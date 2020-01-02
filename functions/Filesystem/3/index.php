@@ -34,7 +34,7 @@ readfile($path);
  */
 // fgets, fgetc
 while (($line = fgets($fh)) && !feof($fh)) {
-    // echo $line;
+    //  $line;
 }
 // -> string
 rewind($fh);

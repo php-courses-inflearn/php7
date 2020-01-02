@@ -1,116 +1,79 @@
 # PHP 7+ Programming: Basic (renewal.ver)
 
-Codes for PHP 7+ Prgramming Lec.
+Codes for **PHP 7+ Prgramming: Basic** Lec.
 
-## Basic grammar in use
+## Language Reference
 
 <http://docs.php.net/manual/en/langref.php>
 
-### Basic
+* Basic syntax -> **/lang/BasicSyntax** (1)
+* Types -> **lang/Types** (2, 3)
+* Variables -> **/lang/Variables** (4)
+* Constants -> **/lang/Constants** (5)
+* (Expressions)
+* Operators -> **/lang/Operators** (6)
+* Control Structures -> **/lang/ControlStructures** (7, 8, 10)
+* Functions -> **/lang/Functions** (9)
 
-* Basic syntax -> **lang/HelloWorld**
-
-#### Docs
-
-* <http://docs.php.net/manual/en/language.basic-syntax.php>
-
-### Variable
-
-* Variables -> **lang/Variable**
-
-#### Docs
-
-* <http://docs.php.net/manual/en/language.types.php>
-* <http://docs.php.net/manual/en/language.variables.php>
-* <http://docs.php.net/manual/en/language.constants.php>
-
-### Operators
-
-* Operators -> **lang/Operator**
-
-#### Docs
-
-* <http://docs.php.net/manual/en/language.operators.php>
-
-### Control Structures
-
-* If ~ elseif ~ else -> **lang/If**
-* Switch ~ case -> **lang/SwitchCase**
-* For, while, do ~ while -> **lang/Loop**
-
-#### Docs
-
-* <http://docs.php.net/manual/en/language.control-structures.php>
-
-### Array
-
-* Types/Arrays -> **lang/Array**
-
-### Docs
-
-* <http://docs.php.net/manual/kr/language.types.array.php>
-
-### Functions
-
-* Functions -> **lang/Function**
-
-#### Docs
-
-* <http://docs.php.net/manual/en/language.functions.php>
-
-### Generators
-
-* Generators -> **lang/Generator**
-
-#### Docs
-
-<http://docs.php.net/manual/en/language.generators.php>
-
-### References
-
-* References Explained -> **lang/Reference**
-
-#### Docs
-
-<http://docs.php.net/manual/en/language.references.php>
-
-### Include, require
-
-* Control Structures/Include, require -> **lang/Include**
-
-#### Docs
-
-<http://docs.php.net/manual/en/language.control-structures.php>
-
-## Functions
+## Membership Extensions
 
 <http://docs.php.net/manual/en/extensions.membership.php>
 
-* PHP Options/Info -> **Configuration**
-* Error Handling -> **Error**
-* Arrays -> Array
-* Variable Handling -> **Variable**
-* Function Handling -> **Function**
-* Data/Time -> **Date**
-* ODBC(Open DataBase Connectivity) -> **ODBC**
-* Math -> **Math**
-* CSPRNG(Cryptographically Secure Pseudo-Random Number Generator) -> **CSPRNG**
-* cURL -> **cURL**
-* Cookie -> **Cookie**
-* Session -> **Session**
-* JSON(JavaScript Object Notation) -> **JSON**
-* URLs -> **URL**
-* Network -> **Network**
-* Filter -> **Filter**
-* Strings & Multibyte String -> **String**
-* Hash & Password Handling -> **Hash**
-* PCRE(Perl-Compatible Regular Expression) -> **PCRE**
-* Directories -> **Directory**
-* Filesystem -> **Filesystem**
-* Streams -> **Stream** 
-* Readline -> **Readline**
-* Output Control -> **OutputControl**
-* Program Execution -> **ProgramExecution**
+### Configurations
+
+* PHP Options/Info -> **/functions/Configuration** (1)
+
+### String
+
+* Strings -> **/functions/String** (2)
+* Hash -> **/functions/Hash** (3)
+* Password Hashing -> **/functions/PasswordHashing** (4)
+* PCRE(Perl-Compatible Regular Expression) -> **/functions/PCRE** \
+**POSIX Regex was DEPRECATED in PHP 5.3.0, and REMOVED in PHP 7.0.0** \
+<http://docs.php.net/manual/en/intro.regex.php>
+
+### Math
+
+* Math -> **/functions/Math** (5)
+* CSPRNG(Cryptographically Secure Pseudo-Random Number Generator) -> **/functions/CSPRNG** (6)
+
+### Arrays
+
+* Arrays -> **/functions/Arrays** (7)
+
+### Varialbes
+
+* Variable Handling -> **/functions/Variable** (8)
+* Filter -> **/functions/Filter** (9)
+
+### Functions
+
+* Function Handling -> **/functions/Function** (10)
+
+### Date/Time
+
+* Date/Time -> **/functions/Date** (11)
+
+### Http
+
+* Network -> **/functions/Network** (12)
+* Sessions -> **/functions/Sessions** (13)
+* URLs -> **/functions/URL** (14)
+
+### Filesystem
+
+* Directories -> **/functions/Directories** (15)
+* Filesystem -> **/functions/Filesystem** (16)
+
+### Stream
+
+* Streams -> **/functions/Streams** (17)
+* Output Control -> **/functions/OutputControl** (18)
+* Program Execution -> **/functions/ProgramExecution** (19)
+
+### Database
+
+* ODBC(Open DataBase Connectivity) -> **/functions/ODBC** (20)
 
 ## Security
 

@@ -32,5 +32,5 @@ $result = odbc_exec($conn, "SELECT * FROM user WHERE email = '{$email}'");
  */
 if ($result /* && $row = odbc_fetch_array($result) */) {
     // if (password_hash($password ,$row['password'])) {}
-    echo "Hello, world";
+     "Hello, world";
 }

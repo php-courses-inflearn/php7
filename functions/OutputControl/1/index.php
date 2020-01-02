@@ -13,7 +13,7 @@ ob_start(function (string $buf) {
 /**
  * 출력 스트림 컨텐츠 얻기
  */
-echo "Hello, world";
+ "Hello, world";
 ob_get_contents();
 
 /**

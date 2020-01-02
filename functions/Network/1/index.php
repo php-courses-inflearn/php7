@@ -11,16 +11,6 @@ header_remove('X-MyHeader');
 headers_list();
 
 /*
- * 네트워크 (호스트, 포트 등)
- */
-// 호스트로 IP 구하기
-gethostbyname('localhost');
-// 포트로 서비스를 구하기
-getservbyport(80, 'tcp');
-// IP 로 호스트의 이름 구하기
-gethostbyaddr($_SERVER['REMOTE_ADDR']);
-
-/*
  * HTTP 상태 코드
  */
 // 코드만 반환하기
