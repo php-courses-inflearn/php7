@@ -6,14 +6,13 @@ Codes for **PHP 7+ Prgramming: Basic** Lec.
 
 <http://docs.php.net/manual/en/langref.php>
 
-* Basic syntax -> **/lang/BasicSyntax** (1)
-* Types -> **lang/Types** (2, 3)
-* Variables -> **/lang/Variables** (4)
-* Constants -> **/lang/Constants** (5)
-* (Expressions)
-* Operators -> **/lang/Operators** (6)
-* Control Structures -> **/lang/ControlStructures** (7, 8, 10)
-* Functions -> **/lang/Functions** (9)
+* [Basic syntax](https://github.com/pronist/phplec/tree/basic/lang/BasicSyntax)
+* [Types](https://github.com/pronist/phplec/tree/basic/lang/Types)
+* [Variables](https://github.com/pronist/phplec/tree/basic/lang/Variables)
+* [Constants](https://github.com/pronist/phplec/tree/basic/lang/Constants)
+* [Operators](https://github.com/pronist/phplec/tree/basic/lang/BasicSyntax)
+* [Control Structures](https://github.com/pronist/phplec/tree/basic/lang/ControlStructures)
+* [Functions](https://github.com/pronist/phplec/tree/basic/lang/Functions)
 
 ## Membership Extensions
 
@@ -21,64 +20,77 @@ Codes for **PHP 7+ Prgramming: Basic** Lec.
 
 ### Configurations
 
-* PHP Options/Info -> **/functions/Configuration** (1)
+* [PHP Options/Info](https://github.com/pronist/phplec/tree/basic/functions/Configurations)
 
-### String
+### Misc.
 
-* Strings -> **/functions/String** (2)
-* Hash -> **/functions/Hash** (3)
-* Password Hashing -> **/functions/PasswordHashing** (4)
-* PCRE(Perl-Compatible Regular Expression) -> **/functions/PCRE** \
-**POSIX Regex was DEPRECATED in PHP 5.3.0, and REMOVED in PHP 7.0.0** \
-<http://docs.php.net/manual/en/intro.regex.php>
+* [Misc](https://github.com/pronist/phplec/tree/basic/functions/Misc)
+
+### Error
+
+* [Error Handling](https://github.com/pronist/phplec/tree/basic/functions/Error)
+
+### Strings
+
+* [Strings](https://github.com/pronist/phplec/tree/basic/functions/Strings)
+* [Hash](https://github.com/pronist/phplec/tree/basic/functions/Hash)
+* [Password Hashing](https://github.com/pronist/phplec/tree/basic/functions/PasswordHashing)
+* [PCRE(Perl-Compatible Regular Expression)](https://github.com/pronist/phplec/tree/basic/functions/PCRE)
 
 ### Math
 
-* Math -> **/functions/Math** (5)
-* CSPRNG(Cryptographically Secure Pseudo-Random Number Generator) -> **/functions/CSPRNG** (6)
+* [Math](https://github.com/pronist/phplec/tree/basic/functions/Math)
+* [CSPRNG(Cryptographically Secure Pseudo-Random Number Generator)](https://github.com/pronist/phplec/tree/basic/functions/CSPRNG)
 
 ### Arrays
 
-* Arrays -> **/functions/Arrays** (7)
+* [Arrays](https://github.com/pronist/phplec/tree/basic/functions/Arrays)
 
-### Varialbes
+### Variables
 
-* Variable Handling -> **/functions/Variable** (8)
-* Filter -> **/functions/Filter** (9)
+* [Variable Handling](https://github.com/pronist/phplec/tree/basic/functions/Variables)
+* [Filter](https://github.com/pronist/phplec/tree/basic/functions/Filter)
 
 ### Functions
 
-* Function Handling -> **/functions/Function** (10)
+* [Function Handling](https://github.com/pronist/phplec/tree/basic/functions/Functions)
 
 ### Date/Time
 
-* Date/Time -> **/functions/Date** (11)
+* [Date/Time](https://github.com/pronist/phplec/tree/basic/functions/Date)
 
 ### Http
 
-* Network -> **/functions/Network** (12)
-* Sessions -> **/functions/Sessions** (13)
-* URLs -> **/functions/URL** (14)
+* [Network](https://github.com/pronist/phplec/tree/basic/functions/Network)
+* [Sessions](https://github.com/pronist/phplec/tree/basic/functions/Sessions)
+* [URLs](https://github.com/pronist/phplec/tree/basic/functions/URLs)
+* [cURL](https://github.com/pronist/phplec/tree/basic/functions/cURL)
+* [JSON](https://github.com/pronist/phplec/tree/basic/functions/JSON)
 
 ### Filesystem
 
-* Directories -> **/functions/Directories** (15)
-* Filesystem -> **/functions/Filesystem** (16)
+* [Directories](https://github.com/pronist/phplec/tree/basic/functions/Directories)
+* [Filesystem](https://github.com/pronist/phplec/tree/basic/functions/Filesystem)
 
 ### Stream
 
-* Streams -> **/functions/Streams** (17)
-* Output Control -> **/functions/OutputControl** (18)
-* Program Execution -> **/functions/ProgramExecution** (19)
+* [Streams](https://github.com/pronist/phplec/tree/basic/functions/Streams)
+* [Output Control](https://github.com/pronist/phplec/tree/basic/functions/OutputControl)
+* [Program Execution](https://github.com/pronist/phplec/tree/basic/functions/ProgramExecution)
 
 ### Database
 
-* ODBC(Open DataBase Connectivity) -> **/functions/ODBC** (20)
+* [ODBC(Open DataBase Connectivity)](https://github.com/pronist/phplec/tree/basic/functions/ODBC)
 
 ## Security
 
-* CSRF(Cross-Site Request Forgery) -> **CSRF**
-* File Upload & Download -> **File**
-* Session -> **Session**
-* SQLInjection -> **SQLInjection**
-* XSS(Cross-Site Scripting) -> **XSS**
+* [CSRF(Cross-Site Request Forgery)](https://github.com/pronist/phplec/tree/basic/security/CSRF)
+* [File Upload & Download](https://github.com/pronist/phplec/tree/basic/security/File)
+* [Session](https://github.com/pronist/phplec/tree/basic/security/Session)
+* [Database](https://github.com/pronist/phplec/tree/basic/security/Database)
+* [XSS(Cross-Site Scripting)](https://github.com/pronist/phplec/tree/basic/security/XSS)
+* [Error](https://github.com/pronist/phplec/tree/basic/security/Error)
+
+## app
+
+// Coming soon...
