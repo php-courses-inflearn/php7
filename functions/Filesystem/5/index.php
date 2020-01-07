@@ -1,5 +1,9 @@
 <?php
 
+if (!file_exists('./Links')) {
+    mkdir('./Links');
+}
+
 /*
  * 하드 링크
  */

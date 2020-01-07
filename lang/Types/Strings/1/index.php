@@ -1,49 +1,16 @@
 <?php
 
 /**
- * Define Variables
+ * String Types
  * 
  * http://docs.php.net/manual/en/language.types.php
  */
-$message = 'Hello, world'; // String
-$userCount = 0; // Int
-$pi = 3.14; // Double
-$is_visited = false; // Boolean
-$temp = null; // NULL
+'Hello, world'; // String
 
 /**
  * Type Casting
  */
-(int) "10";
-
-/**
- * Using Variables
- */
-$message;
-
-/**
- * Using Variables in String
- */
-$message = 'Hello, world';
-
-// The message is Hello, world
-"The message is '{$message}'";
-
-/**
- * Here Doc, Now Doc
- */
-<<<HTML
-<!DOCTYPE html>
-
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>HTML Template</title>
-    </head>
-    <body>
-        <h1>$message</h1>
-    </body>
-</html>
-HTML;
+(string) 10; // -> "10"
+(string) true; // -> 1
+(string) false; // -> ""
+(string) 1.234; // -> "1.234"

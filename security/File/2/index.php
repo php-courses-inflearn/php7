@@ -4,16 +4,10 @@
  * File Downloads
  */
 $path = filter_input(INPUT_GET, 'path', FILTER_SANITIZE_STRING);
-/**
- * .., / 와 같은 불건전한 경로문자는 제거합니다.
- */
-$path = str_replace('..', '', $path);
-$path = str_replace('/', '', $path);
-
-$filepath = realpath('./Uploads/'.$path);
+$filepath = realpath('./uploads/'.basename($path));
 
 /*
- * 실제로 해당하는 파일이 있는지 검증합니다.
+ * Check file exists
  */
 if (file_exists($filepath)) {
     $path_parts = pathinfo($filepath);
@@ -21,7 +15,7 @@ if (file_exists($filepath)) {
         'md',
     ];
     /*
-     * 허용하는 확장자인지 검사합니다.
+     * Check file extensions
      */
     if (in_array($path_parts['extension'], $accepts)) {
 
@@ -37,7 +31,7 @@ if (file_exists($filepath)) {
     }
 } else {
     /**
-     * 파일이 없습니다.
+     * Not Found
      */
     http_response_code(404);
 }

@@ -8,6 +8,19 @@ for ($i = 0; $i < 10; $i++) {
 }
 
 /**
+ * for with array
+ */
+$messages = [
+    'Hello, world',
+    'Who are you?',
+    'Bye'
+];
+
+for ($i = 0; $i < count($messages); $i++) {
+    $messages[$i]; // $i -> 0 ~ 2
+}
+
+/**
  * Alternative syntax
  */
 for ($i = 0; $i < 10; $i++):

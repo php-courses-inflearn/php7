@@ -1,6 +1,6 @@
 <?php
 
 /**
- * Hello, world 출력하기
+ * Print 'Hello, world'
  */
-echo 'Hello, world';
+echo 'Hello, world'; // -> Hello, world

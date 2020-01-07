@@ -3,7 +3,7 @@
 /**
  * Session
  */
-session_save_path("./Sessions");
+session_save_path("./sessions");
 
 session_start();
 

@@ -32,7 +32,7 @@ asort($arr);
 
 // 정렬: 값
 usort($numbers, function ($a, $b) {
-    return $a > $b; 
+    return $a > $b;
 });
 
 // 연관 배열: 값

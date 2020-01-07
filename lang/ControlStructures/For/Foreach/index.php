@@ -1,19 +1,6 @@
 <?php
 
 /**
- * for with array
- */
-$messages = [
-    'Hello, world',
-    'Who are you?',
-    'Bye'
-];
-
-for ($i = 0; $i < count($messages); $i++) {
-    $messages[$i]; // $i -> 0 ~ 2
-}
-
-/**
  * foreach (as [$key => ] $value)
  */
 $response = [

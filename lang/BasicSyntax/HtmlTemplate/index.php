@@ -1,6 +1,6 @@
 <?php
 /**
- * HTML 템플릿 사용하기
+ * Using HTML Templates
  */
 ?>
 <!DOCTYPE html>

@@ -6,7 +6,7 @@
 $conn = require_once './Database.php';
 
 /**
- * 유저에게 데이터 받기
+ * Get data from User
  */
 // list('email' => $email, 'password '=> $email) = $_POST;
 // $email = 'pronist@naver.com';
@@ -14,13 +14,13 @@ $email = "' or 1='1";
 $password = "secret";
 
 /**
- * Case 1. 변수를 그냥 넣기
+ * Case 1. Just Injection
  */
 // SELECT * FROM user email = '' or 1='1'
 $result = odbc_exec($conn, "SELECT * FROM user WHERE email = '{$email}'");
 
 /**
- * Case 2. Prepare Statement 사용하기
+ * Case 2. Prepare Statement
  */
 // $result = odbc_prepare($conn, "SELECT * FROM user WHERE email = ?");
 // odbc_execute($result, [
@@ -28,7 +28,7 @@ $result = odbc_exec($conn, "SELECT * FROM user WHERE email = '{$email}'");
 // ]);
 
 /**
- * SQL 통과하였습니까?
+ * Successful?
  */
 if ($result /* && $row = odbc_fetch_array($result) */) {
     // if (password_hash($password ,$row['password'])) {}

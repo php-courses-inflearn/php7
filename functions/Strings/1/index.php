@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 문자열 따옴표에 슬래시 추가/삭제.
+ * Add slashes at Quotes
  */
 // 슬래시 추가
 $slashe = addslashes("Hello' world");

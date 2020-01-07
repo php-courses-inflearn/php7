@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Data Control in Array
+ */
 $messages = [
     'Hello, world',
     'Who are you?',

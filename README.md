@@ -91,6 +91,6 @@ Codes for **PHP 7+ Prgramming: Basic** Lec.
 * [XSS(Cross-Site Scripting)](https://github.com/pronist/phplec/tree/basic/security/XSS)
 * [Error](https://github.com/pronist/phplec/tree/basic/security/Error)
 
-## app
+## Application
 
-// Coming soon...
+<https://github.com/pronist/phpblog/tree/basic>

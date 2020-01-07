@@ -7,7 +7,7 @@ $config = require_once './OdbcConfig.php';
 list($driver, $database, $hostname, $username, $password) = array_values($config);
 
 /**
- * ODBC 연결하기
+ * Connection ODBC
  */
 $conn = odbc_connect(
     sprintf(
