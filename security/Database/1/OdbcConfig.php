@@ -2,27 +2,27 @@
 
 return [
     /**
-     * ODBC Database Connection Driver
+     * ODBC Database Connection Driver.
      */
     'driver' => 'MySQL ODBC 5.3 Unicode Driver',
 
     /**
-     * Name
+     * Name.
      */
     'database' => 'board',
 
     /**
-     * Host name
+     * Host name.
      */
     'hostname' => 'localhost',
 
     /**
-     * User name
+     * User name.
      */
     'username' => 'root',
 
     /**
-     * User password
+     * User password.
      */
-    'password' => 'root'
+    'password' => 'root',
 ];

@@ -1,9 +1,9 @@
 <?php
 
 /**
- * CSRF(Cross Site Request Forgery)
+ * CSRF(Cross Site Request Forgery).
  */
-session_save_path("./sessions");
+session_save_path('./sessions');
 
 session_start();
 
@@ -21,7 +21,7 @@ HTML;
     case 'POST':
         $uid = $_POST['uid'];
         if (hash_equals($_SESSION['token'], $_POST['csrf_token'])) {
-             'Hello, world';
+            'Hello, world';
         } else {
             http_response_code('400');
         }

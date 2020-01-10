@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Comparison Operators
+ * Comparison Operators.
  */
-10 == "10"; // true
-10 === "10"; // false
+10 == '10'; // true
+10 === '10'; // false
 // 10 <> "10"
-10 != "10"; // false
-10 !== "10"; // true
+10 != '10'; // false
+10 !== '10'; // true
 // 'ab' >= 'ac'
 'ab' > 'ac'; // false
 // '6x' <= 20

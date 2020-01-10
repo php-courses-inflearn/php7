@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Access Global Variables
+ * Access Global Variables.
  */
 $message = 'Hello, world';
 
 function foo()
 {
     $message; // -> Not define Variable (Local)
-    
+
     global $message;
     $message; // -> Hello, world
     $GLOBALS['message']; // -> Hello, world
@@ -17,25 +17,25 @@ function foo()
 foo();
 
 /**
- * Static variables
+ * Static variables.
  */
 function foo2()
 {
     static $foo = 0;
-    ++$foo;
+    $foo++;
 }
 
 foo2(); // -> 1
 foo2(); // -> 2
 
 /**
- * Clousre
+ * Clousre.
  */
 function foo4($arg)
 {
-     return function () use ($arg) {
-          return $arg;
-     };
+    return function () use ($arg) {
+        return $arg;
+    };
 }
 
 $fn = foo4('Hello, world');

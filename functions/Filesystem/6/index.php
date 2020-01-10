@@ -2,7 +2,7 @@
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        echo <<<HTML
+        echo <<<'HTML'
     <form action="/" method="POST" enctype="multipart/form-data">
         <input type="file" name="uploads">
         <input type="submit">
@@ -11,7 +11,7 @@ HTML;
         break;
     case 'POST':
         /**
-         * 파일 얻어오기
+         * 파일 얻어오기.
          */
         $file = $_FILES['uploads'];
 
@@ -22,7 +22,6 @@ HTML;
             /*
             * 파일 업로드 하기
             */
-            move_uploaded_file($file['tmp_name'], "./uploads/".time()."_".$file['name']);
+            move_uploaded_file($file['tmp_name'], './uploads/'.time().'_'.$file['name']);
         }
 }
-

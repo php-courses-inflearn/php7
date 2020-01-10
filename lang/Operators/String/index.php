@@ -1,6 +1,6 @@
 <?php
 
 /**
- * String Operators
+ * String Operators.
  */
 'Hello, '.'world'; // Hello, world

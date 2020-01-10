@@ -1,11 +1,11 @@
 <?php
 
 /**
- * File Uploads
+ * File Uploads.
  */
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        echo <<<HTML
+        echo <<<'HTML'
 <form action="/" method="POST" enctype="multipart/form-data">
     <input type="file" name="uploads">
     <input type="submit">
@@ -15,10 +15,10 @@ HTML;
     case 'POST':
         $file = $_FILES['uploads'];
         $accepts = [
-            'png', 'md'
+            'png', 'md',
         ];
         /**
-         * Check file extensions
+         * Check file extensions.
          */
         if (in_array(pathinfo($file['name'])['extension'], $accepts)) {
             move_uploaded_file($file['tmp_name'], './Uploads/'.time().'_'.$file['name']);
@@ -26,4 +26,3 @@ HTML;
             http_response_code(400);
         }
 }
-

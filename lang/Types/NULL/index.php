@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Null Types
+ * Null Types.
  */
 null;
 
 /**
- * Type Casting
+ * Type Casting.
  */
 // -> Error
 // (null) 10;

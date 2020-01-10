@@ -3,22 +3,22 @@
 $selected = 1;
 
 /**
- * Switch ~ case
+ * Switch ~ case.
  */
 // -> Hello, world
 switch ($selected) {
-    case 1: {
+    case 1:
          'Hello, world';
         break;
-    }
+
     case 2:
-    default: {
+    default:
          'Bye';
-    }
+
 }
 
 /**
- * Alternative syntax
+ * Alternative syntax.
  */
 // -> Hello, world
 switch ($selected):
@@ -31,7 +31,7 @@ switch ($selected):
 endswitch;
 
 /**
- * Switch ~ case -> If 
+ * Switch ~ case -> If.
  */
 // -> Hello, world
 if ($selected == 1) {

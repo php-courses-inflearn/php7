@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Add slashes at Quotes
+ * Add slashes at Quotes.
  */
 // 슬래시 추가
 $slashe = addslashes("Hello' world");
@@ -23,20 +23,20 @@ hex2bin($hex);
  *
  * sha1, md5 함수는 추천하지 않음
  */
-crypt("Hello, world", "secret");
+crypt('Hello, world', 'secret');
 
 /**
  * 문자열을 분리, 합치기.
  */
 // 문자열 분리하기
-explode(",", "Hello, world");
+explode(',', 'Hello, world');
 // 문자열 합치기
-implode(", ", ["Hello", "world"]);
+implode(', ', ['Hello', 'world']);
 
 /**
  * HTML 엔티티 인코딩, 디코딩.
  */
-$html = <<<HTML
+$html = <<<'HTML'
 <html>
     <head>
         <meta charset="utf-8">
@@ -72,7 +72,7 @@ chr(65);
  * 쿼리 스트링 파싱.
  */
 $arr = [];
-parse_str("langauge=php&addr=127.0.0.1", $arr);
+parse_str('langauge=php&addr=127.0.0.1', $arr);
 
 /*
  * 숫자 포맷팅
@@ -83,9 +83,9 @@ number_format(12345678.1234, 1);
  * 대소문자 변경.
  */
 // 소문자 -> 대문자
-strtoupper("Hello, world");
+strtoupper('Hello, world');
 // 대문자 -> 소문자
-strtolower("Hello, world");
+strtolower('Hello, world');
 
 /*
  * 양 옆 공백 제거하기
@@ -95,6 +95,6 @@ trim(' Hello, world ');
 /*
  * 문자열 번역하기
  */
-strtr("Hello, world", [
-    "Hello" => "안녕하세요"
+strtr('Hello, world', [
+    'Hello' => '안녕하세요',
 ]);

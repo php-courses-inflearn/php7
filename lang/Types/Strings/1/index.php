@@ -1,14 +1,14 @@
 <?php
 
 /**
- * String Types
- * 
+ * String Types.
+ *
  * http://docs.php.net/manual/en/language.types.php
  */
 'Hello, world'; // String
 
 /**
- * Type Casting
+ * Type Casting.
  */
 (string) 10; // -> "10"
 (string) true; // -> 1

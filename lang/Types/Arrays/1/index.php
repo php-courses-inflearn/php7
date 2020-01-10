@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Define Array
+ * Define Array.
  */
 $messages = [
     'Hello, world',
@@ -10,10 +10,10 @@ $messages = [
 ];
 
 /**
- * Define Array with key
+ * Define Array with key.
  */
 $messages = [
-    0 => 'Hello, world',
+    0         => 'Hello, world',
     'message' => 'Who are you?',
     'Bye',
 ];

@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Session
+ * Session.
  */
-session_save_path("./sessions");
+session_save_path('./sessions');
 
 session_start();
 

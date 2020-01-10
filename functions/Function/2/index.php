@@ -8,14 +8,14 @@ function foo()
 {
     $argCount = func_num_args();
     switch ($argCount) {
-        case 1: {
+        case 1:
             var_dump(func_get_arg(0));
             break;
-        }
-        case 2: {
+
+        case 2:
             var_dump(func_get_args());
             break;
-        }
+
     }
 }
 
@@ -25,14 +25,14 @@ function foo()
 function foo2(...$args)
 {
     switch (count($args)) {
-        case 1: {
+        case 1:
             var_dump($args[0]);
             break;
-        }
-        case 2: {
+
+        case 2:
             var_dump($args);
             break;
-        }
+
     }
 }
 

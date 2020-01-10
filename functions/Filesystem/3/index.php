@@ -54,7 +54,7 @@ $path = './HelloWorld.txt';
 $fh = fopen($path, 'w');
 
 /**
- * 파일 쓰기
+ * 파일 쓰기.
  */
 // -> Output stream
 if (!file_exists($path)) {

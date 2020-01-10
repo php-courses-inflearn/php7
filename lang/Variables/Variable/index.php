@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Variable variables
+ * Variable variables.
  */
 $varName = 'message';
 // $message = 'Hello, world';

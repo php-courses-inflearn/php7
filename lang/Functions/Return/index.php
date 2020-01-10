@@ -1,8 +1,8 @@
 <?php
 
 /**
- * return value
- * 
+ * return value.
+ *
  * function <name>(...)[: <return_type>]
  */
 function foo(): string
@@ -13,7 +13,7 @@ function foo(): string
 foo(); // -> 'Hello, world'
 
 /**
- * return with context
+ * return with context.
  */
 function foo2($is = true)
 {
@@ -26,4 +26,3 @@ function foo2($is = true)
 
 foo2(); // -> 'Hello, world'
 foo2(false); // -> 'Bye'
-

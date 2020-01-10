@@ -1,7 +1,7 @@
 <?php
 
 /**
- * (Int) Integer Types
+ * (Int) Integer Types.
  */
 10; // -> Decimal
 0777; // -> Octal
@@ -9,7 +9,7 @@
 0b0101; // -> Binary
 
 /**
- * Type Casting
+ * Type Casting.
  */
 (int) 'Hello, world'; // -> 0
 (int) '50x'; // -> 50

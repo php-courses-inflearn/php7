@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Constants Scope
+ * Constants Scope.
  */
 function foo()
 {
@@ -16,7 +16,7 @@ foo();
 var_dump(__MESSAGE__);
 
 /**
- * Callbacks (Don't need 'use')
+ * Callbacks (Don't need 'use').
  */
 function foo2($callback)
 {
