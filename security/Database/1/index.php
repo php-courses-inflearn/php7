@@ -3,6 +3,7 @@
 /**
  * SQL Injection.
  */
+
 $conn = require_once './Database.php';
 
 /**

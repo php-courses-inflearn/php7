@@ -1,6 +1,6 @@
 <?php
 
-$path = dirname(__DIR__, 3).'/README.md';
+$path = dirname(__DIR__, 3) . '/README.md';
 
 /**
  * 파일 열기.

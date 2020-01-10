@@ -8,27 +8,12 @@ $selected = 1;
 // -> Hello, world
 switch ($selected) {
     case 1:
-         'Hello, world';
+        'Hello, world';
         break;
-
     case 2:
     default:
-         'Bye';
-
+        'Bye';
 }
-
-/**
- * Alternative syntax.
- */
-// -> Hello, world
-switch ($selected):
-    case 1:
-         'Hello, world';
-        break;
-    case 2:
-    default:
-         'Bye';
-endswitch;
 
 /**
  * Switch ~ case -> If.

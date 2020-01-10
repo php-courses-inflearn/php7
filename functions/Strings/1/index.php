@@ -3,6 +3,7 @@
 /**
  * Add slashes at Quotes.
  */
+
 // 슬래시 추가
 $slashe = addslashes("Hello' world");
 // 슬래시 삭제

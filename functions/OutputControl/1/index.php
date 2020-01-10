@@ -3,11 +3,12 @@
 /**
  * 출력 스트림 열기.
  */
+
 // 스트림 열기
 ob_start();
 // 콜백과 함께 열기
 ob_start(function (string $buf) {
-    return $buf ? 'Output Control with Callback: '.$buf : '';
+    return $buf ? 'Output Control with Callback: ' . $buf : '';
 });
 
  /**

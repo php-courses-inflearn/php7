@@ -15,7 +15,6 @@ function foo()
         case 2:
             var_dump(func_get_args());
             break;
-
     }
 }
 
@@ -32,7 +31,6 @@ function foo2(...$args)
         case 2:
             var_dump($args);
             break;
-
     }
 }
 

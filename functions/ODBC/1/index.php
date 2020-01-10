@@ -9,8 +9,12 @@ list($driver, $database, $hostname, $username, $password) = array_values($config
 $conn = odbc_connect(
     sprintf(
         'Driver={%s};Server=%s;Database=%s;',
-        $driver, $hostname, $database
-    ), $username, $password
+        $driver,
+        $hostname,
+        $database
+    ),
+    $username,
+    $password
 );
 
 /**
@@ -39,19 +43,19 @@ odbc_execute($result);
      password_hash('secret', PASSWORD_DEFAULT),
  ]);
 // 데이터 얻기
-$result = odbc_prepare($conn, 'SELECT * FROM user');
-if (odbc_execute($result)) {
-    while ($row = odbc_fetch_array($result)) {
-        var_dump($row);
-    }
-}
+ $result = odbc_prepare($conn, 'SELECT * FROM user');
+ if (odbc_execute($result)) {
+     while ($row = odbc_fetch_array($result)) {
+         var_dump($row);
+     }
+ }
 
 /**
  * 결과 데이터 메모리 릴리즈하기.
  */
-odbc_free_result($result);
+ odbc_free_result($result);
 
 /**
  * 데이터베이스 닫기.
  */
-odbc_close($conn);
+ odbc_close($conn);

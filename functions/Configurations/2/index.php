@@ -7,6 +7,7 @@
  *
  * zend.assertions = 1
  */
+
 // 테스트 활성화
 assert_options(ASSERT_ACTIVE, true);
 // 테스트 실패시 스크립트 중지

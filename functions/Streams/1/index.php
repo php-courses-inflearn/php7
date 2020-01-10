@@ -5,6 +5,7 @@
  *
  * http://docs.php.net/manual/en/context.php
  */
+
 $handle = stream_context_create();
 
 /**
@@ -12,8 +13,8 @@ $handle = stream_context_create();
  */
 stream_context_set_option($handle, [
     'http' => [
-        'method'=> 'GET',
-        'header'=> "Accept-language: en\r\n".
+        'method' => 'GET',
+        'header' => "Accept-language: en\r\n" .
                    "Cookie: foo=bar\r\n",
     ],
 ]);
@@ -34,7 +35,7 @@ stream_get_filters();
  * http://docs.php.net/manual/en/wrappers.php
  */
 // $fh = fopen("http://example.com", 'r');
-$fh = fopen(dirname(__DIR__, 3).'/README.md', 'r');
+$fh = fopen(dirname(__DIR__, 3) . '/README.md', 'r');
 
 // 필터 추가
 stream_filter_append($fh, 'string.toupper');

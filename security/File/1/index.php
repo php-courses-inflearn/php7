@@ -21,7 +21,7 @@ HTML;
          * Check file extensions.
          */
         if (in_array(pathinfo($file['name'])['extension'], $accepts)) {
-            move_uploaded_file($file['tmp_name'], './Uploads/'.time().'_'.$file['name']);
+            move_uploaded_file($file['tmp_name'], './Uploads/' . time() . '_' . $file['name']);
         } else {
             http_response_code(400);
         }

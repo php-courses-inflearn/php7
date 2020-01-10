@@ -3,6 +3,7 @@
 /**
  * 정규 표현식으로 매치 문자 찾기.
  */
+
 preg_match("/^(http:?)\/\/(.*?)(\..*?)$/", 'http://example.com', $matches);
 
 /**

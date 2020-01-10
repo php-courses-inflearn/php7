@@ -3,6 +3,7 @@
 /**
  * 특정 형식인지 / 타입인지 검사하기.
  */
+
 // 형식 검사하기
 filter_var('http://example.com', FILTER_VALIDATE_URL);
 // 타입 검사하기

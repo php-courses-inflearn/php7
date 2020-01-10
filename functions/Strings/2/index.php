@@ -7,6 +7,7 @@
  * -> %d 숫자
  * -> %f 실수형
  */
+
 // 파라매터 나열하기
 printf('Hello, world %s', 'Mr. Lauren');
 // 파라매터 배열로 주기

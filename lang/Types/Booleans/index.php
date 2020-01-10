@@ -3,6 +3,7 @@
 /**
  * Boolean Types.
  */
+
 // TRUE
 true; // -> 1
 // FALSE

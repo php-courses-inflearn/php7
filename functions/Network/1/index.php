@@ -3,6 +3,7 @@
 /**
  * Http 헤더.
  */
+
 // 헤더 설정하기
 header('X-MyHeader: Hello, world');
 // 헤더 삭제하기

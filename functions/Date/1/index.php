@@ -5,6 +5,7 @@
  *
  * http://docs.php.net/manual/en/timezones.php
  */
+
 // 설정하기
 date_default_timezone_set('Asia/Seoul');
 // 얻기

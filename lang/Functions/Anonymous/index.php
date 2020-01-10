@@ -3,6 +3,7 @@
 /**
  * First class function.
  */
+
 $foo2 = function () {
     return 'Hello, world';
 };
@@ -18,7 +19,7 @@ function foo3(callable $callback)
 }
 
 foo3(
-     function () {
-         return 'Hello, world';
-     } // -> Hello, world
+    function () {
+        return 'Hello, world';
+    } // -> Hello, world
 );

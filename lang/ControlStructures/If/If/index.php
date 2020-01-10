@@ -36,15 +36,3 @@ if (true) {
 if ($message = 'Hello, world') {
     $message; // Hello, world
 }
-
-/**
- * Alternative syntax.
- */
-// -> Hello, world
-if (true) {
-    'Hello, world';
-} elseif (false) {
-    'Who are you?';
-} else {
-    'Bye';
-}
