@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Define Constants
+ * Define Constants.
  */
 // const __MESSAGE__ = 'Hello, world';
 define('__MESSAGE__', 'Hello, world');

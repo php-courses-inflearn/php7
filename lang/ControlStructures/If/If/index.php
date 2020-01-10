@@ -1,50 +1,50 @@
 <?php
 
 /**
- * if
+ * if.
  */
 // [], '', false, 0, null -> false
-if (true) { 
-     'Hello, world';
+if (true) {
+    'Hello, world';
 }
 
 /**
- * if ~ else
+ * if ~ else.
  */
 // -> Hello, world
 if (true) {
-     'Hello, world';
+    'Hello, world';
 } else {
-     'Bye';
+    'Bye';
 }
 
 /**
- * if ~ elseif ~ else
+ * if ~ elseif ~ else.
  */
 // -> Hello, world
 if (true) {
-     'Hello, world';
+    'Hello, world';
 } elseif (false) {
-     'Who are you?';
+    'Who are you?';
 } else {
-     'Bye';
+    'Bye';
 }
 
 /**
- * Define Variables in If Context
+ * Define Variables in If Context.
  */
 if ($message = 'Hello, world') {
-     $message; // Hello, world
+    $message; // Hello, world
 }
 
 /**
- * Alternative syntax
+ * Alternative syntax.
  */
 // -> Hello, world
-if (true):
-     'Hello, world';
-elseif (false):
-     'Who are you?';
-else:
-     'Bye';
-endif;
+if (true) {
+    'Hello, world';
+} elseif (false) {
+    'Who are you?';
+} else {
+    'Bye';
+}

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Bitwise Operators
+ * Bitwise Operators.
  */
 $bin = 0b0101; // 5
 

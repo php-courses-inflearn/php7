@@ -1,16 +1,16 @@
 <?php
 
 /**
- * foreach (as [$key => ] $value)
+ * foreach (as [$key => ] $value).
  */
 $response = [
-    'name' => 'PHP 7+ Programming: Basic',
+    'name'       => 'PHP 7+ Programming: Basic',
     'categoryId' => 0,
-    'messages' => [
+    'messages'   => [
         'Hello, world',
         'Who are you?',
-        'Bye'
-    ]
+        'Bye',
+    ],
 ];
 
 foreach ($response as $key => $value) {
@@ -25,9 +25,9 @@ foreach ($response as $key => $value) {
 }
 
 /**
- * Alternative syntax
+ * Alternative syntax.
  */
-foreach ($response as $key => $value):
+foreach ($response as $key => $value) {
     if (is_array($value)) {
         foreach ($messages as $message) {
             $message;
@@ -36,4 +36,4 @@ foreach ($response as $key => $value):
         // $response[$key];
         $value;
     }
-endforeach;
+}

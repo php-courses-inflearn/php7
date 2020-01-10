@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Arithmetic Operators
+ * Arithmetic Operators.
  */
 2 + 2; // 4
 17 - 3.5; // 13.5

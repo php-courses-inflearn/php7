@@ -1,17 +1,17 @@
 <?php
 
 /**
- * Database
+ * Database.
  */
 $config = require_once './OdbcConfig.php';
 list($driver, $database, $hostname, $username, $password) = array_values($config);
 
 /**
- * Connection ODBC
+ * Connection ODBC.
  */
 $conn = odbc_connect(
     sprintf(
-        "Driver={%s};Server=%s;Database=%s;", 
+        'Driver={%s};Server=%s;Database=%s;',
         $driver, $hostname, $database
     ), $username, $password
 );

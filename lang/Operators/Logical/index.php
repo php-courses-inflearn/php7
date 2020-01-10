@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Logical Operators
+ * Logical Operators.
  */
 // true or true
 true || true; // true

@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Assignment Operators
- * 
+ * Assignment Operators.
+ *
  * =, +=, -=, /=, *=, %=, **=, &=, |=, ^=, <<=, >>=, .=
  */
 $message = 'Hello, ';

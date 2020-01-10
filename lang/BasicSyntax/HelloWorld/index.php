@@ -1,6 +1,6 @@
 <?php
 
 /**
- * Print 'Hello, world'
+ * Print 'Hello, world'.
  */
 echo 'Hello, world'; // -> Hello, world

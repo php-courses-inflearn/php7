@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Define function
+ * Define function.
  */
 function foo()
 {
@@ -11,11 +11,11 @@ function foo()
 foo(); // -> Hello, world
 
 /**
- * Variables function
+ * Variables function.
  */
 function foo2()
 {
-     return 'Hello, world';
+    return 'Hello, world';
 }
 $fnName = 'foo2';
 // $fnName();

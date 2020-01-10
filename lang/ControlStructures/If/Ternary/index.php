@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Ternary Operator
+ * Ternary Operator.
  */
 // 'Hello, world' ?: 'Bye'
 'Hello, world' ? 'Hello, world' : 'Bye'; // Hello, world

@@ -1,31 +1,31 @@
 <?php
 
 /**
- * Data Control in Array
+ * Data Control in Array.
  */
 $messages = [
     'Hello, world',
     'Who are you?',
-    'Bye'
+    'Bye',
 ];
 
 /**
- * Insert
+ * Insert.
  */
 // $messages[3] = 'whoops'
 $messages[] = 'whoops';
 
 /**
- * Select
+ * Select.
  */
 $messages[3]; // -> whoops
 
 /**
- * Update
+ * Update.
  */
 $messages[3] = 'Do you know?';
 
 /**
- * Delete
+ * Delete.
  */
 unset($messages[3]);

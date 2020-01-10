@@ -1,9 +1,9 @@
 <?php
 
 /**
- * do ~ while
+ * do ~ while.
  */
 $i = 0;
 do {
     $i++; // -> 0 ~ 9
-} while($i < 10);
+} while ($i < 10);

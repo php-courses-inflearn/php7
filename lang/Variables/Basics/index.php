@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Define Variables
- * 
+ * Define Variables.
+ *
  * http://docs.php.net/manual/en/language.types.php
  */
 $message = 'Hello, world'; // String
@@ -12,12 +12,12 @@ $is_visited = false; // Boolean
 $temp = null; // NULL
 
 /**
- * Using Variables
+ * Using Variables.
  */
 $message;
 
 /**
- * Using Variables in String
+ * Using Variables in String.
  */
 $message = 'Hello, world';
 
@@ -25,7 +25,7 @@ $message = 'Hello, world';
 "The message is '{$message}'";
 
 /**
- * Here Doc, Now Doc
+ * Here Doc, Now Doc.
  */
 <<<HTML
 <!DOCTYPE html>

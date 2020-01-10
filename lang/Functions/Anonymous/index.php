@@ -1,23 +1,24 @@
 <?php
 
 /**
- * First class function
+ * First class function.
  */
 $foo2 = function () {
-     return 'Hello, world';
+    return 'Hello, world';
 };
 
 $foo2(); // -> Hello ,world
 
 /**
- * Higher-order function
+ * Higher-order function.
  */
-function foo3(callable $callback) {
-     return $callback(); // -> Hello, world
+function foo3(callable $callback)
+{
+    return $callback(); // -> Hello, world
 }
 
 foo3(
      function () {
-          return 'Hello, world';
+         return 'Hello, world';
      } // -> Hello, world
 );
