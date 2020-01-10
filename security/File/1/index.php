@@ -5,8 +5,8 @@
  */
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-         <<<HTML
-<form action={$_SERVER['PHP_SELF']} method="POST" enctype="multipart/form-data">
+        echo <<<HTML
+<form action="/" method="POST" enctype="multipart/form-data">
     <input type="file" name="uploads">
     <input type="submit">
 </form>

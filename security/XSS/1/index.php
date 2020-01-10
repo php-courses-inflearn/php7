@@ -8,7 +8,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         if (array_key_exists('PHPSESSID', $_GET)) {
              $_GET['PHPSESSID'];
         } else {
-             <<<HTML
+            echo <<<HTML
     <form action="/" method="POST">
         <textarea name="text" style="width: 320px; height: 320px; display: block;"></textarea>
         <input type="submit">

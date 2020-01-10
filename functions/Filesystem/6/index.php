@@ -1,16 +1,15 @@
 <?php
 
 switch ($_SERVER['REQUEST_METHOD']) {
-    case 'GET': {
-    echo <<<HTML
-<form action={$_SERVER['PHP_SELF']} method="POST" enctype="multipart/form-data">
-    <input type="file" name="uploads">
-    <input type="submit">
-</form>
+    case 'GET':
+        echo <<<HTML
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="uploads">
+        <input type="submit">
+    </form>
 HTML;
-     break;
-    }
-    case 'POST': {
+        break;
+    case 'POST':
         /**
          * 파일 얻어오기
          */
@@ -23,9 +22,7 @@ HTML;
             /*
             * 파일 업로드 하기
             */
-            move_uploaded_file($file['tmp_name'], "./Uploads/".time()."_".$file['name']);
+            move_uploaded_file($file['tmp_name'], "./uploads/".time()."_".$file['name']);
         }
-        break;
-    }
 }
 

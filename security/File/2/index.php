@@ -35,5 +35,3 @@ if (file_exists($filepath)) {
      */
     http_response_code(404);
 }
-
-
