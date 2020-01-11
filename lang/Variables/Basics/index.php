@@ -5,7 +5,6 @@
  *
  * http://docs.php.net/manual/en/language.types.php
  */
-
 $message = 'Hello, world'; // String
 $userCount = 0; // Int
 $pi = 3.14; // Double

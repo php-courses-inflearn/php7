@@ -3,7 +3,6 @@
 /**
  * base64 인코딩.
  */
-
 $base64Encoded = base64_encode('Hello, world');
 
 /*

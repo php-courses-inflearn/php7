@@ -22,6 +22,6 @@ HTML;
             /*
             * 파일 업로드 하기
             */
-            move_uploaded_file($file['tmp_name'], './uploads/' . time() . '_' . $file['name']);
+            move_uploaded_file($file['tmp_name'], './uploads/'.time().'_'.$file['name']);
         }
 }

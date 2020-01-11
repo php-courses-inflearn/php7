@@ -3,7 +3,6 @@
 /**
  * (Int) Integer Types.
  */
-
 10; // -> Decimal
 0777; // -> Octal
 0xF; // -> Hexdecimal

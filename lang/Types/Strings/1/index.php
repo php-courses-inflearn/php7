@@ -5,7 +5,6 @@
  *
  * http://docs.php.net/manual/en/language.types.php
  */
-
 'Hello, world'; // String
 
 /**

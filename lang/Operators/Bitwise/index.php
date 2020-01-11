@@ -3,7 +3,6 @@
 /**
  * Bitwise Operators.
  */
-
 $bin = 0b0101; // 5
 
 $bin | 0b0100; // 0b0101

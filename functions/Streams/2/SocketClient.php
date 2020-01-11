@@ -3,7 +3,6 @@
 /**
  * 스트림 소켓 클라이언트 만들기.
  */
-
 $sock = stream_socket_client('tcp://127.0.0.1:8000', $errno, $errstr);
 
 /**

@@ -3,7 +3,6 @@
 /**
  * Using HTML Templates.
  */
-
 ?>
 <!DOCTYPE html>
 

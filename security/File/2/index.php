@@ -3,9 +3,8 @@
 /**
  * File Downloads.
  */
-
 $path = filter_input(INPUT_GET, 'path', FILTER_SANITIZE_STRING);
-$filepath = realpath('./uploads/' . basename($path));
+$filepath = realpath('./uploads/'.basename($path));
 
 /*
  * Check file exists
@@ -20,9 +19,9 @@ if (file_exists($filepath)) {
      */
     if (in_array($path_parts['extension'], $accepts)) {
         header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename=' . $path_parts['basename']);
+        header('Content-Disposition: attachment; filename='.$path_parts['basename']);
         header('Content-Transfer-Encoding: binary');
-        header('Content-Length: ' . filesize($filepath));
+        header('Content-Length: '.filesize($filepath));
 
         readfile($filepath);
     } else {

@@ -3,7 +3,6 @@
 /**
  * foreach (as [$key => ] $value).
  */
-
 $response = [
     'name'       => 'PHP 7+ Programming: Basic',
     'categoryId' => 0,

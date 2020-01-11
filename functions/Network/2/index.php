@@ -3,7 +3,6 @@
 /**
  * 쿠키 설정하기.
  */
-
 setcookie('myCookie', 'Hello, world', time() + 60 * 60);
 
 /*
