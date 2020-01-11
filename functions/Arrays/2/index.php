@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Sort by value
+ * Sort by value.
  */
 $numbers = range(1, 5);
 
@@ -9,7 +9,7 @@ $numbers = range(1, 5);
 rsort($numbers);
 
 /**
- * Assoc sort by value
+ * Assoc sort by value.
  */
 $arr = [
     'r' => 'Bye',
@@ -20,14 +20,14 @@ $arr = [
 asort($arr);
 // arsort($arr);
 
-/**
- * Sort by key
- */
+ /**
+  * Sort by key.
+  */
  ksort($arr);
 // krsort($arr);
 
 /**
- * Sort by callback
+ * Sort by callback.
  */
 // Sort by value
 usort($numbers, function ($a, $b) {

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Define 'posts Array
+ * Define 'posts Array.
  */
 $blog = [
     'title'      => 'Lorem Ipsum',
@@ -63,7 +63,7 @@ array_search('Lorem Ipsum', $blog);
 /***************************/
 
 /**
- * Generate Numbers array
+ * Generate Numbers array.
  */
 
 // $numbers = [1,2,3,4,5];
@@ -92,7 +92,7 @@ array_keys($numbers);
 array_values($numbers);
 
 /**
- * Make a array from variables
+ * Make a array from variables.
  */
 $message = 'Hello, world'; // String
 $userCount = 0; // Int
