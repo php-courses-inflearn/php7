@@ -2,6 +2,10 @@
     <a href="https://www.inflearn.com/course/php"><img src="https://cdn.inflearn.com/public/files/courses/280298/57e113b0-2f17-494b-a363-6fdc6d0da066/php2.png" width="400"></a>
 </p>
 
+<p align="center">
+    <a href="https://github.styleci.io/repos/231129705"><img src="https://github.styleci.io/repos/231129705/shield?branch=basic" alt="StyleCI"></a>
+</p>
+
 ## PHP 7+ Programming
 
 Codes for **PHP 7+ Prgramming** Lec.
@@ -12,6 +16,8 @@ Codes for **PHP 7+ Prgramming** Lec.
 ### Branches
 
 * [Baisc](https://github.com/pronist/phplec/tree/basic) - PHP 7+ Prgramming: Basic
+
+## Basic
 
 ### Language Reference
 
@@ -102,6 +108,6 @@ Codes for **PHP 7+ Prgramming** Lec.
 * [XSS(Cross-Site Scripting)](https://github.com/pronist/phplec/tree/basic/security/XSS)
 * [Error](https://github.com/pronist/phplec/tree/basic/security/Error)
 
-### Application
+## Application
 
 * [Basic](https://github.com/pronist/phpblog/tree/basic) - PHP **Classic Architecture**
