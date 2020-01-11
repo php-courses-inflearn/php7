@@ -3,5 +3,4 @@
 /**
  * String Operators.
  */
-
-'Hello, ' . 'world'; // Hello, world
+'Hello, '.'world'; // Hello, world

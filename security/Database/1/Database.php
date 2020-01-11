@@ -3,7 +3,6 @@
 /**
  * Database.
  */
-
 $config = require_once './OdbcConfig.php';
 list($driver, $database, $hostname, $username, $password) = array_values($config);
 

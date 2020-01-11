@@ -3,7 +3,6 @@
 /**
  * Null Types.
  */
-
 null;
 
 /**

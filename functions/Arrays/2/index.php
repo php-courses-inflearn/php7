@@ -3,7 +3,6 @@
 /**
  * 정렬하기: 값.
  */
-
 $numbers = range(1, 5);
 
 // sort($numbers);

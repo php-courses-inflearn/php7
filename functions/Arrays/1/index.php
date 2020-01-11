@@ -3,7 +3,6 @@
 /**
  * 'posts' 배열 만들기.
  */
-
 $blog = [
     'title'      => 'Lorem Ipsum',
     'categories' => [

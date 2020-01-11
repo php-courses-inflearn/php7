@@ -3,7 +3,6 @@
 /**
  * 현재 위치 바꾸기.
  */
-
 chdir(__DIR__);
 
 /*
@@ -14,13 +13,13 @@ getcwd();
 /**
  * 디렉토리 읽기.
  */
-$files = scandir(__DIR__ . '/../..');
+$files = scandir(__DIR__.'/../..');
 
 /**
  * 디렉토리 핸들링
  */
 // 디렉토리 열기
-$dir = opendir(__DIR__ . '/../..');
+$dir = opendir(__DIR__.'/../..');
 // 디렉토리 읽기
 while ($name = readdir($dir)) {
 }

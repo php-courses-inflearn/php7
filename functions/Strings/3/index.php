@@ -3,7 +3,6 @@
 /**
  * 문자 치환하기.
  */
-
 str_replace('Hello', 'Hi', 'Hello, world');
 
 /*

@@ -3,13 +3,12 @@
 /**
  * 로그 수준 조절하기.
  */
-
 error_reporting(E_ALL & ~E_NOTICE);
 
 /**
  * 에러 로그 보내기.
  */
-error_log('Hello, world', 3, __DIR__ . '/logs/log.txt');
+error_log('Hello, world', 3, __DIR__.'/logs/log.txt');
 
 /**
  * 역추적 로그.
