@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 'posts' 배열 만들기.
+ * Define 'posts Array
  */
 $blog = [
     'title'      => 'Lorem Ipsum',
@@ -24,7 +24,7 @@ $blog = [
 ];
 
 /*
- * 배열의 맨 끝에 값 추가하기
+ * Push a eleement
  */
 array_push($blog['categories']['all'], [
     'title'   => 'Hello, world',
@@ -32,61 +32,72 @@ array_push($blog['categories']['all'], [
 ]);
 
 /*
- * 배열의 맨 끝의 값 삭제하기
+ * Delete a eleement
  */
 array_pop($blog['categories']['all']);
 
 /*
- * 배열에서 요소를 필터링하기
+ * Filtering
  */
 array_filter($blog['categories']['all'], function ($post) {
     return $post['title'] == 'What is Lorem Ipsum?';
 });
 
 /*
- * 배열에 키가 있는지 검증하기
+ * Validate key
  */
 array_key_exists('title', $blog);
 
 /*
- * 배열을 기반으로 새로운 배열을 만들기
+ * Make an array from another array
  */
 array_map(function ($post) {
     return $post['title'];
 }, $blog['categories']['all']);
 
 /*
- * 배열에서 특정 값의 키를 찾기
+ * Find a key
  */
 array_search('Lorem Ipsum', $blog);
 
 /***************************/
 
 /**
- * 숫자 배열 생성하기.
+ * Generate Numbers array
  */
 
 // $numbers = [1,2,3,4,5];
 $numbers = range(1, 5);
 
 /*
- * 배열의 요소 접기
+ * Folding
  */
 array_reduce($numbers, function ($carry, $num) {
     return $carry += $num * 2;
 });
 
 /*
- * 배열에 요소가 있는지 체크하기
+ * Check element in array
  */
 in_array(1, $numbers);
 
 /*
- * 배열의 키만 얻기
+ * Get array keys
  */
 array_keys($numbers);
 
 /*
- * 배열의 값만 얻기
+ * Get array values
  */
 array_values($numbers);
+
+/**
+ * Make a array from variables
+ */
+$message = 'Hello, world'; // String
+$userCount = 0; // Int
+$pi = 3.14; // Double
+$is_visited = false; // Boolean
+$temp = null; // NULL
+
+compact('message', 'userCount', 'pi', 'is_visited', 'temp');

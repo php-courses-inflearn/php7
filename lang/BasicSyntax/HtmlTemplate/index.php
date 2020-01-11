@@ -1,9 +1,3 @@
-<?php
-
-/**
- * Using HTML Templates.
- */
-?>
 <!DOCTYPE html>
 
 <html lang="en">

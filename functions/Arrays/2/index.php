@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 정렬하기: 값.
+ * Sort by value
  */
 $numbers = range(1, 5);
 
@@ -9,7 +9,7 @@ $numbers = range(1, 5);
 rsort($numbers);
 
 /**
- * 연관배열 정렬하기: 값.
+ * Assoc sort by value
  */
 $arr = [
     'r' => 'Bye',
@@ -20,27 +20,26 @@ $arr = [
 asort($arr);
 // arsort($arr);
 
- /**
-  * 연관배열 정렬하기: 키.
-  */
+/**
+ * Sort by key
+ */
  ksort($arr);
 // krsort($arr);
 
 /**
- * 콜백으로 정렬하기.
+ * Sort by callback
  */
-
-// 정렬: 값
+// Sort by value
 usort($numbers, function ($a, $b) {
     return $a > $b;
 });
 
-// 연관 배열: 값
+// Assoc sort by value
 uasort($arr, function ($a, $b) {
     return $a > $b;
 });
 
-// 연관 배열: 키
+// Sort by key
 uksort($arr, function ($a, $b) {
     return $a > $b;
 });
