@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Read a line
+ * Read a line.
  */
 echo $line = readline('prompt >> ');
 
 /**
- * Add readline history
+ * Add readline history.
  */
 readline_add_history($line);
 
 /**
- * Clear history
+ * Clear history.
  */
 readline_clear_history();

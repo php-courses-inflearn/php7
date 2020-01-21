@@ -23,8 +23,7 @@ HTML;
             'png', 'md',
         ];
         if (in_array(strtolower($path_parts['extension']), $accepts) &&
-            is_uploaded_file($file['name']['tmp_name']))
-        {
+            is_uploaded_file($file['name']['tmp_name'])) {
             move_uploaded_file($file['tmp_name'], './uploads/'.time().'_'.$file['name']);
         } else {
             http_response_code(400);

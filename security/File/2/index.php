@@ -13,7 +13,7 @@ if (!preg_match('/^(?:[0-9a-z_-]|\.(?!\.))+$/i', $path)) {
     exit;
 }
 
-$filepath = realpath('./uploads/' . basename($path));
+$filepath = realpath('./uploads/'.basename($path));
 
 if (file_exists($filepath)) {
     $path_parts = pathinfo($filepath);

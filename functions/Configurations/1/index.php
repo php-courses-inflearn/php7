@@ -22,7 +22,7 @@ get_include_path();
 restore_include_path();
 
 /**
- * 포함된 파일들 얻기
+ * 포함된 파일들 얻기.
  */
 get_included_files();
 
@@ -41,15 +41,15 @@ ini_set('display_errors', 0);
 ini_get('display_errors');
 
 /**
- * Environment Variables
+ * Environment Variables.
  */
 // Set
-putenv('APP_ENV=' . 'production');
+putenv('APP_ENV='.'production');
 // Get
 getenv('APP_ENV'); // -> production
 
 /**
- * Memory bytes
+ * Memory bytes.
  */
 memory_get_peak_usage();
 memory_get_usage();

@@ -6,6 +6,6 @@
 echo 'Hello, world'; // -> Hello, world
 
 /**
- * Terminate script
+ * Terminate script.
  */
 exit; // die

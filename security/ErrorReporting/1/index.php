@@ -3,7 +3,7 @@
 ini_set('display_errors', 'On');
 
 /**
- * PHP.ini
+ * PHP.ini.
  *
  * display_errors = Off, error_reporting = 0
  */

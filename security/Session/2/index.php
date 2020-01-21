@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Timestamp based session
+ * Timestamp based session.
  */
 date_default_timezone_set('Asia/Seoul');
 
@@ -13,7 +13,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $_SESSION['timestamp'] = time();
 
         echo '<button id=renewal>Renewal Session</button>';
-        echo <<<HTML
+        echo <<<'HTML'
 <script>
     function sessionTimeOut(timeOut) {
         return setTimeout(() => {
@@ -42,7 +42,7 @@ HTML;
     case 'POST':
         if ($json = file_get_contents('php://input')) {
             $_POST = json_decode($json, true);
-            $diff = date("s", time() - $_SESSION['timestamp']);
+            $diff = date('s', time() - $_SESSION['timestamp']);
             $sessionTimeOutSeconds = 3;
 
             if (isset($_POST['refresh']) && $diff <= $sessionTimeOutSeconds) {
