@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Connection
+ * Connection.
  */
 $conn = mysqli_connect(
     'localhost',
@@ -16,7 +16,7 @@ $conn = mysqli_connect(
 $_POST = [
     'email'     => "' or 1='1",
     // 'email'     => 'foo@exameple.com',
-    'password'  => 'secret'
+    'password'  => 'secret',
 ];
 [ 'email' => $email, 'password' => $password ] = $_POST;
 
@@ -29,7 +29,7 @@ $_POST = [
 /**
  * Case 2. Prepare Statement.
  */
-$stmt = mysqli_prepare($conn, "SELECT * FROM users WHERE email = ? LIMIT 1");
+$stmt = mysqli_prepare($conn, 'SELECT * FROM users WHERE email = ? LIMIT 1');
 
 mysqli_stmt_bind_param($stmt, 's', $email);
 mysqli_stmt_execute($stmt);

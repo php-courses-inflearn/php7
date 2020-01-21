@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Connection
+ * Connection.
  */
 $conn = mysqli_connect(
     'localhost',
@@ -11,7 +11,7 @@ $conn = mysqli_connect(
 );
 
 /**
- * Query Execute
+ * Query Execute.
  */
 mysqli_query($conn, 'CREATE TABLE tests (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -19,7 +19,7 @@ mysqli_query($conn, 'CREATE TABLE tests (
 )');
 
 /**
- * Query Execute (Statement)
+ * Query Execute (Statement).
  */
 // mysqli_autocommit($conn, false);
 
@@ -34,7 +34,7 @@ mysqli_stmt_execute($stmt);
 // mysqli_rollback($conn);
 
 /**
- * Select
+ * Select.
  */
 $stmt = mysqli_prepare($conn, 'SELECT message FROM tests');
 mysqli_stmt_execute($stmt);
@@ -52,6 +52,6 @@ while ($row = mysqli_fetch_assoc($result)) {
 mysqli_query($conn, 'DROP TABLE tests');
 
 /**
- * Close connection
+ * Close connection.
  */
 mysqli_close($conn);

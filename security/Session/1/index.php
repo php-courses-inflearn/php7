@@ -4,7 +4,7 @@ session_save_path('sessions');
 session_start();
 
 /**
- * # Cookie
+ * # Cookie.
  *
  * /?PHPSESSID=123456789
  *
@@ -22,20 +22,19 @@ switch ($_SERVER['REQUEST_METHOD']) {
 exit;
 
 /**
- * # Javascript Injection
+ * # Javascript Injection.
  *
  * session.cookie_httpOnly
  */
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        echo "<script>document.write(document.cookie)</script>";
+        echo '<script>document.write(document.cookie)</script>';
         break;
 }
 exit;
 
 /**
- * # Https
+ * # Https.
  *
  * session.cookie_secure
  */
-
