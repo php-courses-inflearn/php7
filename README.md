@@ -1,11 +1,3 @@
-<p align="center">
-    <a href="https://www.inflearn.com/course/php"><img src="https://cdn.inflearn.com/public/files/courses/280298/57e113b0-2f17-494b-a363-6fdc6d0da066/php2.png" width="400"></a>
-</p>
-
-<p align="center">
-    <a href="https://github.styleci.io/repos/231129705"><img src="https://github.styleci.io/repos/231129705/shield?branch=basic" alt="StyleCI"></a>
-</p>
-
 ## PHP 7+ Programming
 
 Codes for **PHP 7+ Prgramming** Lec.
@@ -15,9 +7,13 @@ Codes for **PHP 7+ Prgramming** Lec.
 
 ### Branches
 
-* [Baisc](https://github.com/pronist/phplec/tree/basic) - PHP 7+ Prgramming: Basic
+* [Basic](https://github.com/pronist/phplec/tree/basic) - PHP 7+ Prgramming: Basic
 
 ## Basic
+
+<p>
+    <img src="https://github.styleci.io/repos/231129705/shield?branch=basic" alt="StyleCI">
+</p>
 
 ### Language Reference
 
@@ -38,10 +34,6 @@ Codes for **PHP 7+ Prgramming** Lec.
 #### Configurations
 
 * [PHP Options/Info](https://github.com/pronist/phplec/tree/basic/functions/Configurations)
-
-#### Misc.
-
-* [Misc](https://github.com/pronist/phplec/tree/basic/functions/Misc)
 
 #### Error
 
@@ -92,22 +84,29 @@ Codes for **PHP 7+ Prgramming** Lec.
 #### Stream
 
 * [Streams](https://github.com/pronist/phplec/tree/basic/functions/Streams)
+* [Readline](https://github.com/pronist/phplec/tree/basic/functions/Readline)
 * [Output Control](https://github.com/pronist/phplec/tree/basic/functions/OutputControl)
 * [Program Execution](https://github.com/pronist/phplec/tree/basic/functions/ProgramExecution)
 
 #### Database
 
-* [ODBC(Open DataBase Connectivity)](https://github.com/pronist/phplec/tree/basic/functions/ODBC)
+* [MySQLi](https://github.com/pronist/phplec/tree/basic/functions/MySQLi)
 
 ### Security
 
-* [CSRF(Cross-Site Request Forgery)](https://github.com/pronist/phplec/tree/basic/security/CSRF)
-* [File Upload & Download](https://github.com/pronist/phplec/tree/basic/security/File)
-* [Session](https://github.com/pronist/phplec/tree/basic/security/Session)
-* [Database](https://github.com/pronist/phplec/tree/basic/security/Database)
 * [XSS(Cross-Site Scripting)](https://github.com/pronist/phplec/tree/basic/security/XSS)
-* [Error](https://github.com/pronist/phplec/tree/basic/security/Error)
+* [CSRF(Cross-Site Request Forgery)](https://github.com/pronist/phplec/tree/basic/security/CSRF)
+* [Session](https://github.com/pronist/phplec/tree/basic/security/Session)
+* [SQLInjection](https://github.com/pronist/phplec/tree/basic/security/SQLInjection)
+* [File Upload & Download](https://github.com/pronist/phplec/tree/basic/security/File)
+* [ErrorReporting](https://github.com/pronist/phplec/tree/basic/security/ErrorReporting)
 
 ## Application
 
 * [Basic](https://github.com/pronist/phpblog/tree/basic) - PHP **Classic Architecture**
+
+## License
+
+[MIT](https://github.com/pronist/phplec/blob/basic/LICENSE)
+
+Copyright 2020. [SangWoo Jeong](https://github.com/pronist). All rights reserved.

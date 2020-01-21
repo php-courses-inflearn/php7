@@ -6,14 +6,14 @@
 $p = proc_open('php ./Readline/1/index.php', [
     0 => ['pipe', 'r'],
     1 => ['pipe', 'w'],
-    2 => ['file', __DIR__.'/logs/log.txt', 'a'],
+    2 => ['file', __DIR__.'/logs/log.log', 'a'],
 ], $pipes, dirname(__DIR__, 2));
 
 // 입력 스트림에 입력하기
 fwrite($pipes[0], 'Hello, world');
 fclose($pipes[0]);
 // 출력 스트림으로 부터 데이터를 얻기
- stream_get_contents($pipes[1]);
+stream_get_contents($pipes[1]);
 fclose($pipes[1]);
 
 /**

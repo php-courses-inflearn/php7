@@ -1,14 +1,41 @@
 <?php
 
-/**
- * Session.
- */
-session_save_path('./sessions');
-
+session_save_path('sessions');
 session_start();
 
-if (!array_key_exists('user', $_SESSION)) {
-    $_SESSION['user'] = filter_input(INPUT_GET, 'user', FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_URL);
+/**
+ * # Cookie
+ *
+ * /?PHPSESSID=123456789
+ *
+ * session.use_strict_mode
+ *
+ * session.use_cookies
+ * session.use_only_cookies
+ */
+switch ($_SERVER['REQUEST_METHOD']) {
+    case 'GET':
+        $_SESSION['message'] = 'Hello, world';
+        echo $_SESSION['message'];
+        break;
 }
+exit;
 
- $_SESSION['user'];
+/**
+ * # Javascript Injection
+ *
+ * session.cookie_httpOnly
+ */
+switch ($_SERVER['REQUEST_METHOD']) {
+    case 'GET':
+        echo "<script>document.write(document.cookie)</script>";
+        break;
+}
+exit;
+
+/**
+ * # Https
+ *
+ * session.cookie_secure
+ */
+

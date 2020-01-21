@@ -18,14 +18,19 @@ set_include_path(__DIR__.'/mylib');
 // require_once "HelloWorld.php";
 // 얻기
 get_include_path();
+// 초기화
+restore_include_path();
+
+/**
+ * 포함된 파일들 얻기
+ */
+get_included_files();
 
 /**
  * PHP 정보 얻기.
  */
 // 종합적으로 얻기
-phpinfo();
-// 버전 얻기
-phpversion();
+// phpinfo();
 
 /**
  * PHP 옵션 설정/얻기.
@@ -34,3 +39,17 @@ phpversion();
 ini_set('display_errors', 0);
 // 얻기
 ini_get('display_errors');
+
+/**
+ * Environment Variables
+ */
+// Set
+putenv('APP_ENV=' . 'production');
+// Get
+getenv('APP_ENV'); // -> production
+
+/**
+ * Memory bytes
+ */
+memory_get_peak_usage();
+memory_get_usage();

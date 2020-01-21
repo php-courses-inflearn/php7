@@ -2,6 +2,10 @@
 
 /**
  * File Uploads.
+ *
+ * php.ini
+ *
+ * file_uploads
  */
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
@@ -14,15 +18,18 @@ HTML;
         break;
     case 'POST':
         $file = $_FILES['uploads'];
+        $path_parts = pathinfo($file['name']);
         $accepts = [
             'png', 'md',
         ];
-        /**
-         * Check file extensions.
-         */
-        if (in_array(pathinfo($file['name'])['extension'], $accepts)) {
-            move_uploaded_file($file['tmp_name'], './Uploads/'.time().'_'.$file['name']);
+        if (in_array(strtolower($path_parts['extension']), $accepts) &&
+            is_uploaded_file($file['name']['tmp_name']))
+        {
+            move_uploaded_file($file['tmp_name'], './uploads/'.time().'_'.$file['name']);
         } else {
             http_response_code(400);
         }
+        break;
+    default:
+        http_response_code(404);
 }

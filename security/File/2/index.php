@@ -2,21 +2,24 @@
 
 /**
  * File Downloads.
+ *
+ * php.ini
+ *
+ * allow_url_fopen, allow_url_include
  */
 $path = filter_input(INPUT_GET, 'path', FILTER_SANITIZE_STRING);
-$filepath = realpath('./uploads/'.basename($path));
 
-/*
- * Check file exists
- */
+if (!preg_match('/^(?:[0-9a-z_-]|\.(?!\.))+$/i', $path)) {
+    exit;
+}
+
+$filepath = realpath('./uploads/' . basename($path));
+
 if (file_exists($filepath)) {
     $path_parts = pathinfo($filepath);
     $accepts = [
         'md',
     ];
-    /*
-     * Check file extensions
-     */
     if (in_array($path_parts['extension'], $accepts)) {
         header('Content-Type: application/octet-stream');
         header('Content-Disposition: attachment; filename='.$path_parts['basename']);
@@ -28,8 +31,5 @@ if (file_exists($filepath)) {
         http_response_code(400);
     }
 } else {
-    /**
-     * Not Found.
-     */
     http_response_code(404);
 }

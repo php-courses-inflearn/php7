@@ -3,11 +3,16 @@
 /**
  * Define Array.
  */
-$messages = [
+// $messages = [
+//     'Hello, world',
+//     'Who are you?',
+//     'Bye',
+// ];
+$messages = array(
     'Hello, world',
     'Who are you?',
-    'Bye',
-];
+    'Bye'
+);
 
 /**
  * Define Array with key.
@@ -17,3 +22,15 @@ $messages = [
     'message' => 'Who are you?',
     'Bye',
 ];
+
+/**
+ * Destructuring
+ */
+// [, $message ] = [ 'Hello, world', 'Who are you?' ];
+list(, $message ) = [ 'Hello, world', 'Who are you?' ];
+// ['message' => $message ] = [ ... ]
+list('message' => $message) = [
+    'message' => 'Hello, world'
+];
+
+
