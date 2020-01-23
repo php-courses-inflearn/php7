@@ -3,11 +3,17 @@
 /**
  * 양방향 프로세스 열기.
  */
-$p = proc_open('php ./Readline/1/index.php', [
+
+$p = proc_open(
+    'php ./Readline/1/index.php',
+    [
     0 => ['pipe', 'r'],
     1 => ['pipe', 'w'],
-    2 => ['file', __DIR__.'/logs/log.log', 'a'],
-], $pipes, dirname(__DIR__, 2));
+    2 => ['file', __DIR__ . '/logs/log.log', 'a'],
+    ],
+    $pipes,
+    dirname(__DIR__, 2)
+);
 
 // 입력 스트림에 입력하기
 fwrite($pipes[0], 'Hello, world');

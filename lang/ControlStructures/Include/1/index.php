@@ -1,6 +1,6 @@
 <?php
 
 // Hello, world
-include 'HelloWorld.php';
+require 'HelloWorld.php';
 // Hello, world
 require 'HelloWorld.php';

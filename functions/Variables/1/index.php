@@ -18,8 +18,10 @@ gettype($var);
 // 정수형
 is_int(10);
 // 부를 수 있는 형태
-is_callable(function () {
-});
+is_callable(
+    function () {
+    }
+);
 // 반복가능한
 is_iterable([]);
 

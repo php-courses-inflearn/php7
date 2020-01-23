@@ -3,6 +3,7 @@
 /**
  * Read a line.
  */
+
 echo $line = readline('prompt >> ');
 
 /**

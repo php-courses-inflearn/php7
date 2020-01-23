@@ -3,6 +3,7 @@
 /**
  * Access Global Variables.
  */
+
 $message = 'Hello, world';
 
 function foo()

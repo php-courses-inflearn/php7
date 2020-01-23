@@ -3,6 +3,7 @@
 /**
  * PHP 확장 로드 체크.
  */
+
 extension_loaded('mbstring');
 
 /**
@@ -14,7 +15,7 @@ get_loaded_extensions();
  * include/require 패치 설정/얻기.
  */
 // 설정하기
-set_include_path(__DIR__.'/mylib');
+set_include_path(__DIR__ . '/mylib');
 // require_once "HelloWorld.php";
 // 얻기
 get_include_path();
@@ -44,7 +45,7 @@ ini_get('display_errors');
  * Environment Variables.
  */
 // Set
-putenv('APP_ENV='.'production');
+putenv('APP_ENV=' . 'production');
 // Get
 getenv('APP_ENV'); // -> production
 

@@ -3,6 +3,7 @@
 /**
  * Define 'posts Array.
  */
+
 $blog = [
     'title'      => 'Lorem Ipsum',
     'categories' => [
@@ -26,10 +27,13 @@ $blog = [
 /*
  * Push a eleement
  */
-array_push($blog['categories']['all'], [
+array_push(
+    $blog['categories']['all'],
+    [
     'title'   => 'Hello, world',
     'content' => 'hello, world',
-]);
+    ]
+);
 
 /*
  * Delete a eleement
@@ -39,9 +43,12 @@ array_pop($blog['categories']['all']);
 /*
  * Filtering
  */
-array_filter($blog['categories']['all'], function ($post) {
-    return $post['title'] == 'What is Lorem Ipsum?';
-});
+array_filter(
+    $blog['categories']['all'],
+    function ($post) {
+        return $post['title'] == 'What is Lorem Ipsum?';
+    }
+);
 
 /*
  * Validate key
@@ -51,9 +58,12 @@ array_key_exists('title', $blog);
 /*
  * Make an array from another array
  */
-array_map(function ($post) {
-    return $post['title'];
-}, $blog['categories']['all']);
+array_map(
+    function ($post) {
+        return $post['title'];
+    },
+    $blog['categories']['all']
+);
 
 /*
  * Find a key
@@ -72,9 +82,12 @@ $numbers = range(1, 5);
 /*
  * Folding
  */
-array_reduce($numbers, function ($carry, $num) {
-    return $carry += $num * 2;
-});
+array_reduce(
+    $numbers,
+    function ($carry, $num) {
+        return $carry += $num * 2;
+    }
+);
 
 /*
  * Check element in array

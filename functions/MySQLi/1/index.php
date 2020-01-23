@@ -3,6 +3,7 @@
 /**
  * Connection.
  */
+
 $conn = mysqli_connect(
     'localhost',
     'root',
@@ -13,10 +14,7 @@ $conn = mysqli_connect(
 /**
  * Query Execute.
  */
-mysqli_query($conn, 'CREATE TABLE tests (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    message VARCHAR(255)
-)');
+mysqli_query($conn, 'CREATE TABLE tests (id INT AUTO_INCREMENT PRIMARY KEY, message VARCHAR(255))');
 
 /**
  * Query Execute (Statement).

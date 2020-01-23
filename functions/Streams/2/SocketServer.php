@@ -3,6 +3,7 @@
 /**
  * 스트림 소켓 서버 열기.
  */
+
 $server = stream_socket_server('tcp://127.0.0.1:8000', $errno, $errstr);
 
 /**

@@ -96,6 +96,9 @@ trim(' Hello, world ');
 /*
  * 문자열 번역하기
  */
-strtr('Hello, world', [
+strtr(
+    'Hello, world',
+    [
     'Hello' => '안녕하세요',
-]);
+    ]
+);

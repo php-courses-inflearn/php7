@@ -23,6 +23,8 @@ function foo2($callback)
     $callback();
 }
 
-foo2(function () {
-    echo __MESSAGE__;
-});
+foo2(
+    function () {
+        echo __MESSAGE__;
+    }
+);

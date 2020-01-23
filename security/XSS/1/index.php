@@ -9,10 +9,10 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $_GET['PHPSESSID'];
         } else {
             echo <<<'HTML'
-    <form action="/" method="POST">
-        <textarea name="text" style="width: 320px; height: 320px; display: block;"></textarea>
-        <input type="submit">
-    </form>
+        <form action="/" method="POST">
+            <textarea name="text" style="width: 320px; height: 320px; display: block;"></textarea>
+            <input type="submit">
+        </form>
 HTML;
         }
         break;

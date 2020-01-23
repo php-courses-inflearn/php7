@@ -13,25 +13,15 @@ session_start();
  * session.use_cookies
  * session.use_only_cookies
  */
-switch ($_SERVER['REQUEST_METHOD']) {
-    case 'GET':
-        $_SESSION['message'] = 'Hello, world';
-        echo $_SESSION['message'];
-        break;
-}
-exit;
+$_SESSION['message'] = 'Hello, world';
+echo $_SESSION['message'];
 
 /**
  * # Javascript Injection.
  *
  * session.cookie_httpOnly
  */
-switch ($_SERVER['REQUEST_METHOD']) {
-    case 'GET':
-        echo '<script>document.write(document.cookie)</script>';
-        break;
-}
-exit;
+echo '<script>document.write(document.cookie)</script>';
 
 /**
  * # Https.

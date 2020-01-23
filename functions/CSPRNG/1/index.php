@@ -3,6 +3,7 @@
 /**
  * 랜덤 숫자 생성하기 (rand() vs random_int()).
  */
+
 random_int(0, 2);
 
 /*

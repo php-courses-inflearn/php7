@@ -3,6 +3,7 @@
 /**
  * base64 인코딩.
  */
+
 $base64Encoded = base64_encode('Hello, world');
 
 /*
@@ -23,10 +24,12 @@ get_meta_tags('http://example.com');
 /**
  * 쿼리 스트링으로 만들기.
  */
-http_build_query([
+http_build_query(
+    [
     'message'  => 'Hello, world',
     'language' => 'php',
-]);
+    ]
+);
 
 /*
  * URL 파싱

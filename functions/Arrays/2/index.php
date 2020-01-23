@@ -3,6 +3,7 @@
 /**
  * Sort by value.
  */
+
 $numbers = range(1, 5);
 
 // sort($numbers);
@@ -30,16 +31,25 @@ asort($arr);
  * Sort by callback.
  */
 // Sort by value
-usort($numbers, function ($a, $b) {
-    return $a > $b;
-});
+usort(
+    $numbers,
+    function ($a, $b) {
+        return $a > $b;
+    }
+);
 
 // Assoc sort by value
-uasort($arr, function ($a, $b) {
-    return $a > $b;
-});
+uasort(
+    $arr,
+    function ($a, $b) {
+        return $a > $b;
+    }
+);
 
 // Sort by key
-uksort($arr, function ($a, $b) {
-    return $a > $b;
-});
+uksort(
+    $arr,
+    function ($a, $b) {
+        return $a > $b;
+    }
+);

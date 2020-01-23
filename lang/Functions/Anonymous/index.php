@@ -3,6 +3,7 @@
 /**
  * First class function.
  */
+
 $foo2 = function () {
     return 'Hello, world';
 };
