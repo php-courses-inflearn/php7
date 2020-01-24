@@ -3,8 +3,8 @@
 /**
  * for.
  */
-for ($i = 0; $i < 10; $i++) {
-    $i; // -> 0 ~ 9
+for ($i = 1; $i <= 10; $i++) {
+    echo $i; // -> 1 ~ 10
 }
 
 /**
@@ -13,9 +13,9 @@ for ($i = 0; $i < 10; $i++) {
 $messages = [
     'Hello, world',
     'Who are you?',
-    'Bye',
+    'Bye'
 ];
 
 for ($i = 0; $i < count($messages); $i++) {
-    $messages[$i]; // $i -> 0 ~ 2
+    echo $messages[$i] . PHP_EOL;
 }

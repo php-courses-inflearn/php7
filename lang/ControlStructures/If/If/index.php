@@ -5,34 +5,32 @@
  */
 // [], '', false, 0, null -> false
 if (true) {
-    'Hello, world';
+    echo 'Hello, world';
 }
 
 /**
  * if ~ else.
  */
-// -> Hello, world
-if (true) {
-    'Hello, world';
+if (false) {
+    echo 'Hello, world';
 } else {
-    'Bye';
+    echo 'Bye';
 }
 
 /**
  * if ~ elseif ~ else.
  */
-// -> Hello, world
-if (true) {
-    'Hello, world';
-} elseif (false) {
-    'Who are you?';
+if (false) {
+    echo 'Hello, world';
+} elseif (true) {
+    echo 'Who are you?';
 } else {
-    'Bye';
+    echo 'Bye';
 }
 
 /**
  * Define Variables in If Context.
  */
 if ($message = 'Hello, world') {
-    $message; // Hello, world
+    echo $message;
 }

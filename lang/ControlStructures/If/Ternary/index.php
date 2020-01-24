@@ -4,5 +4,4 @@
  * Ternary Operator.
  */
 
-// 'Hello, world' ?: 'Bye'
-'Hello, world' ? 'Hello, world' : 'Bye'; // Hello, world
+echo 'Hello, world' ?: 'Bye';

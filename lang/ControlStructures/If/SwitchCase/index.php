@@ -1,26 +1,29 @@
 <?php
 
-$selected = 1;
+$context = 1;
 
 /**
  * Switch ~ case.
  */
-// -> Hello, world
-switch ($selected) {
+switch ($context) {
     case 1:
-        'Hello, world';
+        echo 'Hello, world';
         break;
     case 2:
+        echo 'Who are you?';
+        break;
     default:
-        'Bye';
+        echo 'Bye';
 }
 
 /**
  * Switch ~ case -> If.
  */
-// -> Hello, world
-if ($selected == 1) {
-    'Hello, world';
+
+if ($context == 1) {
+    echo 'Hello, world';
+} elseif ($context == 2) {
+    echo 'Who are you?';
 } else {
-    'Bye';
+    echo 'Bye';
 }
