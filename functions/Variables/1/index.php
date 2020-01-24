@@ -69,3 +69,21 @@ unserialize($serialized);
  * 변수를 릴리즈하기
  */
 unset($var);
+
+/**
+ * Get defined ...
+ */
+// Variables
+get_defined_vars();
+// Constants
+get_defined_constants();
+
+/**
+ * Constants
+ */
+const MESSAGE = 'Hello, world';
+if (defined('MESSAGE')) {
+    echo constant('MESSAGE'); // -> Hello, world
+}
+
+

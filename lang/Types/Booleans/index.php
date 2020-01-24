@@ -5,9 +5,9 @@
  */
 
 // TRUE
-true; // -> 1
+true;
 // FALSE
-false; // ->
+false;
 
 /**
  * Type Casting.
@@ -15,4 +15,4 @@ false; // ->
 (bool) 10; // -> true
 (bool) []; // -> false
 (bool) ''; // -> false
-(bool) null; // -> fasle
+(bool) null; // -> false

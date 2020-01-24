@@ -7,6 +7,6 @@
  */
 
 $message = 'Hello, ';
+$message .= 'world';
 
-// $message = $message.'world';
-$message .= 'world'; // Hello, world
+echo $message; // -> Hello, world

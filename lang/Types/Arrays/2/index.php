@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Data Control in Array.
- */
-
 $messages = [
     'Hello, world',
     'Who are you?',
@@ -13,13 +9,13 @@ $messages = [
 /**
  * Insert.
  */
-// $messages[3] = 'whoops'
 $messages[] = 'whoops';
+// $messages[3] = 'whoops';
 
 /**
  * Select.
  */
-$messages[3]; // -> whoops
+$messages[3];
 
 /**
  * Update.

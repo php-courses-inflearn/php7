@@ -22,3 +22,8 @@ call_user_func('foo', 'Hello, world', 1);
  * 함수 존재 여부 파악하기
  */
 function_exists('foo');
+
+/**
+ * Get defined functions
+ */
+get_defined_functions();

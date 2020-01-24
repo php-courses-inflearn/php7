@@ -3,25 +3,20 @@
 /**
  * Define Array.
  */
-
-// $messages = [
-//     'Hello, world',
-//     'Who are you?',
-//     'Bye',
-// ];
 $messages = [
     'Hello, world',
     'Who are you?',
-    'Bye',
+    'Bye'
 ];
+// $messages = array('Hello, world', 'Who are you?', 'Bye');
 
 /**
  * Define Array with key.
  */
 $messages = [
-    0         => 'Hello, world',
-    'message' => 'Who are you?',
-    'Bye',
+    0           => 'Hello, world',
+    'message'   => 'Who are you?',
+    'Bye'
 ];
 
 /**

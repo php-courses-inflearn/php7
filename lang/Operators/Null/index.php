@@ -4,4 +4,4 @@
  * Null coalescing.
  */
 
-null ?? 'Hello, world'; // Hello, world
+null ?? 'Hello, world'; // -> Hello, world

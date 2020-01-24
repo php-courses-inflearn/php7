@@ -6,8 +6,5 @@
 
 $count = 0;
 
-$count--; // 0
-$count--; // -2
-
-$count++; // -2
-$count++; // 0
+echo $count--; // -> 0
+echo $count; // -> -1

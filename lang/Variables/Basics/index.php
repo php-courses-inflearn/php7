@@ -20,10 +20,8 @@ $message;
 /**
  * Using Variables in String.
  */
-$message = 'Hello, world';
-
-// -> The message is Hello, world
-"The message is '{$message}'";
+// -> The message is Hello, world;
+"The message is {$message}";
 
 /**
  * Here Doc, Now Doc.
@@ -43,3 +41,8 @@ $message = 'Hello, world';
     </body>
 </html>
 HTML;
+
+/**
+ * Free.
+ */
+unset($message);
