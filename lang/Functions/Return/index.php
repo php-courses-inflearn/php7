@@ -10,19 +10,28 @@ function foo(): string
     return 'Hello, world';
 }
 
-foo(); // -> 'Hello, world'
+// echo foo(); // -> Hello, world
 
 /**
  * return with context.
  */
-function foo2($is = true)
+function foo2(bool $is)
 {
-    if (true) {
+    if ($is) {
         return 'Hello, world';
-    } else {
-        return 'Bye';
     }
+    return 'Bye';
 }
 
-foo2(); // -> 'Hello, world'
-foo2(false); // -> 'Bye'
+// echo foo2(true); // -> Hello, world
+
+/**
+ * return variables
+ */
+
+function foo3($arg)
+{
+    return $arg;
+}
+
+// echo foo3('Hello, world'); // -> Hello, world

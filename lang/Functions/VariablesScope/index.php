@@ -3,41 +3,44 @@
 /**
  * Access Global Variables.
  */
-
 $message = 'Hello, world';
 
 function foo()
 {
-    $message; // -> Not define Variable (Local)
+    // global $message;
+    $GLOBALS['message'] = 'Who are you?';
 
-    global $message;
-    $message; // -> Hello, world
-    $GLOBALS['message']; // -> Hello, world
+    // $message = 'Who are you?';
+    // echo $message;
 }
 
 foo();
+
+// echo $message;
 
 /**
  * Static variables.
  */
 function foo2()
 {
-    static $foo = 0;
-    $foo++;
+    static $count = 0;
+    return ++$count;
 }
 
-foo2(); // -> 1
-foo2(); // -> 2
+// echo foo2();
+// echo foo2();
+// echo foo2();
+
 
 /**
  * Clousre.
  */
-function foo4($arg)
+function foo3($arg)
 {
     return function () use ($arg) {
         return $arg;
     };
 }
 
-$fn = foo4('Hello, world');
-$fn(); // -> Hello, world
+$func = foo3('Hello, world');
+echo $func();

@@ -1,30 +1,25 @@
 <?php
 
+// const MESSAGE = 'Hello, world';
+
 /**
  * Constants Scope.
  */
 function foo()
 {
-    define('__MESSAGE__', 'Hello, world');
-
-    // -> Error
-    // const __MESSAGE__ = 'Hello, world';
+    define('MESSAGE', 'Hello, world');
 }
 
 foo();
 
-var_dump(__MESSAGE__);
+// echo MESSAGE; // -> Hello, world
+
 
 /**
  * Callbacks (Don't need 'use').
  */
-function foo2($callback)
-{
-    $callback();
-}
+$foo = function () {
+    return MESSAGE;
+};
 
-foo2(
-    function () {
-        echo __MESSAGE__;
-    }
-);
+echo $foo();

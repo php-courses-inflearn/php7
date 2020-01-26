@@ -3,23 +3,32 @@
 /**
  * First class function.
  */
-
-$foo2 = function () {
+$foo = function () {
     return 'Hello, world';
 };
 
-$foo2(); // -> Hello ,world
+// echo $foo();
+
+function foo($callback)
+{
+    echo $callback();
+}
+
+// foo(
+//     function () {
+//         return 'Hello, world';
+//     }
+// );
 
 /**
  * Higher-order function.
  */
-function foo3(callable $callback)
+function foo2()
 {
-    return $callback(); // -> Hello, world
+    return function () {
+        return 'Hello, world';
+    };
 }
 
-foo3(
-    function () {
-        return 'Hello, world';
-    } // -> Hello, world
-);
+$func = foo2();
+echo $func(); // -> Hello, world

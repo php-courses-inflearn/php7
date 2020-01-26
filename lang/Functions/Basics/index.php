@@ -5,7 +5,7 @@
  */
 function foo()
 {
-    'Hello, world';
+    echo 'Hello, world';
 }
 
 foo(); // -> Hello, world
@@ -13,10 +13,6 @@ foo(); // -> Hello, world
 /**
  * Variables function.
  */
-function foo2()
-{
-    return 'Hello, world';
-}
-$fnName = 'foo2';
-// $fnName();
-'foo2'(); // -> Hello, world
+
+$fn = 'foo';
+$fn(); // -> Hello, world
