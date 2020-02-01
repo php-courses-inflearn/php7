@@ -20,13 +20,10 @@ HTML;
         $file = $_FILES['uploads'];
         $path_parts = pathinfo($file['name']);
         $accepts = [
-        'png', 'md',
+            'png', 'md'
         ];
-        if (
-            in_array(strtolower($path_parts['extension']), $accepts)
-            && is_uploaded_file($file['name']['tmp_name'])
-        ) {
-            move_uploaded_file($file['tmp_name'], './uploads/' . time() . '_' . $file['name']);
+        if (in_array(strtolower($path_parts['extension']), $accepts) && is_uploaded_file($file['tmp_name'])) {
+            move_uploaded_file($file['tmp_name'], dirname(__DIR__) . '/uploads/' . time() . '_' . $file['name']);
         } else {
             http_response_code(400);
         }

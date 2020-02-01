@@ -14,12 +14,12 @@ if (!preg_match('/^(?:[0-9a-z_-]|\.(?!\.))+$/i', $path)) {
     exit;
 }
 
-$filepath = realpath('./uploads/' . basename($path));
+$filepath = realpath(dirname(__DIR__) . '/uploads/' . basename($path));
 
 if (file_exists($filepath)) {
     $path_parts = pathinfo($filepath);
     $accepts = [
-        'md',
+        'md'
     ];
     if (in_array($path_parts['extension'], $accepts)) {
         header('Content-Type: application/octet-stream');

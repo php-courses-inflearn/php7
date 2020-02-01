@@ -1,4 +1,4 @@
-## PHP 7+ Programming
+## What is this
 
 Codes for **PHP 7+ Prgramming** Lec.
 
@@ -9,7 +9,7 @@ Codes for **PHP 7+ Prgramming** Lec.
 
 * [Basic](https://github.com/pronist/phplec/tree/basic) - PHP 7+ Prgramming: Basic
 
-## Basic
+## PHP 7+ Programming: Basic
 
 <p>
     <img src="https://github.styleci.io/repos/231129705/shield?branch=basic" alt="StyleCI">
@@ -103,7 +103,8 @@ Codes for **PHP 7+ Prgramming** Lec.
 
 ## Application
 
-* [Basic](https://github.com/pronist/phpblog/tree/basic) - PHP **Classic Architecture**
+* [Basic](https://github.com/pronist/phpblog/tree/basic) - **Function based MVC(Model, View, Controller)**
+* [Beginning](https://github.com/pronist/phpblog/tree/beginning) - **Classical Architecture**
 
 ## License
 

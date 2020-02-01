@@ -85,5 +85,3 @@ const MESSAGE = 'Hello, world';
 if (defined('MESSAGE')) {
     echo constant('MESSAGE'); // -> Hello, world
 }
-
-

@@ -3,6 +3,7 @@
 /**
  * Define Constants.
  */
+
 define('CONSTANT', 'Hello, world');
 
 const CONSTANT = [
