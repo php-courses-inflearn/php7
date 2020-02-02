@@ -1,48 +1,52 @@
 <?php
 
 /**
- * PHP 확장 로드 체크.
+ * PHP Extension.
  */
 
+// Loaded
 extension_loaded('mbstring');
-
-/**
- * 로드된 PHP 확장 보기.
- */
+// Gets
 get_loaded_extensions();
 
 /**
- * include/require 패치 설정/얻기.
+ * include Path.
  */
-// 설정하기
+// Set
 set_include_path(__DIR__ . '/mylib');
-// require_once "HelloWorld.php";
-// 얻기
+// include 'HelloWorld.php'; // -> Hello, world
+// Get
 get_include_path();
-// 초기화
+// Reset
 restore_include_path();
+// include 'HelloWorld.php'; //-> Error
 
 /**
- * 포함된 파일들 얻기.
+ * Get included Files.
  */
 get_included_files();
 
 /**
- * PHP 정보 얻기.
+ * Get php information.
  */
-// 종합적으로 얻기
 // phpinfo();
 
 /**
- * PHP 옵션 설정/얻기.
+ * php.ini
  */
-// 설정하기
-ini_set('display_errors', 0);
-// 얻기
-ini_get('display_errors');
+// Set
+ini_set('session.gc_maxlifetime', 1440);
+// Get
+ini_get('session.gc_maxlifetime'); // -> 1440
+// Reset
+ini_restore('session.gc_maxlifetime');
 
 /**
  * Environment Variables.
+ */
+
+/**
+ * Case 1. put, getenv
  */
 // Set
 putenv('APP_ENV=' . 'production');
@@ -50,7 +54,9 @@ putenv('APP_ENV=' . 'production');
 getenv('APP_ENV'); // -> production
 
 /**
- * Memory bytes.
+ * Case 2. $_ENV
  */
-memory_get_peak_usage();
-memory_get_usage();
+// Set
+$_ENV['APP_ENV'] = 'development';
+// Get
+$_ENV['APP_ENV']; // -> development

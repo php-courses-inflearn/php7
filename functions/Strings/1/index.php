@@ -4,55 +4,59 @@
  * Add slashes at Quotes.
  */
 
-// 슬래시 추가
-$slashe = addslashes("Hello' world");
-// 슬래시 삭제
+// Add
+$slashe = addslashes("'");
+// Remove
 stripslashes($slashe);
 
 /**
- * 2진수와 16진수.
+ * Binary to Hex
  */
-$bytes = random_bytes(64);
+$bytes = random_bytes(32);
 
-// 2진수 -> 16진수
+// bin -> hex
 $hex = bin2hex($bytes);
-// 16진수 -> 2진수
+// hex -> bin
 hex2bin($hex);
 
 /*
- * 단방향 해시함수 (암호화)
+ * One way hash (Encryption)
  *
- * sha1, md5 함수는 추천하지 않음
+ * sha1, md5 Not recommended
  */
 crypt('Hello, world', 'secret');
 
 /**
- * 문자열을 분리, 합치기.
+ * Split, Join
  */
-// 문자열 분리하기
-explode(',', 'Hello, world');
-// 문자열 합치기
-implode(', ', ['Hello', 'world']);
+$url = 'http://example.com';
+
+// Split
+$exp = explode('//', $url);
+// Join
+implode('//', $exp);
 
 /**
- * HTML 엔티티 인코딩, 디코딩.
+ * HTML entities
  */
 $html = <<<'HTML'
 <html>
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body></body>
+    <body>
+        <h1>Hello, world</h1>
+    </body>
 </html>
 HTML;
 
-// HTML 엔티티 인코딩
-$encodedHtml = htmlentities($html);
-// html 엔티티 디코딩
-html_entity_decode($encodedHtml);
+// Encode
+// $encoded = htmlentities($html);
+$encoded = htmlspecialchars($html);
+
+// Decode
+// html_entity_decode($encoded);
+htmlspecialchars_decode($encoded);
 
 /*
- * HTML 태그를 날려버리기
+ * Strip HTML Tags
  */
 strip_tags($html);
 
@@ -62,43 +66,40 @@ strip_tags($html);
 nl2br("Hello,\nworld");
 
 /*
- * 문자를 숫자로, 숫자를 문자로
+ * Char
  */
-// 문자를 숫자로 바꾸기
-ord('A');
-// 숫자를 문자로 바꾸기
-chr(65);
+// char -> num
+ord('A'); // -> 65
+// num -> char
+chr(65); // -> A
 
 /**
- * 쿼리 스트링 파싱.
+ * Parse Query string
  */
-$arr = [];
-parse_str('langauge=php&addr=127.0.0.1', $arr);
+$qs = 'lang=php&addr=127.0.0.1';
+parse_str($qs, $arr);
 
 /*
- * 숫자 포맷팅
+ * Number Format
  */
-number_format(12345678.1234, 1);
+number_format(123456789);
 
 /**
- * 대소문자 변경.
+ * Case
  */
-// 소문자 -> 대문자
+// Upper
 strtoupper('Hello, world');
-// 대문자 -> 소문자
-strtolower('Hello, world');
+// Lower
+strtolower('HELLO, WORLD');
 
 /*
- * 양 옆 공백 제거하기
+ * Remove spaces
  */
-trim(' Hello, world ');
+trim('Hello, world');
 
 /*
- * 문자열 번역하기
+ * Replace
  */
-strtr(
-    'Hello, world',
-    [
-    'Hello' => '안녕하세요',
-    ]
-);
+echo strtr('Hello, world', [
+    'Hello, world' => '안녕하세요'
+]);

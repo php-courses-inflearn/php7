@@ -1,33 +1,30 @@
 <?php
 
 /**
- * 테스트 옵션 설정하기.
+ * Set assert options
  *
  * PHP.ini
  *
  * zend.assertions = 1
  */
 
-// 테스트 활성화
-assert_options(ASSERT_ACTIVE, true);
-// 테스트 실패시 스크립트 중지
-assert_options(ASSERT_BAIL, false);
-// PHP Trace 생성여부
-assert_options(ASSERT_WARNING, true);
-// 테스트 콜백
-assert_options(ASSERT_CALLBACK, 'assert_failure');
+// ini_set('zend.assertions', 1);
 
-function assert_failure(...$args)
+// Active
+assert_options(ASSERT_ACTIVE, true);
+// Stop testing on failure
+assert_options(ASSERT_BAIL, false);
+// PHP Trace
+assert_options(ASSERT_WARNING, true);
+// Callback
+assert_options(ASSERT_CALLBACK, 'assertFailure');
+
+function assertFailure(...$args)
 {
     var_dump($args);
 }
 
 /**
- * 최종 값이 FALSE 인지 검증하기.
+ * Assert
  */
-function test_assert($arg1)
-{
-    assert(is_bool($arg1), __FUNCTION__);
-}
-
-test_assert('Hello, world');
+assert(false, __LINE__);

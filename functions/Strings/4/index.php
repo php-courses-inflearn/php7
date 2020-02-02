@@ -1,38 +1,37 @@
 <?php
 
 /**
- * 문자를 찾고 문자열의 일부분을 반환하기.
+ * Sub String
  */
 
 strstr('http://example.com', '//');
 
 /*
- * 토큰으로 문자열 분리하기
+ * Token
  */
 strtok('http://example.com', '//');
-strtok('//');
 
 /*
- * 문자열의 일부분 반환하기
+ * Slice
  */
-substr('http://example.com', -4, 4);
+substr('Hello, world', 7);
 
 /*
- * 문자열의 일부분을 비교하기
+ * Compare
  */
-substr_compare('Hello, world', 'world', -5, 5);
+substr_compare('Hello, world', 'world', -5);
 
 /*
- * 문자열의 일부분 치환하기
+ * Replace
  */
 substr_replace('Hello, world', 'Hi', 0, 5);
 
 /*
- * 문자열의 일부분에서 특정 문자열의 개수 세기
+ * Count
  */
-substr_count('Hello, world', 'l');
+substr_count('Hello, world', 'l', 0);
 
 /*
- * 길이에 따라 문자열 처리하기
+ * Wrapping
  */
-wordwrap('Hello, world', 5);
+echo wordwrap('Hello, world', 5);

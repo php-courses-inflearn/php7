@@ -1,36 +1,28 @@
 <?php
 
 /**
- * 문자열 포맷팅.
+ * Print formatted string
  *
- * -> %s 문자열
- * -> %d 숫자
- * -> %f 실수형
+ * -> %s String
+ * -> %d Int
+ * -> %f Float
  */
 
-// 파라매터 나열하기
-printf('Hello, world %s', 'Mr. Lauren');
-// 파라매터 배열로 주기
-vprintf(
-    'Hello, world %s',
-    [
-    'Mr. Lauren',
-    ]
-);
+// $message = 'Hello, world';
 
-// 스프레드로 사용하기
-printf('Hello, world %s', ...['Mr. Lauren']);
+// printf("%s, %d", $message, 10);
+// printf("%s, %d", ...[ $message, 10 ]);
+// vprintf("%s, %d", [
+//     $message, 10
+// ]);
 
 /**
- * 문자열 포맷 (버퍼링).
+ * Buffering
  */
-$buf = sprintf('Hello, world %s', 'Mr. Lauren');
-vsprintf(
-    'Hello, world %s',
-    [
-    'Mr. Lauren',
-    ]
-);
+$message = 'Hello, world';
 
-// 마찬가지로
-sprintf('Hello, world %s', ...['Mr. Lauren']);
+$buf = sprintf("%s", $message);
+sprintf("%s, %d", ...[ $message, 10 ]);
+echo vsprintf("%s, %d", [
+    $message, 10
+]);

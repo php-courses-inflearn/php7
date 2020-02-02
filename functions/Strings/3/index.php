@@ -1,47 +1,47 @@
 <?php
 
 /**
- * 문자 치환하기.
+ * Replace
  */
 
 str_replace('Hello', 'Hi', 'Hello, world');
 
 /*
- * 문자 반복하기
+ * Repeat
  */
 str_repeat('*', 5);
 
 /*
- * 문자열 분리하기
+ * Split
  */
 str_split('Hello, world', 3);
 
 /*
- * 단어 헤아리기
+ * Word count
  */
-str_word_count('Hello, world', 1);
+str_word_count('Hello, world', 2);
 
 /*
- * 문자열 비교하기
+ * Compare
  */
 strcmp('Hello, world', 'Hello, world');
 
 /*
- * 문자의 위치 찾기
+ * Position
  */
-strpos('Hello, world', 'e');
+strpos('Hello, world', 'o');
 
 /*
- * 하나라도 포함하는 문자열의 위치 찾기
+ * First Position
  */
-strpbrk('Hello, world', 'l');
+strpbrk('Hello, world', 'o');
 
 /*
- * 문자열의 길이 구하기
+ * Length
  */
 strlen('Hello, world');
 
 /*
- * 문자열 뒤집기
+ * Reverse
  */
 strrev('Hello, world');

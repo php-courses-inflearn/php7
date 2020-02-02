@@ -1,13 +1,11 @@
-## What is this
-
-Codes for **PHP 7+ Prgramming** Lec.
+# Codes for PHP 7+ Prgramming.lec
 
 * *php >= 7.2*
 * Extended Coding Style: [PSR-12](https://www.php-fig.org/psr/psr-12/)
 
-### Branches
+## Branches
 
-* [Basic](https://github.com/pronist/phplec/tree/basic) - PHP 7+ Prgramming: Basic
+* [Basic](https://github.com/pronist/phplec/tree/basic) - **PHP 7+ Prgramming: Basic**
 
 ## PHP 7+ Programming: Basic
 
@@ -99,9 +97,9 @@ Codes for **PHP 7+ Prgramming** Lec.
 * [Session](https://github.com/pronist/phplec/tree/basic/security/Session)
 * [SQLInjection](https://github.com/pronist/phplec/tree/basic/security/SQLInjection)
 * [File Upload & Download](https://github.com/pronist/phplec/tree/basic/security/File)
-* [ErrorReporting](https://github.com/pronist/phplec/tree/basic/security/ErrorReporting)
+* [Error Reporting](https://github.com/pronist/phplec/tree/basic/security/ErrorReporting)
 
-## Application
+### Application
 
 * [Basic](https://github.com/pronist/phpblog/tree/basic) - **Function based MVC(Model, View, Controller)**
 * [Beginning](https://github.com/pronist/phpblog/tree/beginning) - **Classical Architecture**
