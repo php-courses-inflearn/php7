@@ -1,38 +1,36 @@
 <?php
 
 /**
- * 해시 알고리즘 나열하기.
+ * Get hash algorithms
  */
-
 hash_algos();
 
 /**
- * 해시 값 만들기.
+ * Create a hash
  */
 $hash = hash('sha256', 'Hello, world');
-// $hash = crypt("Hello, world", "secret");
+// $hash = crypt('Hello, world', 'secret');
 
 /*
- * 해시가 같은지 확인하기
+ * Check a hash
  */
 hash_equals($hash, hash('sha256', 'Hello, world'));
 
 /**
- * 해시 핸들링
+ * Hash Handler
  */
-// 해시 열기
 $h = hash_init('sha256');
-// 해시 만들기
 hash_update($h, 'Hello, world');
-// 해시값 얻기
+
 hash_final($h);
 
 /**
- * 키를 통한 메시지 인증.
+ * HMAC
+ * Hash-based Message Authentication Code
  *
- * key -> "secret" 이라는 키가 공개키로 지정되어 있다고 가정
+ * key -> "secret"
  */
-// 인증용 해시 만들기
+hash_hmac_algos();
+
 $hash = hash_hmac('sha256', 'Hello, world', 'secret');
-// 메시지 인증하기
 hash_equals($hash, hash_hmac('sha256', 'Hello, world', 'secret'));

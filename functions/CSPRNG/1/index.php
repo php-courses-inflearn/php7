@@ -1,12 +1,12 @@
 <?php
 
 /**
- * 랜덤 숫자 생성하기 (rand() vs random_int()).
+ * rand() vs random_int().
  */
 
-random_int(0, 2);
+random_int(1, 5);
 
 /*
- * 랜덤 바이트 (2진수) 생성하기
+ * Create a random bytes
  */
-random_bytes(1);
+random_bytes(32);

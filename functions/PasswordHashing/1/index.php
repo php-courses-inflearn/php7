@@ -1,12 +1,29 @@
 <?php
 
 /**
- * 패스워드를 위한 해시값 생성.
+ * Create a hash value for password
  */
 
-$hash = password_hash('Hello, world', PASSWORD_BCRYPT);
+$hash = password_hash('Hello, world', PASSWORD_DEFAULT);
 
 /*
- * 해시값 검증
+ * Verify password hash
  */
 password_verify('Hello, world', $hash);
+
+/**
+ * Get info
+ */
+password_get_info($hash);
+
+/**
+ * Rehash
+ */
+
+$hash = password_hash('Hello, world', PASSWORD_DEFAULT, [
+    'cost' => 10
+]);
+
+$options = [ 'cost' => 10 ];
+
+password_needs_rehash($hash, PASSWORD_DEFAULT, $options);
