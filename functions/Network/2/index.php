@@ -1,17 +1,17 @@
 <?php
 
 /**
- * 쿠키 설정하기.
+ * Cookie.
  */
 
-setcookie('myCookie', 'Hello, world', time() + 60 * 60);
+setcookie('myCookie', 'Hello, world');
 
 /*
- * 쿠키에 접근하기
+ * Get a Cookie.
  */
- $_COOKIE['myCookie'];
+$_COOKIE['myCookie'];
 
 /*
- * 쿠키 삭제하기
+ * Remove a Cookie.
  */
 setcookie('myCookie', '', time() - 3600);

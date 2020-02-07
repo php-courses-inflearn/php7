@@ -1,74 +1,58 @@
 <?php
 
-$var = 1;
+$message = 'Hello, world';
 
 /*
- * 변수에 타입 지정하기 (타입 캐스팅)
+ * Type.
  */
-settype($var, 'boolean');
+// Get
+gettype($message);
+// Set
+settype($message, 'int');
 
-/*
- * 타입 얻어오기
- */
-gettype($var);
-
-/*
- * 타입 체크하기
- */
-// 정수형
+// Int
 is_int(10);
-// 부를 수 있는 형태
-is_callable(
-    function () {
-    }
-);
-// 반복가능한
+// string
+is_string('Hello, world');
+// iterable
 is_iterable([]);
 
 /*
- * 변수의 값 할당 체크하기
+ * Value check
  */
-// 변수가 할당이 안 되어 있는가?
-empty(null);
-// 변수가 할당이 되어 있는가?
-isset($var);
+isset($message);
+empty($message);
 
 /*
- * 값을 특정 형태로 변환하기
+ * Convert to
  */
-// to boolean
-boolval(0);
-// to int
-intval('56');
-// to string
-strval(56);
+// Int -> String
+strval(10);
 
 /**
- * 변수를 출력하기.
+ * Print
  */
 $var = [
-    'language' => 'php',
+    'message' => 'Hello, world'
 ];
 
-// 사람이 읽기 좋은 형태
-print_r($var);
-// 디버깅하기 좋은 형태
-var_dump($var);
-// 표현할 수 있는 형태
-var_export($var);
+// for Reading
+// print_r($var);
+// for Debug
+// var_dump($var);
+// for Expression
+// var_export($var);
 
 /**
- * 변수를 직렬화/비직렬화 하기.
+ * Serialize.
  */
-// 직렬화
-$serialized = serialize($var);
-// 비직렬화
-unserialize($serialized);
+$serializedArray =  serialize($var);
+$arr = unserialize($serializedArray);
 
 /*
- * 변수를 릴리즈하기
+ * Free.
  */
-unset($var);
+unset($arr);
 
 /**
  * Get defined ...
@@ -83,5 +67,5 @@ get_defined_constants();
  */
 const MESSAGE = 'Hello, world';
 if (defined('MESSAGE')) {
-    echo constant('MESSAGE'); // -> Hello, world
+    echo constant('MESSAGE');
 }

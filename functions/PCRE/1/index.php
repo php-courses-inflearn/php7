@@ -5,6 +5,7 @@
  *
  * Case 1. preg_match
  */
+
 preg_match('/^(https?\:)\/\/(.*)(\..*)$/', 'http://example.com', $matches);
 
 /**

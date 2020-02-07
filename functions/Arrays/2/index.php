@@ -15,41 +15,22 @@ rsort($numbers);
 $arr = [
     'r' => 'Bye',
     'c' => 'Who are you?',
-    'a' => 'Hello, world',
+    'a' => 'Hello, world'
 ];
 
-asort($arr);
-// arsort($arr);
+// asort($arr);
+arsort($arr);
 
- /**
-  * Sort by key.
-  */
- ksort($arr);
+/**
+ * Sort by key.
+ */
+ksort($arr);
 // krsort($arr);
+
 
 /**
  * Sort by callback.
  */
-// Sort by value
-usort(
-    $numbers,
-    function ($a, $b) {
-        return $a > $b;
-    }
-);
-
-// Assoc sort by value
-uasort(
-    $arr,
-    function ($a, $b) {
-        return $a > $b;
-    }
-);
-
-// Sort by key
-uksort(
-    $arr,
-    function ($a, $b) {
-        return $a > $b;
-    }
-);
+uasort($arr, function ($a, $b) {
+    return strcmp($a, $b);
+});

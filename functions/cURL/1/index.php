@@ -1,11 +1,11 @@
 <?php
 
 /**
- * 요청 메서드에 따라 분리하기.
+ * Classify Http methods
  */
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-         $_GET['message'];
+        echo filter_input(INPUT_GET, 'message');
         break;
     case 'POST':
         print_r($_POST);

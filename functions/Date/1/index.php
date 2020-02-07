@@ -1,59 +1,53 @@
 <?php
 
 /**
- * 타임존 설정/얻기.
+ * Timezone
  *
  * http://docs.php.net/manual/en/timezones.php
  */
 
-// 설정하기
+// Set
 date_default_timezone_set('Asia/Seoul');
-// 얻기
+// Get
 date_default_timezone_get();
 
 /**
- * 시간 얻기: 유닉스 타임 스탬프.
+ * Get time: Unix Timestamp
  */
 $t = time();
-// 로컬 시간 구하기
+// Case 1. localtime
 localtime($t, true);
-// 시간 구하기 2
+// Case 2. getdate
 getdate($t);
 
-strftime('%d/%m/%Y/ %H:%M:%S', $t);
-
 /**
- * 시간 변환하기.
+ * Timestamp format
  */
-date('d/M/Y/ H:i:s', $t);
+// Case 1. strftime
+strftime('%d/%m/%Y %H:%M:%S', $t);
+// Case 2. date
+date('d/m/Y H:i:s', $t);
 
 /**
- * 타임 스탬프 만들기.
+ * Make a timestamp
  */
 $timestamp = mktime('1', '15', '30');
 
 /**
- * 시간 파싱하기.
+ * Parsing String time.
  */
-// -> localtime 형태로 반환
-// strptime(strftime("%Y/%m/%d/ %H:%M:%S", $t), "%Y/%m/%d/ %H:%M:%S");
+// strptime(strftime('%d/%m/%Y %H:%M:%S', $t), '%d/%m/%Y %H:%M:%S');
 
 /**
- * 문자열을 시간으로 만들기.
+ * String to time
  */
-strtotime('now');
-strtotime('28 Dec 2019');
-strtotime('+1 day');
-strtotime('+1 week');
-strtotime('+1 week 2 days 4 hours 2 seconds');
-strtotime('next Thursday');
-strtotime('last Monday');
+$timestamp = strtotime('+2 days');
 
 /**
- * 스크립트 타임 시간 체킹.
+ * Script time execution time check.
  */
 $stime = microtime(true);
 
-usleep(10000);
+sleep(1);
 
-var_dump(microtime(true) - $stime);
+echo microtime(true) - $stime;

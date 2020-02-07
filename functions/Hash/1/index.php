@@ -3,6 +3,7 @@
 /**
  * Get hash algorithms
  */
+
 hash_algos();
 
 /**

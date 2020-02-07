@@ -1,25 +1,30 @@
 <?php
 
 /**
- * 특정 형식인지 / 타입인지 검사하기.
+ * Filter.
  */
 
-// 형식 검사하기
-filter_var('http://example.com', FILTER_VALIDATE_URL);
-// 타입 검사하기
-filter_var(10, FILTER_VALIDATE_INT);
+filter_var('pronist@naver.com', FILTER_VALIDATE_EMAIL, FILTER_SANITIZE_EMAIL);
+
+filter_var('Hello, world', FILTER_CALLBACK, [
+    'options' => function ($value) {
+        return $value;
+    }
+]);
 
 /*
- * 허용하지 않는 / 지저분한 형태는 수정하기
+ * Fix.
  */
 filter_var('<html><head></head></html>', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 /*
- * 특정 타입에 포함되는지 살펴보기 (INPUT_<빌트인 글로벌 배열>)
+ * Has.
  */
 filter_has_var(INPUT_SERVER, 'REMOTE_ADDR');
 
 /*
- * 요청 파라매터 검증하기
+ * Request.
  */
-filter_input(INPUT_GET, 'addr', FILTER_VALIDATE_IP);
+
+// $_SERVER
+filter_input(INPUT_SERVER, 'REMOTE_ADDR', FILTER_VALIDATE_IP);

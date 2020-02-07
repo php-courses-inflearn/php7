@@ -94,7 +94,7 @@
 
 * [XSS(Cross-Site Scripting)](https://github.com/pronist/phplec/tree/basic/security/XSS)
 * [CSRF(Cross-Site Request Forgery)](https://github.com/pronist/phplec/tree/basic/security/CSRF)
-* [Session](https://github.com/pronist/phplec/tree/basic/security/Session)
+* [Sessions](https://github.com/pronist/phplec/tree/basic/security/Sessions)
 * [SQLInjection](https://github.com/pronist/phplec/tree/basic/security/SQLInjection)
 * [File Upload & Download](https://github.com/pronist/phplec/tree/basic/security/File)
 * [Error Reporting](https://github.com/pronist/phplec/tree/basic/security/ErrorReporting)

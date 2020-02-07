@@ -1,47 +1,43 @@
 <?php
 
 /**
- * base64 인코딩.
+ * base64 Encode/Decode
  */
 
+// Encode
 $base64Encoded = base64_encode('Hello, world');
-
-/*
- * base64 디코딩
- */
+// Decode
 base64_decode($base64Encoded);
 
 /*
- * 헤더 얻어오기 (PHP가 HTTP Client 로서의 역할)
+ * (as Http client) Get Headers
  */
 get_headers('http://example.com');
 
 /*
- * 메타 태그 얻어오기
+ * (as Http client) Get meta tags
  */
 get_meta_tags('http://example.com');
 
 /**
- * 쿼리 스트링으로 만들기.
+ * Build a query string
  */
-http_build_query(
-    [
-    'message'  => 'Hello, world',
-    'language' => 'php',
-    ]
-);
+
+// http_build_query
+$queryString = http_build_query([
+    'lang'      => 'php',
+    'message'   => 'Hello, world'
+]);
 
 /*
- * URL 파싱
+ * parse URL
  */
-parse_url('http://example.com/?language=php');
+parse_url('http://example.com?' . $queryString);
 
 /**
- * URL 인코딩.
+ * URL Encode/Decode.
  */
-$urlEncoded = urlencode('Hello, world');
-
-/*
- * URL 디코딩
- */
-urldecode($urlEncoded);
+// Encode
+$urlEncoded = urlencode('안녕하세요');
+// Decode
+echo urldecode($urlEncoded);

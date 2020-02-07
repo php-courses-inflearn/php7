@@ -1,42 +1,37 @@
 <?php
 
 /**
- * cURL 생성하기.
+ * cURL Handling
  */
 
-$curl = curl_init();
+// Init
+$ch = curl_init();
 
-/*
- * cURL 옵션 설정하기
- */
-curl_setopt($curl, CURLOPT_URL, 'http://localhost/?message=' . urlencode('Hello, world'));
-curl_setopt($curl, CURLOPT_HTTPGET, true);
+// Set Options (GET)
 
-/*
- * cURL 실행 (HTTP GET)
- */
-curl_exec($curl);
+$queryString = http_build_query([
+    'message' => 'Hello, world'
+]);
 
-/*
- * cURL 옵션 초기화 하기
- */
-curl_reset($curl);
+curl_setopt($ch, CURLOPT_HTTPGET, true);
+curl_setopt($ch, CURLOPT_URL, 'http://localhost:8080/?' . $queryString);
 
-/*
- * Http POST 요청
- */
-curl_setopt($curl, CURLOPT_URL, 'http://localhost');
-curl_setopt($curl, CURLOPT_POST, true);
-curl_setopt(
-    $curl,
-    CURLOPT_POSTFIELDS,
-    [
-    'language' => 'php',
-    'message'  => 'Hello, world',
-    ]
-);
+// Excution
+// curl_exec($ch);
 
-/*
- * cURL 닫기
- */
-curl_close($curl);
+// Reset
+curl_reset($ch);
+
+// Set Options (POST)
+
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, [
+    'message' => 'Hello, world'
+]);
+curl_setopt($ch, CURLOPT_URL, 'http://localhost:8080');
+
+// Exectuion
+curl_exec($ch);
+
+// Close
+curl_close($ch);
