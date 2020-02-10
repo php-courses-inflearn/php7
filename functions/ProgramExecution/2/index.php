@@ -1,17 +1,39 @@
 <?php
 
 /**
- * 단방향 프로세스 열기.
+ * One way Process Handling.
  */
 
-$p = popen('php ' . escapeshellarg(dirname(__DIR__, 3) . '/lang/HelloWorld/1/index.php'), 'w');
+$ph = popen('php ' . dirname(__DIR__, 3) . '/lang/BasicSyntax/HelloWorld/index.php', 'w');
+
+// echo stream_get_contents($ph);
+
+pclose($ph);
 
 /**
- * 단방향 프로세스 읽기/쓰기.
+ * Two way Process Handling.
  */
-fread($p, 1024);
 
-/**
- * 단방향 프로세스 닫기.
- */
-pclose($p);
+$ph = proc_open(
+    'php ./Readline/1/index.php',
+    [
+        0 => ['pipe', 'r'], // READ
+        1 => ['pipe', 'w'], // WRITE
+        2 => ['file', __DIR__ . '/logs/log.log', 'a'] // ERR
+    ],
+    $pipes,
+    dirname(__DIR__, 2)
+);
+
+[ $readStream, $writeStream, ] = $pipes;
+
+fwrite($readStream, 'Hello, world');
+fclose($readStream);
+
+stream_get_contents($writeStream);
+fclose($writeStream);
+
+// Terminate
+proc_terminate($ph);
+// Close Process
+proc_close($ph);

@@ -4,14 +4,10 @@
  * Read a line.
  */
 
-echo $line = readline('prompt >> ');
+echo $line = readline();
 
-/**
- * Add readline history.
- */
+// Add history
 readline_add_history($line);
 
-/**
- * Clear history.
- */
+// Clear
 readline_clear_history();

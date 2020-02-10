@@ -12,24 +12,30 @@ $conn = mysqli_connect(
 );
 
 /**
- * Query Execute.
+ * Query.
  */
-mysqli_query($conn, 'CREATE TABLE tests (id INT AUTO_INCREMENT PRIMARY KEY, message VARCHAR(255))');
+
+// Case 1. mysqli_query.
+$queryString = 'CREATE TABLE tests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    message VARCHAR(255)
+)';
+
+mysqli_query($conn, $queryString);
 
 /**
- * Query Execute (Statement).
+ * Case 2. mysqli_prepare.
  */
-// mysqli_autocommit($conn, false);
+mysqli_autocommit($conn, false);
 
-// $params = [ 'Hello, world' ];
+$stmt = mysqli_prepare($conn, 'INSERT INTO tests(message) VALUES(?)');
 
-$stmt = mysqli_prepare($conn, 'INSERT INTO tests(message) VALUES (?)');
-// mysqli_stmt_bind_param($stmt, 's', ...$params);
+$params = [ 'Hello, world' ];
 
+mysqli_stmt_bind_param($stmt, 's', ...$params);
 mysqli_stmt_execute($stmt);
 
-// mysqli_commit($conn);
-// mysqli_rollback($conn);
+mysqli_rollback($conn);
 
 /**
  * Select.
@@ -37,19 +43,21 @@ mysqli_stmt_execute($stmt);
 $stmt = mysqli_prepare($conn, 'SELECT message FROM tests');
 mysqli_stmt_execute($stmt);
 
-$result = mysqli_stmt_get_result($stmt);
-while ($row = mysqli_fetch_assoc($result)) {
-    var_dump($row);
-}
+// Case 1. mysqli_stmt_get_result
 
-// mysqli_stmt_bind_result($stmt, $message);
-// while (mysqli_stmt_fetch($stmt)) {
-//     var_dump($message);
+// $result = mysqli_stmt_get_result($stmt);
+// while ($row = mysqli_fetch_assoc($result)) {
+//     var_dump($row);
 // }
 
-mysqli_query($conn, 'DROP TABLE tests');
+// Case 2. mysqli_stmt_fetch
+mysqli_stmt_bind_result($stmt, $message);
+while ($row = mysqli_stmt_fetch($stmt)) {
+    var_dump($message);
+}
 
 /**
  * Close connection.
  */
+mysqli_query($conn, 'DROP TABLE tests');
 mysqli_close($conn);

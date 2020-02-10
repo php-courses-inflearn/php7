@@ -1,22 +1,24 @@
 <?php
 
 /**
- * 명령어 실행.
+ * Command Execution.
  */
 
-// -> String (마지막 줄)
-exec('dir', $output);
 // -> String
-shell_exec('dir');
+// exec('dir', $output);
+// -> String
+// echo shell_exec('dir');
 // -> Output stream
-system('dir');
+// system('dir');
 // -> String
-`dir`;
+// echo `dir`;
+// -> Output stream (raw)
+// passthru('dir');
 
 /**
- * 명령어 이스케이핑.
+ * Escaping.
  */
-// 파라매터 이프케이프
-escapeshellarg('php --ini');
-// 명령어 이스케이프
-escapeshellcmd('php --ini && php - a');
+// -> "echo 'Hello, world';"
+escapeshellarg('echo \'Hello, world\';');
+// -> php -r
+escapeshellcmd('php -r');
