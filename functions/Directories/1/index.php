@@ -1,30 +1,30 @@
 <?php
 
 /**
- * 현재 위치 바꾸기.
+ * Change a directory.
  */
 
 chdir(__DIR__);
 
 /*
- * 현재 디렉토리 경로 얻기
+ * Get current working directory
  */
 getcwd();
 
 /**
- * 디렉토리 읽기.
+ * Reading a directory
  */
 $files = scandir(__DIR__ . '/../..');
 
 /**
- * 디렉토리 핸들링
+ * Directory Handling
  */
-// 디렉토리 열기
+// Open
 $dir = opendir(__DIR__ . '/../..');
-// 디렉토리 읽기
+// Read
 while ($name = readdir($dir)) {
 }
-// 디렉토리 커서 초기화
+// Reset
 rewinddir($dir);
-// 디렉토리 닫기
+// Close
 closedir($dir);

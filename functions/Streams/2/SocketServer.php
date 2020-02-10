@@ -1,39 +1,39 @@
 <?php
 
 /**
- * 스트림 소켓 서버 열기.
+ * Socket Server
  */
 
 $server = stream_socket_server('tcp://127.0.0.1:8000', $errno, $errstr);
 
 /**
- * 스트림 서버 만들기.
+ * Listening
  */
 while ($sock = stream_socket_accept($server)) {
     /**
-     * 클라이언트 이름 얻기.
+     * get Client name
      */
     stream_socket_get_name($sock, true);
 
     /**
-     * 클라이언트로 데이터 보내기.
+     * Send data to client
      */
     // stream_socket_sendto($sock, "Hello, world from Server");
     fwrite($sock, 'Hello, world from Server', 1024);
 
     /**
-     * 클라이언트에게 데이터 받기.
+     * get Data from client
      */
     // stream_socket_recvfrom($sock, 1024);
     fread($sock, 1024);
 
     /**
-     * 클라이언트와 연결 종료하기.
+     * Close Connection
      */
     fclose($sock);
 }
 
 /**
- * 소켓 서버 종료.
+ * Close socket server
  */
 fclose($server);

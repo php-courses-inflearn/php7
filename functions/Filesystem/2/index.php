@@ -1,35 +1,74 @@
 <?php
 
 /**
- * 파일, 디렉토리 존재여부 체크하기.
+ * File handling
  */
 
-file_exists('./index.php');
+$path = dirname(__DIR__, 3) . '/README.md';
 
-/*
- * 파일 복사하기
- */
-if (!file_exists('./file_functions.php')) {
-    copy('./index.php', './file_functions.php');
-}
+$fh = fopen($path, 'r');
 
 /*
- * 디렉토리 만들기
+ * File Reading
  */
-if (!file_exists('./Sessions')) {
-    mkdir('./Sessions');
+
+// Case 1. functions
+
+// -> string
+file_get_contents($path);
+// -> array
+file($path);
+// -> output stream
+// readfile($path);
+
+// -> output stream
+// fpassthru($fh);
+// -> string
+fread($fh, filesize($path));
+
+// Case 2. with Loop
+
+while (($line = fgets($fh)) && !feof($fh)) {
 }
 
-/*
- * 파일 삭제하기
+/**
+ * File pointer
  */
-if (file_exists('./file_functions.php')) {
-    unlink('./file_functions.php');
-}
+// Set
+fseek($fh, 0, SEEK_SET);
+// Get
+ftell($fh);
+// is ended
+feof($fh);
+// Reset
+rewind($fh);
+
+/**
+ * File Writing
+ */
+$path = './HelloWorld.txt';
+$fh = fopen($path, 'w');
+
+// Case 1. file_put_contents
+
+file_put_contents($path, 'Hello, world');
+
+// Case 2. file handler
+
+rewind($fh);
+
+// -> output stream
+fwrite($fh, 'Hello, world');
+// -> output stream (force)
+fflush($fh);
+
+/**
+ * File slice
+ */
+$fh = fopen($path, 'r+');
+ftruncate($fh, rand(1, filesize($path)));
 
 /*
- * 디렉토리 삭제하기
+ * File handler close
  */
-if (file_exists('./Sessions')) {
-    rmdir('./Sessions');
-}
+fclose($fh);

@@ -1,32 +1,43 @@
 <?php
 
 /**
- * 경로에서 파일 이름 가져오기.
+ * from Path
  */
 
-basename('C:\\tools\\php72\\php');
+// -> index.php
+basename(__FILE__);
+// -> D:\Development\php\phplec\functions\Filesystem
+dirname(__FILE__, 2);
 
 /*
- * 경로에서 부모(조상) 디렉토리 경로 가져오기
- */
-dirname('C:\\tools\\php72\\php');
-
-/*
- * 상대경로를 절대경로로 표시하기
+ * to Absolute Path
  */
 realpath('.');
 
 /*
- * 경로 정보 얻어오기
+ * Get path info
  */
-pathinfo('C:\\tools\\php72\\php');
+pathinfo(__FILE__);
 
 /*
- * 패턴으로 경로 정보 얻어오기
+ * Find Files
  */
+// Glob
 glob('./*.php');
 
-/*
- * 패턴으로 경로 검사하기
+/**
+ * File name check
  */
-fnmatch('./*.php', './index.php');
+fnmatch('*.php', 'index.php');
+
+/**
+ * File(Directory) Control
+ */
+// Copy
+copy('./index.php', './file_functions.php');
+// Make a directory
+mkdir('./sessions');
+// Remove a file
+unlink('./file_functions.php');
+// Remove a directory
+rmdir('./sessions');

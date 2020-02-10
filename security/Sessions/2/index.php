@@ -22,8 +22,8 @@ $time = strtotime('+9 seconds');
 
 $diff = $time - $_SESSION['timestamp'];
 
-$sessionTimeOutSeconds = 10;
-if ($diff >= $sessionTimeOutSeconds) {
+$sessionTimeOut = 10;
+if ($diff >= $sessionTimeOut) {
     // Session TimeOut
     session_destroy();
 }
