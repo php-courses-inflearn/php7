@@ -1,9 +1,9 @@
 <?php
 
-session_save_path('sessions');
+session_save_path(dirname(__DIR__) . '/sessions');
 
 /**
- * Cookie time, GC
+ * Cookie lifetime, GC.
  */
 ini_set('session.gc_maxlifetime', 3);
 session_set_cookie_params(3);
@@ -16,19 +16,19 @@ session_start();
  */
 $_SESSION['timestamp'] = $_SERVER['REQUEST_TIME'];
 
-// sleep(9);
-// $time = time();
-$time = strtotime('+9 seconds');
+// sleep(10);
+$time = strtotime('+5 seconds');
 
 $diff = $time - $_SESSION['timestamp'];
+$sessionTimeout = 10;
 
-$sessionTimeOut = 10;
-if ($diff >= $sessionTimeOut) {
-    // Session TimeOut
-    session_destroy();
+if ($diff >= $sessionTimeout) {
+    echo 'Session Timeout';
+    exit;
 }
 
 /**
- * Renewal session
+ * Renewal session.
  */
-$_SESSION['timestamp'] = time();
+// session_regenerate_id();
+// $_SESSION['timestamp'] = time();

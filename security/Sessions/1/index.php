@@ -1,6 +1,6 @@
 <?php
 
-session_save_path('sessions');
+session_save_path(dirname(__DIR__) . '/sessions');
 session_start();
 
 /**
@@ -13,8 +13,6 @@ session_start();
  * session.use_cookies
  * session.use_only_cookies
  */
-$_SESSION['message'] = 'Hello, world';
-echo $_SESSION['message'];
 
 /**
  * # Javascript Injection.

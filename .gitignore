@@ -9,5 +9,4 @@ node_modules
 *.code-workspace
 
 functions/Sessions/**/sessions/*
-security/XSS/**/sessions/*
-security/Sessions/**/sessions/*
+security/Sessions/sessions/*

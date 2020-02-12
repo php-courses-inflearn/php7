@@ -92,16 +92,16 @@
 
 ### Security
 
-* [XSS(Cross-Site Scripting)](https://github.com/pronist/phplec/tree/basic/security/XSS)
+* [Error Reporting](https://github.com/pronist/phplec/tree/basic/security/ErrorReporting)
+* [File Upload & Download](https://github.com/pronist/phplec/tree/basic/security/File)
 * [Sessions](https://github.com/pronist/phplec/tree/basic/security/Sessions)
 * [SQLInjection](https://github.com/pronist/phplec/tree/basic/security/SQLInjection)
-* [File Upload & Download](https://github.com/pronist/phplec/tree/basic/security/File)
-* [Error Reporting](https://github.com/pronist/phplec/tree/basic/security/ErrorReporting)
+* [XSS(Cross-Site Scripting)](https://github.com/pronist/phplec/tree/basic/security/XSS)
 
 ### Application
 
-* [Basic](https://github.com/pronist/phpblog/tree/basic) - **Function based MVC(Model, View, Controller)**
 * [Beginning](https://github.com/pronist/phpblog/tree/beginning) - **Classical Architecture**
+* [Basic](https://github.com/pronist/phpblog/tree/basic) - **Function based MVC(Model, View, Controller)**
 
 ## License
 

@@ -17,20 +17,17 @@ if (!preg_match('/^(?:[0-9a-z_-]|\.(?!\.))+$/i', $path)) {
 $filepath = realpath(dirname(__DIR__) . '/uploads/' . basename($path));
 
 if (file_exists($filepath)) {
-    $path_parts = pathinfo($filepath);
+    $pathInfo = pathinfo($filepath);
     $accepts = [
         'md'
     ];
-    if (in_array($path_parts['extension'], $accepts)) {
+    if (in_array($pathInfo['extension'], $accepts)) {
         header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename=' . $path_parts['basename']);
+        header('Content-Disposition: attachment; filename=' . $pathInfo['basename']);
         header('Content-Transfer-Encoding: binary');
         header('Content-Length: ' . filesize($filepath));
 
+        // -> Output stream
         readfile($filepath);
-    } else {
-        http_response_code(400);
     }
-} else {
-    http_response_code(404);
 }

