@@ -17,4 +17,4 @@ function foo($callback)
 foo(function () use ($message) {
     return $message;
 });
-foo(fn() => $message);
+foo(fn () => $message);
