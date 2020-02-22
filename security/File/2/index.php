@@ -2,32 +2,23 @@
 
 /**
  * File Downloads.
- *
- * php.ini
- *
- * allow_url_fopen, allow_url_include
  */
 
-$path = filter_input(INPUT_GET, 'path', FILTER_SANITIZE_STRING);
-
-if (!preg_match('/^(?:[0-9a-z_-]|\.(?!\.))+$/i', $path)) {
-    exit;
-}
-
+// $path = filter_input(INPUT_GET, 'path', FILTER_SANITIZE_STRING);
+$path = '../../../README.md';
 $filepath = realpath(dirname(__DIR__) . '/uploads/' . basename($path));
 
 if (file_exists($filepath)) {
-    $pathInfo = pathinfo($filepath);
+    $pathinfo = pathinfo($filepath);
     $accepts = [
         'md'
     ];
-    if (in_array($pathInfo['extension'], $accepts)) {
-        header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename=' . $pathInfo['basename']);
+    if (in_array(strtolower($pathinfo['extension']), $accepts)) {
+        header('Content-type: application/octet-stream');
+        header('Content-Disposition: attachment; filename=' . basename($filepath));
         header('Content-Transfer-Encoding: binary');
         header('Content-Length: ' . filesize($filepath));
 
-        // -> Output stream
         readfile($filepath);
     }
 }

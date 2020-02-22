@@ -3,6 +3,7 @@
 /**
  * if.
  */
+
 // [], '', false, 0, null -> false
 if (true) {
     echo 'Hello, world';

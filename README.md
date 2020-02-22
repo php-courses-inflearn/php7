@@ -1,11 +1,11 @@
-# Codes for PHP 7+ Prgramming.lec
+# Example codes for PHP 7+ Programming.lec
 
 * *php >= 7.2*
 * Extended Coding Style: [PSR-12](https://www.php-fig.org/psr/psr-12/)
 
 ## Branches
 
-* [Basic](https://github.com/pronist/phplec/tree/basic) - **PHP 7+ Prgramming: Basic**
+* [Basic](https://github.com/pronist/phplec/tree/basic) - **PHP 7+ Programming: Basic**
 
 ## PHP 7+ Programming: Basic
 
@@ -101,7 +101,7 @@
 ### Application
 
 * [Beginning](https://github.com/pronist/phpblog/tree/beginning) - **Classical Architecture**
-* [Basic](https://github.com/pronist/phpblog/tree/basic) - **Function based MVC(Model, View, Controller)**
+* [Basic](https://github.com/pronist/phpblog/tree/basic) - **Similar to MVC(Model, View, Controller)**
 
 ## License
 
