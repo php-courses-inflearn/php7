@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/../config/Providers.php'; ?>
+<?php require_once __DIR__.'/../config/Providers.php'; ?>
 
 <!DOCTYPE html>
 

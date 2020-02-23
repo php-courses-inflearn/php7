@@ -1,6 +1,6 @@
 <?php
 
-$fn = __DIR__ . '/bar.txt';
+$fn = __DIR__.'/bar.txt';
 
 // bar.txt 파일을 씁니다.
 file_put_contents($fn, 'Hello, World!');

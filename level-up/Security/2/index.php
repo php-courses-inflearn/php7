@@ -8,9 +8,9 @@ session_start();
  * with FORM
  * <input type="hidden" name="csrf_token" value="<?=$_SESSION['token'];?>">
  */
-if (empty($_SESSION['token'])) :
+if (empty($_SESSION['token'])) {
     $_SESSION['token'] = bin2hex(random_bytes(32));
-endif;
+}
 
 ?>
 

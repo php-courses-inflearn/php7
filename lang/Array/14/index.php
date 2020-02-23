@@ -3,7 +3,6 @@
 /**
  * Deifne 'posts' array.
  */
-
 $posts = [
     [
         'title'   => 'What is Lorem Ipsum?',

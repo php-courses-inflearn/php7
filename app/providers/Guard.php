@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../lib/Guard.php';
+require_once __DIR__.'/../lib/Guard.php';
 
 /**
  * Authentication Guard.

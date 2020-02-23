@@ -11,12 +11,12 @@ $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 $password = password_hash(filter_input(INPUT_POST, 'password'), PASSWORD_DEFAULT);
 $csrf_token = filter_input(INPUT_POST, 'csrf_token');
 
-if ($email && $password && $csrf_token && verify($csrf_token) && register($email, $password)) :
+if ($email && $password && $csrf_token && verify($csrf_token) && register($email, $password)) {
     // 홈으로 리다이렉트합니다.
     header('HTTP/1.1 302 Redirect');
     header('location: /');
-else :
+} else {
     // 유효하지 않은 값을 전송한 경우 잘못된 요청임을 알립니다.
     header('HTTP/1.1 400 Bad request');
     echo json_encode(['message' => '400 Bad reqeust']);
-endif;
+}

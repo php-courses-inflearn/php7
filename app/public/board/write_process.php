@@ -5,7 +5,7 @@ require_once '../../lib/Board.php';
 
 function wrap($s)
 {
-    return '"' . $s . '"';
+    return '"'.$s.'"';
 }
 
 /**
@@ -17,14 +17,14 @@ $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_SPECIAL_CHARS);
 $csrf_token = filter_input(INPUT_POST, 'csrf_token');
 
 // 로그인을 체크해야합니다.
-if ($title && $content && verify($csrf_token) && write(wrap($title), wrap($content))) :
+if ($title && $content && verify($csrf_token) && write(wrap($title), wrap($content))) {
     // 홈으로 리다이렉트합니다.
     header('HTTP/1.1 302 Redirect');
     header('location: /');
-else :
+} else {
     // 유효하지 않은 값을 전송한 경우 잘못된 요청임을 알립니다.
     header('HTTP/1.1 401 Unauthorized');
     echo json_encode([
         'message' => '401 Unauthorized',
     ]);
-endif;
+}

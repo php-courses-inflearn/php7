@@ -1,9 +1,9 @@
 <?php
 
-if (false) :
+if (false) {
     echo 'Hello, World!';
-elseif (true) :
+} elseif (true) {
     echo 'Bye';
-else :
+} else {
     echo 'Who are you?';
-endif;
+}

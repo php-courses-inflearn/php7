@@ -3,7 +3,7 @@
 $name = 'Mansu Jeong';
 $job = 'Web Developer';
 
-$person = $name . ': ' . $job;
+$person = $name.': '.$job;
 
 // Mansu Jeong: Web Developer
 echo $person;

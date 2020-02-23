@@ -6,7 +6,7 @@
 <main id="main">
     <div id="post_wrapper" style="margin-top: 50px;">
     <?php
-    foreach ($posts = getPosts() as $row) :
+    foreach ($posts = getPosts() as $row) {
         $content = mb_substr($row['content'], 0, 180);
 
         echo <<<HTML
@@ -20,7 +20,7 @@
         </div>
     </div>
 HTML;
-    endforeach;
+    }
     ?>
     </div>
 </main>

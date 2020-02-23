@@ -7,11 +7,11 @@
  */
 function token()
 {
-    if (isset($_SESSION['token'])) :
+    if (isset($_SESSION['token'])) {
         return $_SESSION['token'];
-    else :
-            return false;
-    endif;
+    } else {
+        return false;
+    }
 }
 
 /**
@@ -23,9 +23,9 @@ function token()
  */
 function verify(string $token): bool
 {
-    if (hash_equals($_SESSION['token'], $token)) :
+    if (hash_equals($_SESSION['token'], $token)) {
         return true;
-    else :
-            return false;
-    endif;
+    } else {
+        return false;
+    }
 }

@@ -15,6 +15,6 @@ $providers = [
     'csrf'  => 'CsrfToken.php',
 ];
 
-foreach ($providers as $provider) :
-    require_once __DIR__ . "/../providers/{$provider}";
-endforeach;
+foreach ($providers as $provider) {
+    require_once __DIR__."/../providers/{$provider}";
+}

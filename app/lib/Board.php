@@ -1,6 +1,6 @@
 <?php
 
-const POSTS_PATH = __DIR__ . '/../storage/posts.csv';
+const POSTS_PATH = __DIR__.'/../storage/posts.csv';
 
 /**
  * Writeing a post.
@@ -12,7 +12,7 @@ const POSTS_PATH = __DIR__ . '/../storage/posts.csv';
  */
 function write(string $title, string $content): bool
 {
-    if (file_exists(POSTS_PATH)) :
+    if (file_exists(POSTS_PATH)) {
         $fh = fopen(POSTS_PATH, 'a+');
         fwrite($fh, implode(',', [
             /*
@@ -22,12 +22,12 @@ function write(string $title, string $content): bool
             count(file(POSTS_PATH, FILE_SKIP_EMPTY_LINES)) + 1,
             $title,
             $content,
-        ]) . "\r\n");
+        ])."\r\n");
 
         fclose($fh);
 
         return true;
-    endif;
+    }
 
     return false;
 }
@@ -43,16 +43,16 @@ function write(string $title, string $content): bool
 function getPosts(string $id = null): array
 {
     $fh = fopen(POSTS_PATH, 'r');
-    if (file_exists(POSTS_PATH)) :
+    if (file_exists(POSTS_PATH)) {
         $posts = [];
-        while (!feof($fh) && ($row = fgetcsv($fh))) :
+        while (!feof($fh) && ($row = fgetcsv($fh))) {
             /*
              * CSV 파일에 저장된 데이터 필드입니다.
              * 키값이 없으므로 구분을 위해 따로 변수를 선언해둡니다.
              */
-            foreach (['_id', '_title', '_content'] as $index => $name) :
+            foreach (['_id', '_title', '_content'] as $index => $name) {
                 $$name = $row[$index];
-            endforeach;
+            }
 
             $currentPost = [
                 'id'      => $_id,
@@ -60,13 +60,13 @@ function getPosts(string $id = null): array
                 'content' => $_content,
             ];
 
-            if (isset($id) && $id == $_id) :
+            if (isset($id) && $id == $_id) {
                 return $currentPost;
-            else :
-                    array_push($posts, $currentPost);
-            endif;
-        endwhile;
+            } else {
+                array_push($posts, $currentPost);
+            }
+        }
 
         return $posts;
-    endif;
+    }
 }
