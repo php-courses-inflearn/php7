@@ -20,33 +20,33 @@ function register(string $email, string $password): bool
          * 데이터베이스가 아닌 파일시스템이라 발생하는 문제.
          */
         $fh = fopen(USERS_PATH, 'a+');
-        $currentUserId = 1;
-        while (!feof($fh) && ($row = fgetcsv($fh))) :
+    $currentUserId = 1;
+    while (!feof($fh) && ($row = fgetcsv($fh))) :
             /*
              * CSV 파일에 저장된 데이터 필드입니다.
              * 키값이 없으므로 구분을 위해 따로 변수를 선언해둡니다.
              */
             foreach (['_id', '_email', '_password'] as $index => $name) :
                 $$name = $row[$index];
-            endforeach;
+    endforeach;
 
-            $currentUserId++;
+    $currentUserId++;
 
-            if ($email == $_email) :
+    if ($email == $_email) :
                 $is = false;
-            // 같은 이메일이 있으면 빠져나갑니다.
-                break;
-            endif;
-        endwhile;
+    // 같은 이메일이 있으면 빠져나갑니다.
+    break;
+    endif;
+    endwhile;
 
-        if (!isset($is)) :
+    if (!isset($is)) :
             // 유저를 추가합니다.
             fputcsv($fh, [$currentUserId, $email, $password]);
-        endif;
+    endif;
 
-        fclose($fh);
+    fclose($fh);
 
-        return isset($is) ? false : true;
+    return isset($is) ? false : true;
     endif;
 }
 
@@ -62,27 +62,27 @@ function login(string $email, string $password): bool
 {
     if (file_exists(USERS_PATH)) :
         $fh = fopen(USERS_PATH, 'r');
-        while (!feof($fh) && ($row = fgetcsv($fh))) :
+    while (!feof($fh) && ($row = fgetcsv($fh))) :
             /*
              * CSV 파일에 저장된 데이터 필드입니다.
              * 키값이 인덱스이므로 구분을 위해 따로 변수를 선언해둡니다.
              */
             foreach (['_id', '_email', '_password'] as $index => $name) :
                 $$name = $row[$index];
-            endforeach;
+    endforeach;
 
-            if ($email == $_email && password_verify($password, $_password)) :
+    if ($email == $_email && password_verify($password, $_password)) :
                 // 로그인 세션을 시작합니다.
                 $_SESSION['user'] = $_email;
-                $is = true;
-            // 시도이후에는 반복문을 빠져나갑니다.
-                break;
-            endif;
-        endwhile;
+    $is = true;
+    // 시도이후에는 반복문을 빠져나갑니다.
+    break;
+    endif;
+    endwhile;
 
-        fclose($fh);
+    fclose($fh);
 
-        return isset($is) ? true : false;
+    return isset($is) ? true : false;
     endif;
 }
 
@@ -94,8 +94,7 @@ function login(string $email, string $password): bool
 function user()
 {
     if (isset($_SESSION['user'])) :
-        return $_SESSION['user'];
-    else :
+        return $_SESSION['user']; else :
             return false;
     endif;
 }

@@ -16,11 +16,11 @@ function guard(array $guards): void
         if ($_SERVER['SCRIPT_NAME'] == $uri) :
             if (!user()) :
                 header('HTTP/1.1 401 Unauthorized');
-                echo json_encode([
+    echo json_encode([
                     'message' => '401 Unauthorized',
                 ]);
-                exit;
-            endif;
-        endif;
+    exit;
+    endif;
+    endif;
     endforeach;
 }
