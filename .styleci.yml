@@ -1,4 +1,4 @@
-preset: recommended
+preset: PSR12
 risky: true
 finder:
   exclude:
