@@ -1,0 +1,11 @@
+<html>
+    <head></head>
+    <body>
+        <h1>XSS(Cross Site Scripting)</h1>
+        <!-- <script> ...? </script> 을 삽입한다면? -->
+        <form action="index2.php" method="POST">
+            <textarea name="text" style="width: 320px; height: 320px; display: block;"></textarea>
+            <input type="submit">
+        </form>
+    </body>
+</html>

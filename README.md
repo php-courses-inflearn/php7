@@ -3,108 +3,53 @@
 * *php >= 7.2*
 * Extended Coding Style: [PSR-12](https://www.php-fig.org/psr/psr-12/)
 
-## Branches
-
-* [Basic](https://github.com/pronist/phplec/tree/basic) - **PHP 7+ Programming: Basic**
-
-## PHP 7+ Programming: Basic
+## PHP 7+ Programming: Legacy
 
 <p>
-    <img src="https://github.styleci.io/repos/231129705/shield?branch=basic" alt="StyleCI">
+    <img src="https://github.styleci.io/repos/231129705/shield?branch=legacy" alt="StyleCI">
 </p>
 
-### Language Reference
+### Basic syntax
 
-<http://docs.php.net/manual/en/langref.php>
+* [HelloWorld](https://github.com/pronist/phplec/tree/legacy/lang/HelloWorld)
+* [StringAndNumber](https://github.com/pronist/phplec/tree/legacy/lang/StringAndNumber)
+* [Variables](https://github.com/pronist/phplec/tree/legacy/lang/Variables)
+* [If](https://github.com/pronist/phplec/tree/legacy/lang/If)
+* [SwitchCase](https://github.com/pronist/phplec/tree/legacy/lang/SwitchCase)
+* [ForAndWhile](https://github.com/pronist/phplec/tree/legacy/lang/ForAndWhile)
+* [Array](https://github.com/pronist/phplec/tree/legacy/lang/Array)
+* [Type](https://github.com/pronist/phplec/tree/legacy/lang/Type)
+* [Function](https://github.com/pronist/phplec/tree/legacy/lang/Function)
+* [Scope](https://github.com/pronist/phplec/tree/legacy/lang/Scope)
+* [Const](https://github.com/pronist/phplec/tree/legacy/lang/Const)
+* [References](https://github.com/pronist/phplec/tree/legacy/lang/References)
+* [Include](https://github.com/pronist/phplec/tree/legacy/lang/Include)
+* [Constructs](https://github.com/pronist/phplec/tree/legacy/lang/Constructs)
 
-* [Basic syntax](https://github.com/pronist/phplec/tree/basic/lang/BasicSyntax)
-* [Types](https://github.com/pronist/phplec/tree/basic/lang/Types)
-* [Variables](https://github.com/pronist/phplec/tree/basic/lang/Variables)
-* [Constants](https://github.com/pronist/phplec/tree/basic/lang/Constants)
-* [Operators](https://github.com/pronist/phplec/tree/basic/lang/Operators)
-* [Control Structures](https://github.com/pronist/phplec/tree/basic/lang/ControlStructures)
-* [Functions](https://github.com/pronist/phplec/tree/basic/lang/Functions)
+### Web
 
-### Membership Extensions
+* [HtmlTemplate](https://github.com/pronist/phplec/tree/legacy/web/HtmlTemplate)
+* [Form](https://github.com/pronist/phplec/tree/legacy/web/Form)
+* [CookieAndSession](https://github.com/pronist/phplec/tree/legacy/web/CookieAndSession)
 
-<http://docs.php.net/manual/en/extensions.membership.php>
+### Functions
 
-#### Configurations
+* [File](https://github.com/pronist/phplec/tree/legacy/functions/File)
+* [Http](https://github.com/pronist/phplec/tree/legacy/functions/Http)
 
-* [PHP Options/Info](https://github.com/pronist/phplec/tree/basic/functions/Configurations)
+### Level up
 
-#### Error
-
-* [Error Handling](https://github.com/pronist/phplec/tree/basic/functions/Error)
-
-#### Strings
-
-* [Strings](https://github.com/pronist/phplec/tree/basic/functions/Strings)
-* [Hash](https://github.com/pronist/phplec/tree/basic/functions/Hash)
-* [Password Hashing](https://github.com/pronist/phplec/tree/basic/functions/PasswordHashing)
-* [PCRE(Perl-Compatible Regular Expression)](https://github.com/pronist/phplec/tree/basic/functions/PCRE)
-
-#### Math
-
-* [Math](https://github.com/pronist/phplec/tree/basic/functions/Math)
-* [CSPRNG(Cryptographically Secure Pseudo-Random Number Generator)](https://github.com/pronist/phplec/tree/basic/functions/CSPRNG)
-
-#### Arrays
-
-* [Arrays](https://github.com/pronist/phplec/tree/basic/functions/Arrays)
-
-#### Variables
-
-* [Variable Handling](https://github.com/pronist/phplec/tree/basic/functions/Variables)
-* [Filter](https://github.com/pronist/phplec/tree/basic/functions/Filter)
-
-#### Functions
-
-* [Function Handling](https://github.com/pronist/phplec/tree/basic/functions/Functions)
-
-#### Date/Time
-
-* [Date/Time](https://github.com/pronist/phplec/tree/basic/functions/Date)
-
-#### Http
-
-* [Network](https://github.com/pronist/phplec/tree/basic/functions/Network)
-* [Sessions](https://github.com/pronist/phplec/tree/basic/functions/Sessions)
-* [URLs](https://github.com/pronist/phplec/tree/basic/functions/URLs)
-* [cURL](https://github.com/pronist/phplec/tree/basic/functions/cURL)
-* [JSON](https://github.com/pronist/phplec/tree/basic/functions/JSON)
-
-#### Filesystem
-
-* [Directories](https://github.com/pronist/phplec/tree/basic/functions/Directories)
-* [Filesystem](https://github.com/pronist/phplec/tree/basic/functions/Filesystem)
-
-#### Stream
-
-* [Streams](https://github.com/pronist/phplec/tree/basic/functions/Streams)
-* [Readline](https://github.com/pronist/phplec/tree/basic/functions/Readline)
-* [Output Control](https://github.com/pronist/phplec/tree/basic/functions/OutputControl)
-* [Program Execution](https://github.com/pronist/phplec/tree/basic/functions/ProgramExecution)
-
-#### Database
-
-* [MySQLi](https://github.com/pronist/phplec/tree/basic/functions/MySQLi)
-
-### Security
-
-* [Error Reporting](https://github.com/pronist/phplec/tree/basic/security/ErrorReporting)
-* [File Upload & Download](https://github.com/pronist/phplec/tree/basic/security/File)
-* [Sessions](https://github.com/pronist/phplec/tree/basic/security/Sessions)
-* [SQLInjection](https://github.com/pronist/phplec/tree/basic/security/SQLInjection)
-* [XSS(Cross-Site Scripting)](https://github.com/pronist/phplec/tree/basic/security/XSS)
+* [Security](https://github.com/pronist/phplec/tree/legacy/level-up/Security)
+* [Cache](https://github.com/pronist/phplec/tree/legacy/level-up/Cache)
+* [Debug](https://github.com/pronist/phplec/tree/legacy/level-up/Debug)
+* [PHP.ini](https://github.com/pronist/phplec/tree/legacy/level-up/PHP.ini)
 
 ### Application
 
-* [Beginning](https://github.com/pronist/phpblog/tree/beginning) - **Classical Architecture**
-* [Basic](https://github.com/pronist/phpblog/tree/basic) - **Similar to MVC(Model, View, Controller)**
+* [App](https://github.com/pronist/phplec/tree/legacy/app)
 
 ## License
 
-[MIT](https://github.com/pronist/phplec/blob/basic/LICENSE)
+[MIT](https://github.com/pronist/phplec/blob/legacy/LICENSE)
 
-Copyright 2020. [SangWoo Jeong](https://github.com/pronist). All rights reserved.
+Copyright 2019. [SangWoo Jeong](https://github.com/pronist). All rights reserved.
