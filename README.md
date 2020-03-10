@@ -21,6 +21,14 @@
 * [The Basics](https://github.com/pronist/phplec/tree/intermediate/lang/TheBasics)
 * [Inherit](https://github.com/pronist/phplec/tree/intermediate/lang/Inherit)
 
+### Membership Extensions
+
+<http://docs.php.net/manual/en/extensions.membership.php>
+
+* [PDO](https://github.com/pronist/phplec/tree/intermediate/functions/PDO)
+* [Session Handler](https://github.com/pronist/phplec/tree/intermediate/functions/SessionHandler)
+* [Reflection](https://github.com/pronist/phplec/tree/intermediate/functions/Reflection)
+
 ## License
 
 [MIT](https://github.com/pronist/phplec/blob/intermediate/LICENSE)

@@ -16,7 +16,7 @@ class B
 {
     public function create()
     {
-        return new class() extends A {
+        return new class () extends A {
         };
     }
 }
