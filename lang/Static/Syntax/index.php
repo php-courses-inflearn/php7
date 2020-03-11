@@ -3,6 +3,7 @@
 /**
  * Static
  */
+
 class A
 {
     public static $message = 'Hello, world';
