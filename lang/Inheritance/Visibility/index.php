@@ -30,4 +30,4 @@ class B extends A
     }
 }
 
-$b = new B();
+new B();

@@ -18,15 +18,19 @@
 
 <http://docs.php.net/manual/en/langref.php>
 
-* [The Basics](https://github.com/pronist/phplec/tree/intermediate/lang/TheBasics)
-* [Inherit](https://github.com/pronist/phplec/tree/intermediate/lang/Inherit)
+#### Classes and Objects
+
+* [Basics](https://github.com/pronist/phplec/tree/intermediate/lang/Basics)
+* [Static](https://github.com/pronist/phplec/tree/intermediate/lang/Static)
+* [Inheritance](https://github.com/pronist/phplec/tree/intermediate/lang/Inheritance)
+* [Abstraction](https://github.com/pronist/phplec/tree/intermediate/lang/Abstraction)
 
 ### Membership Extensions
 
 <http://docs.php.net/manual/en/extensions.membership.php>
 
 * [PDO](https://github.com/pronist/phplec/tree/intermediate/functions/PDO)
-* [Session Handler](https://github.com/pronist/phplec/tree/intermediate/functions/SessionHandler)
+* [Session](https://github.com/pronist/phplec/tree/intermediate/functions/Session)
 * [Reflection](https://github.com/pronist/phplec/tree/intermediate/functions/Reflection)
 
 ## License
