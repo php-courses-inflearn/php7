@@ -10,9 +10,6 @@ class A
     public function foo()
     {
         static::who();
-        // $this->who();
-
-        // self::who();
     }
 
     // public static function who()
@@ -28,7 +25,6 @@ class B extends A
     public function test()
     {
         A::foo();
-        // $this->foo();
 
         parent::foo();
         self::foo();

@@ -25,13 +25,17 @@
 * [Static](https://github.com/pronist/phplec/tree/intermediate/lang/Static)
 * [Inheritance](https://github.com/pronist/phplec/tree/intermediate/lang/Inheritance)
 * [Abstraction](https://github.com/pronist/phplec/tree/intermediate/lang/Abstraction)
+* [MagicMethods](https://github.com/pronist/phplec/tree/intermediate/lang/MagicMethods)
+* [Namespaces](https://github.com/pronist/phplec/tree/intermediate/lang/Namespaces)
+* [Exceptions](https://github.com/pronist/phplec/tree/intermediate/lang/Exceptions)
+* [Generators](https://github.com/pronist/phplec/tree/intermediate/lang/Generators)
+* [References](https://github.com/pronist/phplec/tree/intermediate/lang/References)
 
 ### Membership Extensions
 
 <http://docs.php.net/manual/en/extensions.membership.php>
 
 * [PDO](https://github.com/pronist/phplec/tree/intermediate/functions/PDO)
-* [Session](https://github.com/pronist/phplec/tree/intermediate/functions/Session)
 * [Reflection](https://github.com/pronist/phplec/tree/intermediate/functions/Reflection)
 
 ## License
