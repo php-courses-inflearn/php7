@@ -3,7 +3,6 @@
 /**
  * References
  */
-
 $hello = 'Hello, world';
 $world =& $hello;
 
@@ -15,8 +14,9 @@ var_dump($hello);
  */
 function foo(&$message)
 {
-    global $a;
-    // $a =& $GLOBALS['a'];
+    // global $hello;
+    $hello =& $GLOBALS['hello'];
+    $hello = 'Bye';
 
     $message = 'Hello, world';
 }
@@ -24,10 +24,12 @@ function foo(&$message)
 foo($message);
 var_dump($message);
 
+var_dump($hello);
+
 function &foo2()
 {
-    $message = 'Hello, world';
-    return $message;
+    $sayHello = 'Hello, world';
+    return $sayHello;
 }
 
 $foo2 =& foo2();

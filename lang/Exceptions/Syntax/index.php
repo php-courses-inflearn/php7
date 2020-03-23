@@ -5,15 +5,13 @@
  */
 
 set_error_handler(function ($errno, $errstr) {
-    throw new ErrorException($errstr);
+    throw new ErrorException($errstr, $errno);
 });
 
-// set_exception_handler(fn (Exception $e) => var_dump($e->getMessage()));
+set_exception_handler(fn (Exception $e) => var_dump($e->getMessage()));
 
 try {
-    echo $message;
-} catch (Exception $e) {
-    var_dump($e->getMessage());
+    var_dump($message);
 } finally {
-    var_dump('Hello, world');
+    var_dump('finally');
 }

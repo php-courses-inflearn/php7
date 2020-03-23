@@ -4,25 +4,41 @@
  * Magic Methods: Serialize
  */
 
-class A
+// class A
+// {
+//     private $sayHello = 'Hello, world';
+
+//     public function __sleep()
+//     {
+//         return [ 'sayHello' ];
+//     }
+
+//     public function __wakeup()
+//     {
+//         var_dump(__METHOD__);
+//     }
+// }
+
+class A implements Serializable
 {
-    public $sayHello = 'Hello, world';
+    private $sayHello = 'Hello, world';
 
-    public function __sleep()
+    public function serialize()
     {
-        var_dump(__METHOD__);
-        // $this->sayHello = 'Hello, world';
-
-        return [ 'sayHello' ];
+        return serialize($this->sayHello);
     }
 
-    public function __wakeup()
+    public function unserialize($serialized)
     {
-        var_dump(__METHOD__);
+        $this->sayHello = unserialize($serialized);
     }
 }
 
-$a = new A();
+class B extends A
+{
+}
+
+$a = new B();
 $serialized = serialize($a);
 
 var_dump(unserialize($serialized));

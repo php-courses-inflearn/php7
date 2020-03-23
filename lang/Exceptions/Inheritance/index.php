@@ -3,7 +3,6 @@
 /**
  * Exception extends
  */
-
 class MyException extends Exception
 {
     public function __construct($message = "", $code = 0, $previous = null)
@@ -16,6 +15,6 @@ class MyException extends Exception
 
 try {
     throw new MyException('Hello, world');
-} catch (Exception $e) {
+} catch(MyException $e) {
     var_dump($e->getMessage());
 }

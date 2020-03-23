@@ -3,7 +3,6 @@
 /**
  * Generator
  */
-
 function gen()
 {
     yield 1;
@@ -11,13 +10,19 @@ function gen()
     yield 3;
 }
 
-$gen = gen();
+// $gen = gen();
 
-$gen->next();
-var_dump($gen->current());
+// var_dump($gen->current());
 
-$gen->next();
-var_dump($gen->current());
+// $gen->next();
+// var_dump($gen->current());
+
+// $gen->next();
+// var_dump($gen->current());
+
+// foreach (gen() as $number) {
+//     var_dump($number);
+// }
 
 /**
  * Compare Memory Usage
@@ -29,9 +34,12 @@ function __range($start, $end, $step = 1)
     }
 }
 
+// -> 6695376
 // foreach (range(0, 100000) as $number) {
 // }
-foreach (__range(0, 100000) as $number) {
-}
+
+// -> 441120
+// foreach (__range(0, 100000) as $number) {
+// }
 
 var_dump(memory_get_peak_usage());
