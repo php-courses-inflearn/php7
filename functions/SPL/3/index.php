@@ -42,4 +42,3 @@ function recusiveDirectories(RecursiveDirectoryIterator $it)
 }
 
 recusiveDirectories(new RecursiveDirectoryIterator(dirname(__DIR__)));
-

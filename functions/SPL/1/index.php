@@ -61,5 +61,3 @@ $storage->attach($o1);
 $storage->attach($o2);
 
 var_dump($storage->contains($o1));
-
-

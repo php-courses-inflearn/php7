@@ -3,6 +3,7 @@
 /**
  * SplFileObject
  */
+
 $file = new SplFileObject(dirname(__DIR__, 3) . '/README.md', 'r');
 var_dump($file->fread($file->getSize()));
 

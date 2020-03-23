@@ -15,6 +15,6 @@ class MyException extends Exception
 
 try {
     throw new MyException('Hello, world');
-} catch(MyException $e) {
+} catch (MyException $e) {
     var_dump($e->getMessage());
 }

@@ -3,6 +3,7 @@
 /**
  * References
  */
+
 $hello = 'Hello, world';
 $world =& $hello;
 

@@ -44,5 +44,3 @@ $b = new B();
 
 var_dump(is_a($b, 'MyClass'), is_a($b, 'B'), $b instanceof B, $b instanceof A);
 var_dump(is_subclass_of($b, 'MyClass'));
-
-
