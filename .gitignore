@@ -1,5 +1,6 @@
 vendor
 node_modules
+composer.lock
 
 .vscode/*
 !.vscode/settings.json
@@ -7,6 +8,3 @@ node_modules
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
-
-functions/Sessions/**/sessions/*
-security/Sessions/sessions/*

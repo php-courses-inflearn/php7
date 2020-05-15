@@ -1,12 +1,5 @@
 <?php
 
-// function __range($start, $end, $step = 1)
-// {
-//     for ($i = $start; $i <= $end; $i += $step) {
-//         yield $i;
-//     }
-// }
-
 /**
  * Iterator Interface Implements
  */
@@ -73,5 +66,3 @@ class IntegerIterator implements Iterator
 
 foreach (new IntegerIterator(0, 100) as $number) {
 }
-
-var_dump(memory_get_peak_usage());

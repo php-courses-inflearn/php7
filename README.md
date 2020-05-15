@@ -7,7 +7,6 @@
 
 * [Basic](https://github.com/pronist/phplec/tree/basic) - **PHP 7+ Programming: Basic**
 * [Intermediate](https://github.com/pronist/phplec/tree/intermediate) - **PHP 7+ Programming: Intermediate**
-* [Handbook](https://github.com/pronist/phplec/tree/handbook) - **PHP 7+ Programming: Handbook**
 
 ## PHP 7+ Programming: Intermediate
 
@@ -26,6 +25,7 @@
 * [Inheritance](https://github.com/pronist/phplec/tree/intermediate/lang/Inheritance)
 * [Abstraction](https://github.com/pronist/phplec/tree/intermediate/lang/Abstraction)
 * [Magic Methods](https://github.com/pronist/phplec/tree/intermediate/lang/MagicMethods)
+* [Cloning](https://github.com/pronist/phplec/tree/intermediate/lang/Cloning)
 
 #### Namespaces
 
@@ -52,10 +52,11 @@
 * [DateTime](https://github.com/pronist/phplec/tree/intermediate/functions/DateTime)
 * [Directory](https://github.com/pronist/phplec/tree/intermediate/functions/Directory)
 * [Reflection](https://github.com/pronist/phplec/tree/intermediate/functions/Reflection)
-* [Sessions](https://github.com/pronist/phplec/tree/intermediate/functions/Sessions)
 * [SPL](https://github.com/pronist/phplec/tree/intermediate/functions/SPL)
 * [Streams](https://github.com/pronist/phplec/tree/intermediate/functions/Streams)
 * [PDO](https://github.com/pronist/phplec/tree/intermediate/functions/PDO)
+* [Sessions](https://github.com/pronist/phplec/tree/intermediate/functions/Sessions)
+* [Cache](https://github.com/pronist/phplec/tree/intermediate/functions/Cache)
 
 ## License
 

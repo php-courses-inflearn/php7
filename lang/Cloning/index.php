@@ -1,31 +1,40 @@
 <?php
 
-class MyClass
-{
-    public $message = 'Hello, world';
-}
-
 /**
  * Compare
  */
-$myclass1 = new MyClass();
-$myclass2 = new MyClass();
 
-var_dump($myclass1 == $myclass2); // -> true
-var_dump($myclass1 === $myclass2); // -> false
+$class1 = new stdClass();
+$class2 = new stdClass();
+
+// var_dump($class1 == $class2); // -> true
+// var_dump($class1 === $class2); // -> false
 
 /**
  * Copy
  */
 
-// -> $myclass3 = $myclass1 = <Object Id>
-// $myclass3 = $myclass1;
+// $class3 = $class1 = <Object Id>
+$class3 = $class1;
 
-// -> ($myclass3, $myclass1) = <Object Id>
-// $myclass3 =& $myclass1;
+// $class1->message = 'Hello, world';
+// var_dump($class3->message); // -> Hello, world
 
-// $myclass3 = clone $myclass1;
-// var_dump($myclass1 === $myclass3);
+// ($myclass3, $myclass1) = <Object Id>
+// $class3 =& $class1;
+
+// $class1->message = 'Hello, world';
+// var_dump($class3->message); // -> Hello, world
+
+
+// $class3 = clone $class1;
+var_dump($class1 === $class3); // -> false
+
+$array1 = new ArrayObject([ 1, 2, new ArrayObject([ 3, 4 ]) ]);
+$array2 = clone $array1;
+
+var_dump($array1[2] === $array2[2]); // -> true
+
 
 // $myclass3->message = 'Who are you?';
 // var_dump($myclass1);
@@ -99,7 +108,7 @@ class MyArrayObject implements ArrayAccess, IteratorAggregate
      */
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->offsetExists($offset) ? $this->container[$offset] : null;
     }
 }
 
@@ -107,11 +116,7 @@ $array1 = new MyArrayObject([ 1, 2, new MyArrayObject([ 3, 4 ]) ]);
 
 // Case 1. __clone()
 
-// $array2 = $array1;
 $array2 = clone $array1;
-
-$array2[0] = 10;
-$array2[2][] = 5;
 
 var_dump($array1 === $array2);
 var_dump($array1[2] === $array2[2]);
@@ -122,10 +127,7 @@ foreach ($array2 as $key => $value) {
 
 // Case 2. Serialize
 
-$array2 =  unserialize(serialize($array1));
+$array2 = unserialize(serialize($array1));
 
-$array2[0] = 10;
-$array2[2][] = (5);
-
-var_dump($array1 === $array2);
-var_dump($array1[2] === $array2[2]);
+var_dump($array1 === $array2); // -> false
+var_dump($array1[2] === $array2[2]); // -> false

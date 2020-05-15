@@ -8,7 +8,8 @@ $dt = new DateTime('now', new DateTimeZone('Asia/Seoul'));
 // $dt = DateTime::createFromFormat('Y/m/d', '2020/02/15', new DateTimeZone('Asia/Seoul'));
 $dt->modify('+2 days');
 $dt->modify('+2 days');
-var_dump($dt->format('h:i:s Y/m/d'));
+
+// var_dump($dt->format('h:i:s Y/m/d'));
 
 /**
  * DateTimeZone
@@ -22,10 +23,10 @@ $dz = new DateTimeZone('Asia/Seoul');
 $dt2 = new DateTime('now', new DateTimeZone('Asia/Seoul'));
 // var_dump($dt2->diff($dt));
 
-$di = new DateInterval('P2D');
-$di2 = DateInterval::createFromDateString('+2 Days');
+$di = new DateInterval('P1Y2M2D');
+$di2 = DateInterval::createFromDateString('+2 days');
 
-// var_dump($di, $di2);
+// var_dump($di2);
 
 /**
  * DatePeriod

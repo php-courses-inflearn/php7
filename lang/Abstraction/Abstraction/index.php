@@ -2,7 +2,7 @@
 
 function foo(A $a)
 {
-    echo $a->foo();
+    return $a->foo();
 }
 
 /**
@@ -10,9 +10,9 @@ function foo(A $a)
  */
 abstract class A
 {
-    public $message = 'Hello, world';
+    protected $message = 'Hello, world';
 
-    public function hello()
+    public function sayHello()
     {
         return $this->message;
     }
@@ -28,13 +28,5 @@ class B extends A
     }
 }
 
-class C extends A
-{
-    public function foo()
-    {
-        return __CLASS__;
-    }
-}
-
-// (new B())->foo();
-foo(new B());
+$b = new B();
+var_dump(foo($b));

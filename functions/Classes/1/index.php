@@ -3,14 +3,13 @@
 /**
  * Classes/Objects Functions
  */
-
 class A
 {
     public $message = 'Hello, world';
 
     public function foo()
     {
-        return $message;
+        return $this->message;
     }
 }
 
@@ -23,24 +22,38 @@ class_alias('A', 'MyClass');
 /**
  * Exists
  */
-class_exists('MyClass');
-var_dump(property_exists('MyClass', 'message'));
+// var_dump(
+//     class_exists('MyClass'),
+//     property_exists('MyClass', 'message')
+// );
 
 /**
  * Get
  */
 $a = new MyClass();
+$b = new B();
 
-get_class($a);
-get_class_vars('MyClass');
+// var_dump(
+//     get_class($a),
+//     get_class_vars('MyClass'),
+//     get_class_methods('MyClass')
+// );
 
-var_dump(get_class_methods('MyClass'));
-var_dump(get_declared_classes());
+// var_dump(
+//     get_declared_classes()
+// );
+
+// var_dump(
+//     get_object_vars($a),
+//     get_parent_class($b)
+// );
 
 /**
  * is
  */
-$b = new B();
-
-var_dump(is_a($b, 'MyClass'), is_a($b, 'B'), $b instanceof B, $b instanceof A);
-var_dump(is_subclass_of($b, 'MyClass'));
+var_dump(
+    is_a($a, 'MyClass'),
+    is_subclass_of($b, 'MyClass'),
+    $a instanceof MyClass,
+    $b instanceof MyClass
+);

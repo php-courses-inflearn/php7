@@ -4,16 +4,16 @@
  * WeakReference
  */
 
-$array = [ 'message' => 'Hello, world' ];
+// $messages = [
+//     'sayHello' => 'Hello, world'
+// ];
+// var_dump((object) $messages);
 
-$class = (object) $array; // -> stdClass
-// var_dump($class);
+$class = new stdClass();
 
-// $ref =& $class;
 $weakRef = WeakReference::create($class);
 var_dump($weakRef->get());
 
 unset($class);
 
 var_dump($weakRef->get());
-// var_dump($ref);

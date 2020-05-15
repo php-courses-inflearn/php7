@@ -1,7 +1,9 @@
 <?php
 
+// CREATE TABLE sessions(id VARCHAR(255) UNIQUE NOT NULL, payload TEXT);
+
 /**
- * CREATE TABLE sessions(id VARCHAR(255) UNIQUE NOT NULL, payload TEXT);
+ * Session Handler Interface
  */
 
 class MySqlSessionHanlder implements SessionHandlerInterface

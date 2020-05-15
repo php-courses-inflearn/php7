@@ -4,42 +4,54 @@
  * References
  */
 
-$hello = 'Hello, world';
-$world =& $hello;
+$message = 'Hello, world';
+$sayHello =& $message;
 
-$world = 'Who are you?';
-var_dump($hello);
+$sayHello = 'Who are you?';
+// var_dump($message); // -> Who are you?
 
 /**
  * Functions and Methods
  */
-function foo(&$message)
+function foo()
 {
-    // global $hello;
-    $hello =& $GLOBALS['hello'];
-    $hello = 'Bye';
+    // global $message;
+    $message =& $GLOBALS['message'];
+    $message = 'Bye';
+}
 
+foo();
+// var_dump($message);
+
+function foo2(&$message)
+{
     $message = 'Hello, world';
 }
 
-foo($message);
-var_dump($message);
+foo2($message);
+// var_dump($message);
 
-var_dump($hello);
-
-function &foo2()
+class MyClass
 {
-    $sayHello = 'Hello, world';
-    return $sayHello;
+    public $message = 'Hello, world';
+
+    public function &getMessage()
+    {
+        return $this->message;
+    }
 }
 
-$foo2 =& foo2();
-var_dump($foo2);
+$myclass = new MyClass();
+
+$sayHello =& $myclass->getMessage();
+$sayHello = 'Bye';
+
+// var_dump($myclass->message);
 
 /**
  * Unset
  */
-$foo3 =& $message;
-unset($foo3);
+$sayHello =& $message;
+unset($sayHello);
 
 var_dump($message);

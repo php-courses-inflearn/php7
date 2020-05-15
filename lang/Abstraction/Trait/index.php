@@ -3,14 +3,13 @@
 /**
  * Trait
  */
-
 trait A
 {
-    public $message = 'Hello, world';
+    private $message = 'Hello, world';
 
-    public function hello()
+    public function sayHello()
     {
-        return $this->foo();
+        return $this->message;
     }
 
     abstract public function foo();
@@ -18,37 +17,42 @@ trait A
 
 trait AA
 {
-    public function hello()
+    public function sayHello()
     {
         return __TRAIT__;
     }
 }
 
-trait AAA
-{
-    use A, AA {
-        A::hello insteadof AA;
-        A::hello as protected h;
-    }
-}
+// trait AAA
+// {
+//     use A, AA {
+//         A::sayHello insteadof AA;
+//         A::sayHello as protected h;
+//     }
+// }
 
 class B
 {
-    use AAA;
+    use A, AA {
+        A::sayHello insteadof AA;
+        A::sayHello as protected h;
+    }
 
     public function foo()
     {
-        return $this->message;
+        return __CLASS__;
     }
 }
 
-// var_dump((new B())->hello());
+$b = new B();
+var_dump($b->sayHello());
+
 
 class C
 {
     private $message = 'Hello, world';
 
-    public function hello()
+    public function sayHello()
     {
         return $this->message;
     }
@@ -56,7 +60,7 @@ class C
 
 trait D
 {
-    public function hello()
+    public function sayHello()
     {
         return __TRAIT__;
     }
@@ -66,11 +70,11 @@ class E extends C
 {
     use D;
 
-    public function hello()
+    public function sayHello()
     {
         return __CLASS__;
     }
 }
 
 $e = new E();
-var_dump($e->hello());
+var_dump($e->sayHello());

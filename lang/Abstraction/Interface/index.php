@@ -2,7 +2,7 @@
 
 function foo(A $a)
 {
-    echo $a->foo();
+    return $a->foo();
 }
 
 /**
@@ -13,20 +13,23 @@ interface A
     public function foo();
 }
 
-class B implements A
+interface AA extends A
+{
+    public function sayHello();
+}
+
+class B implements AA
 {
     public function foo()
     {
         return __CLASS__;
     }
-}
 
-class C implements A
-{
-    public function foo()
+    public function sayHello()
     {
-        return __CLASS__;
+        return 'Hello, world';
     }
 }
 
-foo(new C());
+$b = new B();
+var_dump(foo($b));

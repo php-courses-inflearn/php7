@@ -15,17 +15,17 @@ class B extends A
 }
 
 /**
- * ReflecttionClass
+ * ReflectionClass
  */
-$refClass = new ReflectionClass('\A');
-var_dump($refClass->getProperties(ReflectionProperty::IS_PRIVATE));
-var_dump($refClass->getConstructor());
+
+$refClassA = new ReflectionClass('\A');
+// var_dump($refClassA->getProperties(ReflectionProperty::IS_PRIVATE));
 
 $refClassB = new ReflectionClass('\B');
-var_dump($refClassB->isSubclassOf('\A'));
+// var_dump($refClassB->isSubclassOf('\A'));
 
 /**
  * ReflectionProperty
  */
-$messageProperty = $refClass->getProperty('message');
-var_dump($messageProperty->getType());
+$messageProperty = $refClassA->getProperty('message');
+var_dump($messageProperty->getType()->getName());

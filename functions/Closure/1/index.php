@@ -1,31 +1,27 @@
 <?php
 
-class A
-{
-    private $message = 'Hello, world';
-}
-
-$a = new A();
-$foo = fn () => $this->message;
-
 /**
- * Closure::bindTo
- */
-$foo = $foo->bindTo($a, $a);
-var_dump($foo());
-
-/**
- * Closure::call
- */
-var_dump($foo->call($a));
-
-/**
- * From Callable
+ * Closure
  */
 function foo()
 {
     return 'Hello, world';
 }
 
-$foo = Closure::fromCallable('\foo');
-var_dump($foo());
+// $foo = fn () => 'Hello, world';
+// var_dump(Closure::fromCallable('foo'));
+
+class A
+{
+    private $message = 'Hello, world';
+}
+
+$foo = fn () => $this->message;
+
+$a = new A();
+
+// Function call
+// var_dump($foo->call($a));
+
+// $foo2 = $foo->bindTo($a, $a);
+// var_dump($foo2());

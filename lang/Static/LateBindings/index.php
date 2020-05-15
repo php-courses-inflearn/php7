@@ -3,7 +3,6 @@
 /**
  * Static Binding
  */
-
 class A
 {
     // public static function foo()
@@ -26,8 +25,8 @@ class B extends A
     {
         A::foo();
 
-        parent::foo();
-        self::foo();
+        // parent::foo();
+        // self::foo();
     }
 
     // public static function who()

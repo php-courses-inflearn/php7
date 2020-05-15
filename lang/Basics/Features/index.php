@@ -9,14 +9,12 @@ class A
 
     public function foo()
     {
-        // var_dump($this);
         return $this->message;
     }
 }
 
 $a = new A();
-// var_dump($a);
-var_dump($a->foo());
+// var_dump($a->foo());
 
 /**
  * Inherit
@@ -26,7 +24,7 @@ class B extends A
 }
 
 $b = new B();
-var_dump($b->foo());
+// var_dump($b->foo());
 
 /**
  * in Functions
@@ -36,8 +34,7 @@ function foo(A $a)
     return $a->foo();
 }
 
-$b = new B();
-var_dump(foo($b));
+// var_dump(foo($b));
 
 /**
  * Context
@@ -46,9 +43,12 @@ class C extends A
 {
     public function foo()
     {
-        return new self();
-        // return new static;
-        // return new parent;
+        // C
+        // return new self();
+        // D
+        // return new static();
+        // A
+        return new parent();
     }
 }
 
@@ -57,7 +57,7 @@ class D extends C
 }
 
 $d = new D();
-var_dump($d->foo());
+// var_dump($d->foo());
 
 /**
  * Constants
@@ -77,16 +77,14 @@ class E
     }
 }
 
-// $e = new E();
+$e = new E();
 // var_dump($e->getConstants());
+// var_dump(E::MESSAGE);
 
-var_dump(E::MESSAGE);
+// var_dump($e->getClassName());
 
 /**
- * Get classname, instanceof
+ * instanceof
  */
-$e = new E();
-var_dump($e->getClassName());
-
 $d = new D();
-var_dump($d instanceof E);
+var_dump($d instanceof C);

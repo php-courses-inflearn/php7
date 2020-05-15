@@ -14,14 +14,10 @@ class A
     {
         var_dump(__METHOD__);
     }
-
-    public function foo()
-    {
-        var_dump(__METHOD__);
-    }
 }
 
 // $a = new A();
+// var_dump('Hello, world');
 
 /**
  * Constructor Parameters
@@ -36,9 +32,7 @@ class B
     }
 }
 
-$b = new B('Hello, world');
-var_dump($b->message);
-
+// $b = new B('Hello, world');
 
 /**
  * Inherit
@@ -48,21 +42,12 @@ class C extends A
     public function __construct()
     {
         parent::__construct();
-        var_dump(__METHOD__);
     }
 
     public function __destruct()
     {
         parent::__destruct();
-        var_dump(__METHOD__);
-    }
-
-    public function foo()
-    {
-        parent::foo();
-        var_dump('Hello, world');
     }
 }
 
 $c = new C();
-$c->foo();
