@@ -1,7 +1,7 @@
 {
     "name": "pronist/phplec",
     "scripts":{
-        "lint": "phpcs --standard=PSR12 --exclude=PSR1.Classes.ClassDeclaration -n lang functions"
+        "lint": "phpcs"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "3.5.3"

@@ -13,7 +13,7 @@ class StringStreamWrapper
     /**
      * @var int $position
      */
-    private $position = 0;
+    private $position;
 
     /**
      * streamWrapper::stream_opens
@@ -29,6 +29,7 @@ class StringStreamWrapper
     {
         [ 'host' => $varname ] = parse_url($path);
         $this->varname = $varname;
+        $this->position = strlen($GLOBALS[$this->varname]);
 
         return true;
     }
@@ -42,7 +43,9 @@ class StringStreamWrapper
      */
     public function stream_write($data)
     {
-        $GLOBALS[$this->varname] .= substr($GLOBALS[$this->varname], 0, $this->position) . $data;
+        $GLOBALS[$this->varname] .= $data;
+        $this->position += strlen($data);
+
         return strlen($data);
     }
 
@@ -80,22 +83,33 @@ class StringStreamWrapper
     {
         return $this->position >= strlen($GLOBALS[$this->varname]);
     }
+
+    /**
+     * streamWrapper::stream_seek
+     */
+    public function stream_seek($offset, $whence)
+    {
+        switch ($whence) {
+            case SEEK_SET:
+                $this->position = $offset;
+                break;
+        }
+        return true;
+    }
 }
 
-stream_register_wrapper('string', 'StringStreamWrapper');
+stream_wrapper_register('string', 'StringStreamWrapper');
 
 $message = null;
-
-$fp = fopen("string://message", "r+");
+$fp = fopen('string://message', 'r');
 
 fwrite($fp, "Hello, world\n");
-fwrite($fp, "Who are you?\n");
 fwrite($fp, "Bye\n");
 
-while ($row = fgets($fp)) {
+rewind($fp);
+
+while ((! feof($fp)) && ($row = fgets($fp))) {
     echo $row;
 }
-
-fclose($fp);
 
 var_dump($message);

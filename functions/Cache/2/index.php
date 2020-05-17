@@ -1,45 +1,41 @@
 <?php
 
-// CREATE TABLE cache(`key` VARCHAR(255) PRIMARY KEY, `value` TEXT NOT NULL, `expiration` INT DEFAULT NULL, `created_at` TIMESTAMP);
+/* CREATE TABLE cache(
+    `key` VARCHAR(255) PRIMARY KEY,
+    `value` TEXT NOT NULL,
+    `expiration` INT,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+); */
 
 /**
  * MySQL Backend Cache
  */
-class Cache
+interface CacheHandlerInterface
+{
+    public function put(string $key, string $value, int $expiration = null) : bool;
+    public function get(string $key, Closure $callback = null);
+    public function forget(string $Key): bool;
+    public function refresh(): bool;
+}
+
+class DatabaseCacheHandler implements CacheHandlerInterface
 {
     /**
-     * @var PDO $driver
+     * @var PDO $pdo
      */
-    private $driver;
+    private PDO $pdo;
 
     /**
      * Create a Cache Instance
      *
      * @param PDO $driver
      *
-     * @return Cache
+     * @return DatabaseCacheHandler
      */
-    public function __construct(PDO $driver)
+    public function __construct(PDO $pdo)
     {
-        $this->driver = $driver;
-    }
-
-    /**
-     * Cache value by key
-     *
-     * @param string $key
-     * @param Closure $callback
-     *
-     * @return mixed
-     */
-    public function get(string $key, Closure $callback = null): mixed
-    {
-        $sth = $this->driver->prepare('SELECT * FROM cache WHERE `key` = ?');
-
-        if ($sth->execute([ $key ]) && $row = $sth->fetchObject()) {
-            return $row->value;
-        }
-        return $callback ? call_user_func($callback) : null;
+        $this->pdo = $pdo;
     }
 
     /**
@@ -53,8 +49,23 @@ class Cache
      */
     public function put(string $key, string $value, int $expiration = null): bool
     {
-        $sth = $this->driver->prepare('INSERT INTO cache(`key`, `value`, `expiration`) VALUES(?, ?, ?)');
-        return $sth->execute([ $key, $value, $expiration ]);
+        return $this->pdo->prepare('INSERT INTO cache(`key`, `value`, `expiration`) VALUES(?, ?, ?)')->execute([ $key, $value, $expiration ]);
+    }
+
+    /**
+     * Cache value by key
+     *
+     * @param string $key
+     * @param Closure $callback
+     */
+    public function get(string $key, Closure $callback = null)
+    {
+        $sth = $this->pdo->prepare('SELECT * FROM cache WHERE `key` = ?');
+
+        if ($sth->execute([ $key ]) && $row = $sth->fetchObject()) {
+            return $row->value;
+        }
+        return $callback ? call_user_func($callback) : null;
     }
 
     /**
@@ -66,45 +77,64 @@ class Cache
      */
     public function forget(string $key): bool
     {
-        $sth = $this->driver->prepare('DELETE FROM cache WHERE `key` = ?');
-        return $sth->execute([ $key ]);
+        return $this->pdo->prepare('DELETE FROM cache WHERE `key` = ?')->execute([ $key ]);
     }
 
     /**
-     * Remove all caches
-     *
-     * @return bool
+     * Refresh
      */
-    public function flush(): bool
+    public function refresh(): bool
     {
-        return $this->driver->exec('TRUNCATE cache');
-    }
-
-    /**
-     * Refresh Cache value
-     *
-     * @return void
-     */
-    public function refresh(): void
-    {
-        $sth = $this->driver->prepare('SELECT * FROM cache');
+        $sth = $this->pdo->prepare('SELECT * FROM cache');
 
         if ($sth->execute()) {
-            $now = strtotime('now');
             while ($row = $sth->fetchObject()) {
-                $createdAt = strtotime($row->created_at);
-                $invalidCaches = [];
-                if ($now - $createdAt > $row->expiration) {
-                    $invalidCaches[] = $row->key;
+                $timestamp = strtotime($row->created_at);
+                if ($row->expiration) {
+                    if (time() - $timestamp > $row->expiration) {
+                        $this->forget($row->key);
+                    }
                 }
             }
-            array_walk($invalidCaches, fn ($key) => $this->forget($key));
+            return true;
         }
+        return false;
     }
 }
 
-$cache = new Cache(new PDO('mysql:dbname=myapp_test;host=127.0.0.1;', 'root', 'root'));
+class Cache
+{
+    /**
+     * @var CacheHandlerInterface $handler
+     */
+    private CacheHandlerInterface $handler;
 
-// $cache->put('Message', 'Hello, world');
+    /**
+     * Create a new Cache Instance
+     *
+     * @param CacheHandlerInterface $handler
+     */
+    public function __construct(CacheHandlerInterface $handler)
+    {
+        $this->handler = $handler;
+    }
+
+    /**
+     * @param string $name
+     * @param array $args
+     */
+    public function __call($name, $args)
+    {
+        return $this->handler->$name(...$args);
+    }
+}
+
+$databaseCacheHandler = new DatabaseCacheHandler(new PDO('mysql:dbname=myapp_test;host=127.0.0.1;', 'root', 'root'));
+$cache = new Cache($databaseCacheHandler);
+
+$cache->put('message', 'Hello, world');
+$cache->put('foo', serialize(new stdClass()), 10);
 
 $cache->refresh();
+
+var_dump($cache->get('message'));

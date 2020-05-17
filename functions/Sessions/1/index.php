@@ -1,23 +1,32 @@
 <?php
 
-// CREATE TABLE sessions(id VARCHAR(255) UNIQUE NOT NULL, payload TEXT);
+/* CREATE TABLE sessions(
+    `id` VARCHAR(255) UNIQUE NOT NULL,
+    `payload` TEXT,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+); */
+
+// ini_set('session.gc_maxlifetime', 10);
 
 /**
  * Session Handler Interface
  */
-
-class MySqlSessionHanlder implements SessionHandlerInterface
+class DatabaseSessionHandler implements SessionHandlerInterface
 {
-    private $dbh;
+    /**
+     * @var PDO $pdo
+     */
+    private PDO $pdo;
 
     /**
-     * Create a new MySqlSessionHandler
+     * Create a new DatabaseSessionHandler
      *
-     * @return MySqlSessionHanlder
+     * @return DatabaseSessionHandler
      */
-    public function __construct()
+    public function __construct(PDO $pdo)
     {
-        $this->dbh = new PDO('mysql:dbname=myapp_test;host=127.0.0.1', 'root', 'root');
+        $this->pdo = $pdo;
     }
 
     /**
@@ -34,41 +43,6 @@ class MySqlSessionHanlder implements SessionHandlerInterface
     }
 
     /**
-     * run Session GC
-     *
-     * @param int $maxlifetime
-     *
-     * @return bool
-     */
-    public function gc($maxlifetime)
-    {
-        return true;
-    }
-
-    /**
-     * destroy Session
-     *
-     * @param string $session_id
-     *
-     * @return bool
-     */
-    public function destroy($session_id)
-    {
-        $sth = $this->dbh->prepare('DELETE FROM sessions WHERE id = :id');
-        return $sth->execute([ ':id' => $session_id ]);
-    }
-
-    /**
-     * close Session
-     *
-     * @return bool
-     */
-    public function close()
-    {
-        return true;
-    }
-
-    /**
      * read session payload
      *
      * @param string $session_id
@@ -77,13 +51,12 @@ class MySqlSessionHanlder implements SessionHandlerInterface
      */
     public function read($session_id)
     {
-        $sth = $this->dbh->prepare('SELECT * FROM sessions WHERE id = :id');
+        $sth = $this->pdo->prepare('SELECT * FROM sessions WHERE `id` = :id');
         if ($sth->execute([ ':id' => $session_id ])) {
             if ($sth->rowCount() > 0) {
                 $payload = $sth->fetchObject()->payload;
             } else {
-                $sth = $this->dbh->prepare('INSERT INTO sessions(id) VALUES(:id)');
-                $sth->execute([ ':id' => $session_id ]);
+                $this->pdo->prepare('INSERT INTO sessions(`id`) VALUES(:id)')->execute([ ':id' => $session_id ]);
             }
         }
         return $payload ?? '';
@@ -99,19 +72,59 @@ class MySqlSessionHanlder implements SessionHandlerInterface
      */
     public function write($session_id, $session_data)
     {
-        $sth = $this->dbh->prepare('UPDATE sessions SET payload = :payload WHERE id = :id');
-        return $sth->execute([ ':payload' => $session_data, ':id' => $session_id ]);
+        return $this->pdo->prepare('UPDATE sessions SET `payload` = :payload WHERE `id` = :id')->execute([ ':payload' => $session_data, ":id" => $session_id ]);
+    }
+
+    /**
+     * run Session GC
+     *
+     * @param int $maxlifetime
+     *
+     * @return bool
+     */
+    public function gc($maxlifetime)
+    {
+        $sth = $this->pdo->prepare('SELECT * FROM sessions');
+        if ($sth->execute()) {
+            while ($row = $sth->fetchObject()) {
+                $timestamp = strtotime($row->created_at);
+                if (time() - $timestamp > $maxlifetime) {
+                    $this->destroy($row->id);
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * destroy Session
+     *
+     * @param string $session_id
+     *
+     * @return bool
+     */
+    public function destroy($session_id)
+    {
+        return $this->pdo->prepare('DELETE FROM sessions WHERE `id` = :id')->execute([ ':id' => $session_id ]);
+    }
+
+    /**
+     * close Session
+     *
+     * @return bool
+     */
+    public function close()
+    {
+        return true;
     }
 }
 
-session_set_save_handler(new MySqlSessionHanlder(), true);
+session_set_save_handler(new DatabaseSessionHandler(new PDO('mysql:dbname=myapp_test;host=127.0.0.1;', 'root', 'root')));
 
 session_start();
 
 $_SESSION['message'] = 'Hello, world';
 $_SESSION['foo'] = new stdClass();
 
-// -> Hello, world
-var_dump($_SESSION);
-
-session_destroy();
+// session_gc();

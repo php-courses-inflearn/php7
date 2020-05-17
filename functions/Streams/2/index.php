@@ -22,11 +22,11 @@ class StrToUpperFilter extends php_user_filter
     }
 }
 
-stream_filter_register('str.*', 'StrToUpperFilter');
 
 $fp = fopen(dirname(__DIR__, 3) . '/README.md', 'r');
+// stream_filter_append($fp, 'string.toupper');
+
+stream_filter_register('str.toupper', 'StrToUpperFilter');
 stream_filter_append($fp, 'str.toupper');
 
 var_dump(stream_get_contents($fp));
-
-fclose($fp);

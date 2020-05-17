@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="PHP_CodeSniffer" xsi:noNamespaceSchemaLocation="phpcs.xsd">
+    <arg name="standard" value="PSR12"></arg>
+    <arg name="warning-severity" value="0"></arg>
+
+    <file>lang</file>
+    <file>functions</file>
+
+    <rule ref="PSR1">
+        <exclude name="PSR1.Classes.ClassDeclaration"></exclude>
+        <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"></exclude>
+    </rule>
+</ruleset>

@@ -3,41 +3,34 @@
 /**
  * PDO (MySQL)
  */
-
 try {
     $dbh = new PDO('mysql:dbname=myapp_test;host=127.0.0.1;', 'root', 'root');
 
-    /**
-     * Execution
-     */
-    // exec
-    $dbh->exec('CREATE TABLE tests(id INT PRIMARY KEY AUTO_INCREMENT)');
+    // EXEC
+    $dbh->exec('CREATE TABLE tests(`id` INT PRIMARY KEY AUTO_INCREMENT)');
 
-    // prepare
+    // QUERY
+    // $sth = $dbh->query('SELECT * FROM posts LIMIT 10');
+    // while ($row = $sth->fetchObject()) {
+    //     var_dump($row);
+    // }
+
+    // PREAPRE
     $sth = $dbh->prepare('SELECT * FROM posts WHERE user_id = :user_id LIMIT 10');
 
-    // $sth->bindParam(':user_id', 478, PDO::PARAM_INT);
-    if ($sth->execute([ ':user_id' => 478 ])) {
+    if ($sth->execute([ ':user_id' => 480 ])) {
         while ($row = $sth->fetchObject()) {
-            var_dump($row->title);
+            var_dump($row);
         }
     }
 
-    foreach ($dbh->query('SELECT * FROM posts WHERE user_id = 478 LIMIT 10', PDO::FETCH_CLASS, 'stdClass') as $post) {
-        var_dump($post->title);
-    }
-
-    /**
-     * Transaction
-     */
+    // TRANSACTION
     $dbh->beginTransaction();
 
     if ($dbh->inTransaction()) {
-        $dbh->exec('DELETE FROM posts WHERE user_id = 478');
+        $dbh->exec('DELETE FROM posts WHERE user_id = 480');
         $dbh->rollback();
     }
-
-    $dbh->exec('DROP TABLE tests');
 } catch (PDOException $e) {
-    return var_dump($e->getMessage());
+    var_dump($e->getMessage());
 }
