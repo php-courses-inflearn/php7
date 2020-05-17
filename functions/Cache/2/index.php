@@ -13,7 +13,7 @@
  */
 interface CacheHandlerInterface
 {
-    public function put(string $key, string $value, int $expiration = null) : bool;
+    public function put(string $key, string $value, int $expiration = null): bool;
     public function get(string $key, Closure $callback = null);
     public function forget(string $Key): bool;
     public function refresh(): bool;
