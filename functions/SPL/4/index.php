@@ -4,19 +4,17 @@
  * Classes Autoloading (PSR-4)
  */
 
+// include './Classes/MyClass.php';
+
+use Classes\MyClass;
+
 spl_autoload_register(function ($classname) {
     include $classname . '.php';
 });
 
-// use Classes\MyClass;
+new MyClass();
 
-// MyClass::foo();
-
-// Unregister
-
-$autoloadFunctions = spl_autoload_functions();
-var_dump($autoloadFunctions);
-
-foreach ($autoloadFunctions as $function) {
+// var_dump(spl_autoload_functions());
+foreach (spl_autoload_functions() as $function) {
     spl_autoload_unregister($function);
 }

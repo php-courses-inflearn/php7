@@ -2,12 +2,9 @@
 
 require_once './vendor/autoload.php';
 
-use Whoops\Run;
-use Whoops\Handler\PrettyPageHandler;
-
-$whoops = new Run();
-$whoops->pushHandler(new PrettyPageHandler());
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
 
-// ERROR
+// ERROR!
 echo $message;

@@ -20,3 +20,9 @@ set_exception_handler(fn (Exception $e) => var_dump($e->getMessage()));
 /**
  * Error
  */
+try {
+    new MyClass();
+} catch (Error $e) {
+    var_dump($e->getMessage());
+}
+

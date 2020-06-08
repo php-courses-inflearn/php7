@@ -4,8 +4,6 @@ namespace Classes;
 
 class MyClass
 {
-    public static function foo()
-    {
-        var_dump(__CLASS__);
-    }
 }
+
+# \Classes\MyClass
