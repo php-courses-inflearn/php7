@@ -6,7 +6,7 @@
 ## Branches
 
 * [Basic](https://github.com/pronist/phplec/tree/basic) - **PHP 7+ Programming: Basic**
-* [Intermediate](https://github.com/pronist/phplec/tree/intermediate) - **PHP 7+ Programming: Intermediate**
+* [Intermediate](https://github.com/pronist/phplec/tree/intermediate) - **PHP 7+ Programming: OOP**
 
 ## PHP 7+ Programming: Basic
 

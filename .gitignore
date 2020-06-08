@@ -1,12 +1,7 @@
 vendor
 node_modules
 
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
+.vscode
 
 functions/Sessions/**/sessions/*
 security/Sessions/sessions/*
