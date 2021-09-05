@@ -41,7 +41,7 @@
     * [Output Control](https://github.com/php-courses-inflearn/php7/tree/main/ch2/OutputControl)
     * [Program Execution](https://github.com/php-courses-inflearn/php7/tree/main/ch2/ProgramExecution)
     * [MySQLi](https://github.com/php-courses-inflearn/php7/tree/main/ch2/MySQLi)
-3. 보안을 잊지 마십시오.
+3. [보안을 잊지 마십시오.](https://github.com/php-courses-inflearn/php7/tree/main/ch3)
     * [Error Reporting](https://github.com/php-courses-inflearn/php7/tree/main/ch3/ErrorReporting)
     * [File Upload & Download](https://github.com/php-courses-inflearn/php7/tree/main/ch3/File)
     * [Sessions](https://github.com/php-courses-inflearn/php7/tree/main/ch3/Sessions)
