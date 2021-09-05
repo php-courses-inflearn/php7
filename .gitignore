@@ -3,5 +3,5 @@ node_modules
 
 .vscode
 
-functions/Sessions/**/sessions/*
-security/Sessions/sessions/*
+ch2/Sessions/**/sessions/*
+ch3/Sessions/sessions/*

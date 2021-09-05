@@ -1,111 +1,57 @@
-# Example codes for PHP 7+ Programming.lec
+# PHP 7+ 프로그래밍
+
+[[인프런] PHP 7+ 프로그래밍](https://www.inflearn.com/course/https://www.inflearn.com/course/php7-reboot) 예제코드입니다.
 
 * *php >= 7.2*
 * Extended Coding Style: [PSR-12](https://www.php-fig.org/psr/psr-12/)
 
-## Branches
+## 커리큘럼
 
-* [Basic](https://github.com/pronist/phplec/tree/basic) - **PHP 7+ Programming: Basic**
-* [Intermediate](https://github.com/pronist/phplec/tree/intermediate) - **PHP 7+ Programming: OOP**
+1. [꼭 알아야 할 PHP 기초 문법](http://docs.php.net/manual/en/langref.php)
+    * [Basic syntax](https://github.com/php-courses-inflearn/php7/tree/main/ch1/BasicSyntax)
+    * [Types](https://github.com/php-courses-inflearn/php7/tree/main/ch1/Types)
+    * [Variables](https://github.com/php-courses-inflearn/php7/tree/main/ch1/Variables)
+    * [Constants](https://github.com/php-courses-inflearn/php7/tree/main/ch1/Constants)
+    * [Operators](https://github.com/php-courses-inflearn/php7/tree/main/ch1/Operators)
+    * [Control Structures](https://github.com/php-courses-inflearn/php7/tree/main/ch1/ControlStructures)
+    * [Functions](https://github.com/php-courses-inflearn/php7/tree/main/ch1/Functions)
+2. [많이 사용하는 PHP 내장 함수들](http://docs.php.net/manual/en/extensions.membership.php)
+    * [PHP Options/Info](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Configurations)
+    * [Error Handling](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Error)
+    * [Strings](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Strings)
+    * [Hash](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Hash)
+    * [Password Hashing](https://github.com/php-courses-inflearn/php7/tree/main/ch2/PasswordHashing)
+    * [PCRE(Perl-Compatible Regular Expression)](https://github.com/php-courses-inflearn/php7/tree/main/ch2/PCRE)
+    * [Math](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Math)
+    * [CSPRNG(Cryptographically Secure Pseudo-Random Number Generator)](https://github.com/php-courses-inflearn/php7/tree/main/ch2/CSPRNG)
+    * [Arrays](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Arrays)
+    * [Variable Handling](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Variables)
+    * [Filter](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Filter)
+    * [Function Handling](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Functions)
+    * [Date/Time](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Date)
+    * [Network](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Network)
+    * [Sessions](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Sessions)
+    * [URLs](https://github.com/php-courses-inflearn/php7/tree/main/ch2/URLs)
+    * [cURL](https://github.com/php-courses-inflearn/php7/tree/main/ch2/cURL)
+    * [JSON](https://github.com/php-courses-inflearn/php7/tree/main/ch2/JSON)
+    * [Directories](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Directories)
+    * [Filesystem](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Filesystem)
+    * [Streams](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Streams)
+    * [Readline](https://github.com/php-courses-inflearn/php7/tree/main/ch2/Readline)
+    * [Output Control](https://github.com/php-courses-inflearn/php7/tree/main/ch2/OutputControl)
+    * [Program Execution](https://github.com/php-courses-inflearn/php7/tree/main/ch2/ProgramExecution)
+    * [MySQLi](https://github.com/php-courses-inflearn/php7/tree/main/ch2/MySQLi)
+3. 보안을 잊지 마십시오.
+    * [Error Reporting](https://github.com/php-courses-inflearn/php7/tree/main/ch3/ErrorReporting)
+    * [File Upload & Download](https://github.com/php-courses-inflearn/php7/tree/main/ch3/File)
+    * [Sessions](https://github.com/php-courses-inflearn/php7/tree/main/ch3/Sessions)
+    * [SQLInjection](https://github.com/php-courses-inflearn/php7/tree/main/ch3/SQLInjection)
+    * [XSS(Cross-Site Scripting)](https://github.com/php-courses-inflearn/php7/tree/main/ch3/XSS)
+4. [결국, 게시판을 만들게 되어있습니다.](https://github.com/php-courses-inflearn/php7/tree/main/ch4)
+5. [언제까지, 레거시입니까?](https://github.com/php-courses-inflearn/php7/tree/main/ch5)
 
-## PHP 7+ Programming: Basic
+## 저작권
 
-<p>
-    <img src="https://github.styleci.io/repos/231129705/shield?branch=basic" alt="StyleCI">
-</p>
-
-### Language Reference
-
-<http://docs.php.net/manual/en/langref.php>
-
-* [Basic syntax](https://github.com/pronist/phplec/tree/basic/lang/BasicSyntax)
-* [Types](https://github.com/pronist/phplec/tree/basic/lang/Types)
-* [Variables](https://github.com/pronist/phplec/tree/basic/lang/Variables)
-* [Constants](https://github.com/pronist/phplec/tree/basic/lang/Constants)
-* [Operators](https://github.com/pronist/phplec/tree/basic/lang/Operators)
-* [Control Structures](https://github.com/pronist/phplec/tree/basic/lang/ControlStructures)
-* [Functions](https://github.com/pronist/phplec/tree/basic/lang/Functions)
-
-### Membership Extensions
-
-<http://docs.php.net/manual/en/extensions.membership.php>
-
-#### Configurations
-
-* [PHP Options/Info](https://github.com/pronist/phplec/tree/basic/functions/Configurations)
-
-#### Error
-
-* [Error Handling](https://github.com/pronist/phplec/tree/basic/functions/Error)
-
-#### Strings
-
-* [Strings](https://github.com/pronist/phplec/tree/basic/functions/Strings)
-* [Hash](https://github.com/pronist/phplec/tree/basic/functions/Hash)
-* [Password Hashing](https://github.com/pronist/phplec/tree/basic/functions/PasswordHashing)
-* [PCRE(Perl-Compatible Regular Expression)](https://github.com/pronist/phplec/tree/basic/functions/PCRE)
-
-#### Math
-
-* [Math](https://github.com/pronist/phplec/tree/basic/functions/Math)
-* [CSPRNG(Cryptographically Secure Pseudo-Random Number Generator)](https://github.com/pronist/phplec/tree/basic/functions/CSPRNG)
-
-#### Arrays
-
-* [Arrays](https://github.com/pronist/phplec/tree/basic/functions/Arrays)
-
-#### Variables
-
-* [Variable Handling](https://github.com/pronist/phplec/tree/basic/functions/Variables)
-* [Filter](https://github.com/pronist/phplec/tree/basic/functions/Filter)
-
-#### Functions
-
-* [Function Handling](https://github.com/pronist/phplec/tree/basic/functions/Functions)
-
-#### Date/Time
-
-* [Date/Time](https://github.com/pronist/phplec/tree/basic/functions/Date)
-
-#### Http
-
-* [Network](https://github.com/pronist/phplec/tree/basic/functions/Network)
-* [Sessions](https://github.com/pronist/phplec/tree/basic/functions/Sessions)
-* [URLs](https://github.com/pronist/phplec/tree/basic/functions/URLs)
-* [cURL](https://github.com/pronist/phplec/tree/basic/functions/cURL)
-* [JSON](https://github.com/pronist/phplec/tree/basic/functions/JSON)
-
-#### Filesystem
-
-* [Directories](https://github.com/pronist/phplec/tree/basic/functions/Directories)
-* [Filesystem](https://github.com/pronist/phplec/tree/basic/functions/Filesystem)
-
-#### Stream
-
-* [Streams](https://github.com/pronist/phplec/tree/basic/functions/Streams)
-* [Readline](https://github.com/pronist/phplec/tree/basic/functions/Readline)
-* [Output Control](https://github.com/pronist/phplec/tree/basic/functions/OutputControl)
-* [Program Execution](https://github.com/pronist/phplec/tree/basic/functions/ProgramExecution)
-
-#### Database
-
-* [MySQLi](https://github.com/pronist/phplec/tree/basic/functions/MySQLi)
-
-### Security
-
-* [Error Reporting](https://github.com/pronist/phplec/tree/basic/security/ErrorReporting)
-* [File Upload & Download](https://github.com/pronist/phplec/tree/basic/security/File)
-* [Sessions](https://github.com/pronist/phplec/tree/basic/security/Sessions)
-* [SQLInjection](https://github.com/pronist/phplec/tree/basic/security/SQLInjection)
-* [XSS(Cross-Site Scripting)](https://github.com/pronist/phplec/tree/basic/security/XSS)
-
-### Application
-
-* [Beginning](https://github.com/pronist/phpblog/tree/beginning) - **Classical Architecture**
-* [Basic](https://github.com/pronist/phpblog/tree/basic) - **Similar to MVC(Model, View, Controller)**
-
-## License
-
-[MIT](https://github.com/pronist/phplec/blob/basic/LICENSE)
+[MIT](https://github.com/php-courses-inflearn/php7/blob/main/LICENSE)
 
 Copyright 2020. [SangWoo Jeong](https://github.com/pronist). All rights reserved.
